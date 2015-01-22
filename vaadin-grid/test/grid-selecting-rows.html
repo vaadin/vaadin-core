@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <script src="common.js"></script>
+
+  <link rel="import" href="../vaadin-grid.html">
+</head>
+
+<body>
+
+  <div id="gridwrapper"></div>
+
+  <script>
+    describe.feature('selecting rows', function() {
+      var selectListener;
+
+      before(function() {
+        selectListener = sinon.spy();
+        grid.addEventListener('select', selectListener);
+      });
+
+      function getSelectionModeAttr() {
+        return grid.getAttribute('selection-mode');
+      };
+
+      function setSelectionModeAttr(mode) {
+        grid.setAttribute('selection-mode', mode);
+
+        return grid;
+      };
+
+      afterEach(function() {
+        selectListener.reset();
+
+        return grid.then(function() {
+          // force selection clear
+          grid.selection.mode = 'disabled';
+          grid.selection.mode = 'single';
+
+          return grid;
+        });
+      });
+
+      describe('using attributes', function() {
+        describe('selection-mode', function() {
+          it('should set selectionMode to disabled', function() {
+            return setSelectionModeAttr('disabled').then(function() {
+              expect(grid.selection.mode).to.equal('disabled');
+            });
+          });
+
+          it('should set selectionMode to single', function() {
+            return setSelectionModeAttr('single').then(function() {
+              expect(grid.selection.mode).to.equal('single');
+            });
+          });
+
+          it('should set selectionMode to multi', function() {
+            return setSelectionModeAttr('multi').then(function() {
+              expect(grid.selection.mode).to.equal('multi');
+            });
+          });
+
+          it('should should remove selectionMode property', function() {
+            setSelectionModeAttr('disabled');
+            grid.removeAttribute('selection-mode');
+
+            return grid.then(function() {
+              // 'single' is the default
+              expect(grid.selection.mode).to.equal('single');
+            });
+          });
+
+          // TODO: throws an error, but for some reason expect doesn't catch it.
+          it.skip('should fail setting the value to foobar', function() {
+            expect(function() {
+              setSelectionModeAttr('foobar');
+            }).to.throw(Object);
+          });
+        });
+      });
+
+      describe('using properties', function() {
+        describe('selection.mode', function() {
+          var checkBoxQuery = "input[type='checkbox']";
+
+          it('should be single by default', function() {
+            expect(grid.selection.mode).to.equal('single');
+          });
+
+          it('should be use default value when removing the value', function() {
+            grid.selection.mode = 'disabled';
+
+            grid.selection.mode = undefined;
+
+            expect(grid.selection.mode).to.equal('single');
+          });
+
+          it('should set selection-mode to disabled', function() {
+            grid.selection.mode = 'disabled';
+
+            return grid.then(function() {
+              expect(getSelectionModeAttr()).to.equal('disabled');
+              expect(qLocal(checkBoxQuery)).to.be.undefined;
+            });
+          });
+
+          it('should set selection-mode to single', function() {
+            grid.selection.mode = 'single';
+
+            return grid.then(function() {
+              expect(getSelectionModeAttr()).to.equal('single');
+              expect(qLocal(checkBoxQuery)).to.be.undefined;
+            });
+          });
+
+          it('should set selection-mode to multi', function() {
+            grid.selection.mode = 'multi';
+
+            return grid.then(function() {
+              expect(getSelectionModeAttr()).to.equal('multi');
+              expect(qLocal(checkBoxQuery)).to.not.be.undefined;
+            });
+          });
+
+          it('should fail setting the value to foobar', function() {
+            expect(function() {
+              grid.selection.mode = 'foobar';
+            }).to.throw(Object);
+          });
+        });
+
+        describe('selected', function() {
+          describe('with mode: single', function() {
+            beforeEach(function() {
+              grid.selection.mode = 'single';
+            });
+
+            it('should clear the selection when changing mode to disabled', function() {
+              grid.selection.select(0);
+
+              grid.selection.mode = 'disabled';
+
+              expect(grid.selection.selected()).to.be.empty;
+            });
+
+            it('should clear selection when changing mode to multi', function() {
+              grid.selection.select(0);
+
+              grid.selection.mode = 'multi';
+
+              expect(grid.selection.selected()).to.be.empty;
+            });
+          });
+
+          describe('with selectionMode: multi', function() {
+            beforeEach(function() {
+              grid.selection.mode = 'multi';
+            });
+
+            it('should fire a \'select\' event', function() {
+              grid.selection.select(0);
+
+              expect(selectListener.calledOnce).to.be.true;
+            });
+
+            it('should clear the selection when changing mode to disabled', function() {
+              grid.selection.select(0);
+
+              grid.selection.mode = 'disabled';
+
+              expect(grid.selection.selected()).to.be.empty;
+            });
+
+            it('should clear selection when changing mode to single', function() {
+              grid.selection.select(0);
+
+              grid.selection.mode = 'single';
+
+              expect(grid.selection.selected()).to.be.empty;
+            });
+
+            it('should remove multiple selections when changing mode to single', function() {
+              grid.selection.select(0);
+              grid.selection.select(1);
+
+              grid.selection.mode = 'single';
+
+              expect(grid.selection.selected()).to.be.empty;
+            });
+          });
+
+          describe('with selectionMode: disabled', function() {
+            beforeEach(function() {
+              grid.selection.mode = 'disabled';
+            });
+
+            it('should not select any rows', function() {
+              grid.selection.select(0);
+
+              expect(grid.selection.selected()).to.be.empty;
+            });
+          });
+        });
+      });
+
+      describe('by clicking', function() {
+        function getFirstCell() {
+          return qLocal('.v-grid-body .v-grid-cell');
+        }
+
+        function clickFirstCell() {
+          getFirstCell().click();
+
+          return grid;
+        }
+
+        before(function() {
+          // extra 'wait' added for IE11.
+          return grid;
+        });
+
+        it('should fire a \'select\' event', function()  {
+          return clickFirstCell().then(function() {
+            expect(selectListener.calledOnce).to.be.true;
+            expect(selectListener.args[0][0]).to.have.property('type', 'select');
+          });
+        });
+
+        describe('with selection-mode: single', function() {
+          beforeEach(function() {
+            return setSelectionModeAttr('single');
+          });
+
+          it('should select a row', function() {
+            return clickFirstCell().then(function() {
+              expect(grid.selection.selected()).to.eql([0]);
+            });
+          });
+        });
+
+        describe('with selection-mode: multi', function() {
+          beforeEach(function() {
+            return setSelectionModeAttr('multi');
+          });
+
+          it('should only focus a clicked cell', function() {
+            return clickFirstCell().then(function() {
+              expect(grid.selection.selected()).to.be.empty;
+              expect(getFirstCell().getAttribute('class')).to.contain('focus');
+            });
+          });
+
+          // TODO: apparently clicking checkboxes isn't going to happen using JS...
+          it.skip('should select multiple rows', function() {
+            var inputs = qaLocal('input');
+            inputs[0].checked = true;
+            inputs[1].click();
+
+            expect(getSelectedRowsAttr()).to.equal('0,1');
+          });
+        });
+
+        describe('with selection-mode: disabled', function() {
+          beforeEach(function() {
+            return setSelectionModeAttr('disabled');
+          });
+
+          it('should not select a row', function() {
+            return clickFirstCell().then(function() {
+              expect(grid.selection.selected()).to.be.empty;
+            });
+          });
+        });
+      });
+
+      describe('by using API', function() {
+        it('should fire a \'select\' event', function() {
+          grid.selection.select(0);
+
+          expect(selectListener.calledOnce).to.be.true;
+        });
+
+        it('should not select invalid row', function() {
+          grid.selection.select('foo');
+
+          expect(grid.selection.selected()).to.be.empty;
+        });
+
+        it('should add \'row-selected\' class to the selected row', function() {
+          return grid.selection.select(1).then(function() {
+            expect(qaLocal('.v-grid-body .v-grid-row-selected')).to.have.length(1);
+          });
+        });
+
+        describe('with selectionMode: single', function() {
+          beforeEach(function() {
+            grid.selection.mode = 'single';
+          });
+
+          it('should select a row', function() {
+            grid.selection.select(1);
+
+            expect(grid.selection.selected()).to.eql([1]);
+          });
+
+          it('should select another row', function() {
+            grid.selection.select(1);
+            grid.selection.select(0);
+
+            expect(grid.selection.selected()).to.eql([0]);
+          });
+        });
+
+        describe('with selectionMode: multi', function() {
+          beforeEach(function() {
+            grid.selection.mode = 'multi';
+          })
+
+          it('should select multiple rows', function() {
+            grid.selection.select(0);
+            grid.selection.select(1);
+
+            expect(grid.selection.selected()).to.eql([0,1]);
+          });
+        });
+
+        describe('with selectionMode: disabled', function() {
+          beforeEach(function() {
+            grid.selection.mode = 'disabled';
+          });
+
+          it('should not select a row', function() {
+            grid.selection.select(0);
+
+            expect(grid.selection.selected()).to.be.empty;
+          });
+        });
+      });
+
+      describe('deselecting rows using API', function() {
+        it('should fire \'select\' event', function() {
+          grid.selection.select(0);
+
+          grid.selection.deselect(0);
+
+          expect(selectListener.calledTwice).to.be.true;
+        });
+
+        describe('with selectionMode: single', function() {
+          beforeEach(function() {
+            grid.selection.mode = 'single';
+          });
+
+          it('should deselect a row', function() {
+            grid.selection.select(0);
+
+            grid.selection.deselect(0);
+
+            expect(grid.selectedRows).to.be.empty;
+          });
+
+          it('should not deselect other rows', function() {
+            grid.selection.select(0);
+
+            grid.selection.deselect(1);
+
+            expect(grid.selection.selected()).to.eql([0]);
+          });
+        });
+
+        describe('with selectionMode: multi', function() {
+          beforeEach(function() {
+            grid.selection.mode = 'multi';
+          });
+
+          it('should deselect a single row', function() {
+            grid.selection.select(0);
+            grid.selection.select(1);
+
+            grid.selection.deselect(0);
+
+            expect(grid.selection.selected()).to.eql([1]);
+          });
+        });
+      });
+
+      describe('selected indexes', function() {
+
+        describe('in mode: single', function() {
+          beforeEach(function() {
+            grid.selection.mode = 'single';
+            grid.selection.select(0);
+          });
+
+          it('should have a right size', function() {
+            expect(grid.selection.size).to.eql(1);
+          });
+
+          it('should have right deselections', function() {
+            expect(grid.selection.deselected()).to.be.empty;
+          });
+
+          it('should have right selections', function() {
+            expect(grid.selection.selected()).to.eql([0]);
+          });
+
+          it('should iterate right selections', function() {
+            var spy = sinon.spy();
+            grid.selection.selected(spy);
+            expect(spy.calledOnce).to.be.true;
+          });
+
+          it('should return right mapped value', function() {
+            var mapper = function(index){
+              return "foo " + index;
+            };
+            expect(grid.selection.selected(mapper)).to.eql(["foo 0"]);
+          });
+
+          it('should return nothing with iterator', function() {
+            var iterator = function(i){
+              // Itearate
+            };
+            expect(grid.selection.selected(iterator)).to.be.empty;
+          });
+
+          it('clear should work right', function() {
+            grid.selection.clear();
+            expect(grid.selection.selected()).to.be.empty;
+          });
+
+          it('selectAll should work right', function() {
+            grid.selection.selectAll();
+            expect(grid.selection.selected()).to.be.empty;
+          });
+        });
+
+        describe('in mode: multi', function() {
+          beforeEach(function() {
+            grid.data.source =  function(req) {
+              var data = [];
+              for (var i = req.index; i < req.index + req.count; i++) {
+                data.push(["foo " + i, "bar " + i]);
+              }
+              req.success(data, 100);
+            };
+            grid.selection.mode = 'multi';
+            grid.selection.select(0);
+            grid.selection.select(1);
+            grid.selection.select(80);
+            grid.selection.select(81);
+          });
+
+          it('should have a right size', function() {
+            expect(grid.selection.size).to.eql(4);
+          });
+
+          it('should have right deselections', function() {
+            expect(grid.selection.deselected()).to.be.empty;
+          });
+
+          it('should have right selections', function() {
+            expect(grid.selection.selected()).to.eql([0,1,80,81]);
+          });
+
+          it('should iterate right selections', function() {
+            var spy = sinon.spy();
+            grid.selection.selected(spy);
+            expect(spy.callCount).to.eql(4);
+          });
+
+          it('should return right mapped value', function() {
+            var mapper = function(index){
+              return "foo " + index;
+            };
+            expect(grid.selection.selected(mapper)).to.eql(["foo 0", "foo 1", "foo 80", "foo 81"]);
+          });
+
+          it('should return nothing with iterator', function() {
+            var iterator = function(i){
+              // Itearate
+            };
+            expect(grid.selection.selected(iterator)).to.be.empty;
+          });
+
+          it('should return tail', function() {
+            expect(grid.selection.selected(undefined, 3)).to.eql([81]);
+          });
+
+          it('should return head', function() {
+            expect(grid.selection.selected(undefined, undefined, 1)).to.eql([0, 1]);
+          });
+
+          it('should return range', function() {
+            expect(grid.selection.selected(undefined, 1, 2)).to.eql([1, 80]);
+          });
+
+          it('clear should work right', function() {
+            grid.selection.clear();
+            expect(grid.selection.selected()).to.be.empty;
+          });
+
+          it('selectAll should work right', function() {
+            grid.selection.selectAll();
+            expect(grid.selection.mode).to.eql("all");
+          });
+
+        });
+
+        describe('in mode: all', function() {
+          beforeEach(function() {
+            grid.data.source =  function(req) {
+              var data = [];
+              for (var i = req.index; i < req.index + req.count; i++) {
+                data.push(["foo " + i, "bar " + i]);
+              }
+              req.success(data, 100);
+            };
+            grid.selection.mode = 'all';
+            grid.selection.deselect(0);
+            grid.selection.deselect(1);
+            grid.selection.deselect(80);
+            grid.selection.deselect(81);
+          });
+
+          it('should have a right size', function() {
+            expect(grid.selection.size).to.eql(96);
+          });
+
+          it('should have right deselections', function() {
+            expect(grid.selection.deselected()).to.eql([0,1,80,81]);
+          });
+
+          it('should have right selections', function() {
+            expect(grid.selection.selected()).to.have.length(96);
+          });
+
+          it('should iterate right selections', function() {
+            var spy = sinon.spy();
+            grid.selection.selected(spy);
+            expect(spy.callCount).to.eql(96);
+          });
+
+          it('should return right mapped value', function() {
+            var mapper = function(index){
+              return "foo " + index;
+            };
+            expect(grid.selection.selected(mapper)).to.contain("foo 2");
+            expect(grid.selection.deselected(mapper)).to.eql(["foo 0", "foo 1", "foo 80", "foo 81"]);
+          });
+
+          it('should return nothing with iterator', function() {
+            var iterator = function(i){
+              // Itearate
+            };
+            expect(grid.selection.selected(iterator)).to.be.empty;
+            expect(grid.selection.deselected(iterator)).to.be.empty;
+          });
+
+          it('should return tail', function() {
+            expect(grid.selection.selected(undefined, 50)).to.have.length(46);
+            expect(grid.selection.deselected(undefined, 3)).to.eql([81]);
+          });
+
+          it('should return head', function() {
+            expect(grid.selection.selected(undefined, undefined, 30)).to.have.length(31);
+            expect(grid.selection.deselected(undefined, undefined, 1)).to.eql([0, 1]);
+          });
+
+          it('should not contain deselected values', function() {
+            expect(grid.selection.selected()).not.to.contain(0);
+            expect(grid.selection.selected()).not.to.contain(80);
+          });
+
+          it('should return range', function() {
+            expect(grid.selection.selected(undefined, 1, 2)).to.eql([3, 4]);
+            expect(grid.selection.deselected(undefined, 1, 2)).to.eql([1, 80]);
+          });
+
+          it('clear should work right', function() {
+            grid.selection.clear();
+            expect(grid.selection.mode).to.eql("multi");
+          });
+
+          it('selectAll should work right', function() {
+            grid.selection.selectAll();
+            expect(grid.selection.deselected()).to.be.empty;
+          });
+
+        });
+
+        describe('in mode: disabled', function() {
+          beforeEach(function() {
+            grid.selection.mode = 'disabled';
+            grid.selection.select(0);
+          });
+
+          it('should have a right size', function() {
+            expect(grid.selection.size).to.eql(0);
+          });
+
+          it('should have right deselections', function() {
+            expect(grid.selection.deselected()).to.eql([]);
+          });
+
+          it('should have right selections', function() {
+            expect(grid.selection.selected()).to.eql([]);
+          });
+
+          it('should iterate right selections', function() {
+            var spy = sinon.spy();
+            grid.selection.selected(spy);
+            expect(spy.callCount).to.eql(0);
+          });
+
+          it('should return right mapped value', function() {
+            var mapper = function(index){
+              return "foo " + index;
+            };
+            expect(grid.selection.selected(mapper)).to.eql([]);
+            expect(grid.selection.deselected(mapper)).to.eql([]);
+          });
+
+          it('selectAll should work right', function() {
+            grid.selection.selectAll();
+            expect(grid.selection.selected()).to.eql([]);
+          });
+
+        });
+
+      });
+
+
+    });
+  </script>
+</body>
+
+</html>

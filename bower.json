@@ -1,0 +1,22 @@
+{
+  "name": "vaadin-components",
+  "version": "0.2-snapshot",
+  "authors": [
+    "Vaadin Ltd"
+  ],
+  "description": "Vaadin Grid web component",
+  "license": "Apache License 2.0",
+  "keywords": [
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "**/node_modules",
+    "**/bower_components",
+    "**/test",
+    "**/tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#v0.8.0-rc.7"
+  }
+}
