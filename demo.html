@@ -9,22 +9,7 @@
   <link rel="import" href="vaadin-components.html"></link>
 </head>
 <body vaadin-theme='valo'>
-  <script>
-      function waitUntil(check, exec) {
-        var id = setInterval(function() {
-          if (r = check()) {
-            clearInterval(id);
-            exec(r)
-          }
-        }, 100);
-      }
-      function waitUntilGridReady(id, exec) {
-        waitUntil(function() {
-          var grid = document.getElementById(id);
-          return grid && grid.dataSource && grid;
-        }, exec);
-      }
-    </script>
+  
 
   <h3>Slider</h3>
   <div style='width: 30%'>
