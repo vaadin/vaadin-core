@@ -51,9 +51,17 @@
     });
 
     beforeEach(function() {
+      //reset position to an arbitrary row.
       return grid.scrollToRow(24).then(function () {
+        // calling scrollToRow - scrollToRow - then seems to quite often
+        // run the callback in 'then' before the latter scrolling has finished.
+        // This is most likely caused by multiple timers being fired inside the Grid,
+        // and there's some gap between them - which makes grid.isWorkPending() to return
+        // 'false' too soon.
+        // Adding one 'then' in between the scrolling calls
+        // doesn't seem to remedy the situation. So let's add more.
         return grid;
-      }); //reset position to an arbitrary row.
+      });
     });
 
     it('should throw an error when scrolling to an invalid row', function() {
