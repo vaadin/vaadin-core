@@ -43,6 +43,7 @@ $ bower install vaadin-components#0.3.0
   ...
 </head>
 ```
+
 ## Usage
 ```html
 <!-- After adding the required imports, just add a <v-grid> into your HTML -->
