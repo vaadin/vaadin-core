@@ -2,7 +2,7 @@
 @element v-grid
 -->
 
-<link rel='import' href='../../bower_components/polymer/polymer.html'>
+<link rel='import' href='../../polymer/polymer.html'>
 <script src="VaadinGridImport.nocache.js"></script>
 
 <style>
@@ -44,12 +44,16 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     box-sizing: border-box;
-    display: block;
     font: 400 13px/1.1 Roboto, sans-serif;
     color: rgba(0, 0, 0, 0.87);
     cursor: default;
     transition: opacity 50ms;
     white-space: nowrap;
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
   }
 
   :host(.v-grid-loading) {
@@ -62,6 +66,9 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
     height: 100%;
     outline: none;
     position: relative;
+    z-index: 0;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
   }
 
   /* Anim */
@@ -168,6 +175,10 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
     position: absolute;
   }
 
+  :host ::content .v-grid-spacer {
+    position: absolute;
+  }
+
   .v-grid-body td {
     opacity: 0;
   }
@@ -183,7 +194,7 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
     display: block;
   }
 
-  .v-grid-row:hover td {
+  tbody .v-grid-row:hover td {
     background-color: #eeeeee;
   }
 
@@ -289,6 +300,9 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
   .v-grid-header [class*="sort-"]:after {
     font-size: 8px;
     padding-left: 8px;
+    width: 1em;
+    min-width: 12px;
+    display: inline-block;
   }
 
   .v-grid-header .sort-asc:after {
@@ -307,6 +321,7 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
     left: 0;
     position: absolute;
     z-index: 10;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   }
 
   .v-grid-footer td {
@@ -340,9 +355,9 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
        padding: 0; */
   }
 
-  .v-grid-header th.frozen,
-  .v-grid-body td.frozen,
-  .v-grid-footer td.frozen {
+  .v-grid-header th.last-frozen,
+  .v-grid-body td.last-frozen,
+  .v-grid-footer td.last-frozen {
     border-right: 1px solid #e3e3e3;
   }
 
@@ -446,21 +461,14 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
     transition: none;
   }
 
-  #measure {
+  #measureobject {
     width: 100% !important;
     height: 100% !important;
     z-index: -1 !important;
     pointer-events: none !important;
-    position: relative !important;
-    float: left !important;
-    margin-left: -100% !important;
-    opacity: 0 !important;
-  }
-
-  #measureobject {
     position: absolute !important;
-    width: 100% !important;
-    height: 100% !important;
+    left: -100% !important;
+    opacity: 0 !important;
   }
 
   /* The following is a workaround to https://dev.vaadin.com/ticket/18376 */
@@ -487,9 +495,7 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
 
 </style>
   <template>
-    <div id="measure" class="v-grid">
-      <iframe id="measureobject" class="v-grid"></iframe>
-    </div>
+    <iframe id="measureobject" class="v-grid"></iframe>
     <content></content>
   </template>
 </dom-module>
@@ -720,19 +726,31 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
       },
 
       ready: function() {
+        // hide until fully loaded
+        this.toggleClass('v-grid-loading', true);
         this.async(function() {
           for (var i = 0; i < this.attributes.length; i++) {
             this.attributeChanged(this.attributes[i].nodeName, null, this.attributes[i].nodeValue);
           }
         });
+        this._grid.init(this, Polymer.dom(this).querySelector("table"), Polymer.dom(this.root));
       },
 
       _bindResizeListener: function() {
         var _this = this;
         this.$.measureobject.addEventListener("load", function() {
-          this.contentDocument.defaultView.addEventListener('resize', function(e) {
-            _this._grid.updateSize();
-          });
+          var defaultView = this.contentDocument.defaultView;
+          var prevW = -1;
+          var prevH = -1;
+          defaultView.addEventListener('resize', function(e) {
+            var newW = defaultView.innerWidth;
+            var newH = defaultView.innerHeight;
+            if(newW != prevW || newH != prevH) {
+              prevW = newW;
+              prevH = newH;
+              _this._grid.updateSize();
+            }
+          }.bind(this));
           _this._grid.updateSize();
         });
 
@@ -741,11 +759,7 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
 
       attached: function() {
         var _this = this;
-        this._grid.attached(this, Polymer.dom(this).querySelector("table"), Polymer.dom(this.root));
         this._bindResizeListener();
-
-        // hide until fully loaded
-        this.toggleClass('v-grid-loading', true);
         this.then(function() {
           _this.toggleClass('v-grid-loading', false);
         });
@@ -960,6 +974,39 @@ More examples available at http://vaadin.github.io/components-examples/v-grid/
        */
       then: function(callback) {
         return this._grid.then(callback);
+      },
+
+      /**
+       * The row detail generator that is used for generating detail content for rows.
+       *
+       * Example:
+       * ```
+       * grid.rowDetails.detailsGenerator = function(rowIndex) {
+       *  var detail = document.createElement('div');
+       *  detail.textContent = 'Row detail content for row ' + rowIndex;
+       *  return detail;
+       * };
+       *```
+       *
+       * @property {function} rowDetailsGenerator
+       * @type {function}
+       */
+      set rowDetailsGenerator(rowDetailsGenerator) {
+        this._grid.setRowDetailsGenerator(rowDetailsGenerator);
+      },
+      get rowDetailsGenerator() {
+        return this._grid.getRowDetailsGenerator();
+      },
+
+      /**
+       * Shows or hides row details for the row at the given index.
+       *
+       * @method setRowDetailsVisible
+       * @param {number} rowIndex
+       * @param {boolean} visible
+       */
+      setRowDetailsVisible: function(rowIndex, visible) {
+        this._grid.setRowDetailsVisible(rowIndex, visible);
       }
     }); // End Polymer prototype
 </script>
