@@ -1,8 +1,9 @@
 ## Vaadin Components v0.3.0 (2015-xx-xx)
-- Polymer updated to v1.0.2.
+- Polymer updated to v1.1.1
 
-### `<v-grid>`
-- Vaadin Widgets updated to 7.5.0.beta1.
+### `<vaadin-grid>`
+- Improved touch scrolling.
+- Vaadin Widgets updated to 7.5.3
 - Theme revised to comply better with Material Design guidelines.
 - Improved Grid resizing logic.
 - Drag selection is now disabled.
@@ -11,6 +12,11 @@
 - Spinner added to visualize data loading. (#14)
 - Improved scrolling on touch devices. (#18)
 - JSDocs revised.
+- Added data.getItem api for fetching data items by row index (#45)
+- Combined multi selection models into one model
+- Added row details feature
+- Tag renamed to vaadin-grid
+- Added column hiding feature
 - Issues fixed:
   - Grid doesn't work when using selection-mode multi, frozen columns and sortable columns. (#7)
   - Grid height is recalculated incorrectly when sorting a grid with a fixed height. (#8)
@@ -31,6 +37,22 @@
   - "Wrong checkbox style state" (#32)
   - "Horizontal scrollbar is hidden when scrolling vertically (OS X Chrome)" (#29)
   - "Clicking an indeterminate select all -checkbox should select everything on "multi" mode" (#42)
+  - Ignore navigation event bubbling from focused cell content (#31)
+  - Select All checkbox checkmark is offset by 1px (#49)
+  - Focus of input in cells are stolen (#31)
+  - Clearing the Grid's data source makes the grid disappear (#24)
+  - Grid height calculation fails if it has a datasource prior to being added to the dom (#23)
+  - Fix frozen columns borders
+  - clearCache(X) should work even if datasource was empty
+  - Update footer styles (#48)
+  - <v-grid> is rendered on top of <paper-drawer-panel> (#79)
+  - Prevent infinite size update loop (#33)
+  - Enforce maximum width for expanding columns by cutting content (#46)
+  - v-grid disappears when used as a flex item (#85)
+  - v-grid is now shown even if no data source has been set
+  - calling grid.then without a data source set no longer causes infinite loop
+  - Vertical line on the right of the header hidden
+  - Resizing a v-grid with details-row open makes it disappear
 
 ***
 
