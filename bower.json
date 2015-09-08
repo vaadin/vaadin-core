@@ -18,6 +18,6 @@
     "**/tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#v1.1.1"
+    "vaadin-grid": "vaadin-grid#1.0.0-beta1"
   }
 }
