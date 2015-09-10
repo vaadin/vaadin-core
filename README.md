@@ -10,7 +10,7 @@ View live examples and source code side-by-side for individual custom elements.
 
 | Component | Description | Features |
 | --- | --- | --- |
-| <**vaadin-grid**><li>[Examples](http://vaadin.github.io/vaadin-components-examples/vaadin-grid/)<li>[API](http://vaadin.github.io/components-apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. | Lazy-loading, virtual scrolling, frozen/fixed columns, customizable headers and footers, custom cell renderers, touch support, keyboard navigation, sorting
+| <**vaadin-grid**><li>[Examples](http://vaadin.github.io/components-examples/vaadin-grid/)<li>[API](http://vaadin.github.io/components-apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. | Lazy-loading, virtual scrolling, frozen/fixed columns, customizable headers and footers, custom cell renderers, touch support, keyboard navigation, sorting
 
 
 ### Quickstart
