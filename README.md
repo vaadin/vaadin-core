@@ -1,6 +1,6 @@
 # Vaadin Components
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) or [discuss on the vaadin.com forum](https://vaadin.com/forum/#!/category/9848927/)
 
 Vaadin Components is an evolving set of custom HTML elements, built using [Polymer](https://www.polymer-project.org), for building mobile and desktop web applications in modern browsers.
 
@@ -10,9 +10,9 @@ For contributions and issues, see the project&lsquo;s [Github repository](https:
 
 View live examples and source code side-by-side for individual custom elements.
 
-| Component | Description | Features |
-| --- | --- | --- |
-| <**vaadin-grid**><li>[Examples](http://vaadin.github.io/components-examples/vaadin-grid/)<li>[API](http://vaadin.github.io/components-apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. | Lazy-loading, virtual scrolling, frozen/fixed columns, customizable headers and footers, custom cell renderers, touch support, keyboard navigation, sorting
+| Component | Description |
+| --- | --- |
+| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) [Examples](http://vaadin.github.io/components-examples/vaadin-grid/) · [API](http://vaadin.github.io/components-apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. |
 
 
 ### Quickstart
