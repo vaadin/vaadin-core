@@ -19,5 +19,8 @@
   ],
   "dependencies": {
     "vaadin-grid": "vaadin/vaadin-grid#master"
+  },
+  "resolutions": {
+    "polymer": "v1.1.1"
   }
 }
