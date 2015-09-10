@@ -1,5 +1,7 @@
 # Vaadin Components
 
+[![Join the chat at https://gitter.im/vaadin/vaadin-components](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Vaadin Components is an evolving set of custom HTML elements, built using [Polymer](https://www.polymer-project.org), for building mobile and desktop web applications in modern browsers.
 
 For contributions and issues, see the project&lsquo;s [Github repository](https://github.com/vaadin/vaadin-components).
