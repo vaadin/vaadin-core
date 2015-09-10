@@ -2,7 +2,7 @@
 
 Vaadin Components is an evolving set of custom HTML elements, built using [Polymer](https://www.polymer-project.org), for building mobile and desktop web applications in modern browsers.
 
-For contributions and issues, see the project&lsquo;s [Github repository](https://github.com/vaadin/components).
+For contributions and issues, see the project&lsquo;s [Github repository](https://github.com/vaadin/vaadin-components).
 
 ### Component examples and documentation
 
