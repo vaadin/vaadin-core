@@ -28,15 +28,18 @@ gulp.task('cdn:stage-bower_components', function() {
   });
 });
 
-gulp.task('cdn:stage-vaadin-components', ['clean:cdn'], function() {
-  return gulp.src(['README.md', 'LICENSE.md', 'vaadin-components.html'])
+gulp.task('cdn:stage-markdown', function() {
+  return gulp.src(['README.md', 'LICENSE.md'])
     .pipe(markdown())
     .pipe(gulp.dest(stagingPath + "/vaadin-components"));
 });
 
-gulp.task('stage:cdn',
-  ['cdn:stage-bower_components',
-    'cdn:stage-vaadin-components']);
+gulp.task('cdn:stage-vaadin-components', ['cdn:stage-markdown'], function() {
+  return gulp.src(['vaadin-components.html', 'demo/*', 'apidoc/*'], {base:"."})
+    .pipe(gulp.dest(stagingPath + "/vaadin-components"));
+});
+
+gulp.task('stage:cdn', [ 'clean:cdn', 'cdn:stage-bower_components', 'cdn:stage-vaadin-components' ]);
 
 gulp.task('deploy:cdn', ['stage:cdn'], function() {
   common.checkArguments(['cdnUsername', 'cdnDestination']);

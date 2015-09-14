@@ -20,6 +20,11 @@
   "dependencies": {
     "vaadin-grid": "vaadin/vaadin-grid#master"
   },
+  "devDependencies": {
+    "iron-doc-viewer": "polymerelements/iron-doc-viewer#~1.0.3",
+    "hydrolysis": "polymer/hydrolysis#~1.15.1",
+    "lodash": "~3.9.3"
+  },
   "resolutions": {
     "polymer": "v1.1.1"
   }
