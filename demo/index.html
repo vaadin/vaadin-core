@@ -29,7 +29,7 @@
     xhr.onload = function (e) {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          readme.innerHTML = marked(xhr.responseText);
+          readme.innerHTML = xhr.responseText;
           [].forEach.call(readme.querySelectorAll("pre"), function(pre) {
             var code = document.createElement("code");
             code.innerHTML = pre.innerHTML;

@@ -1,4 +1,4 @@
-# Vaadin Components
+# Vaadin Component
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) or [discuss on the vaadin.com forum](https://vaadin.com/forum/#!/category/9848927/)
 
@@ -10,7 +10,7 @@ View live examples and source code side-by-side for individual custom elements.
 
 | Component | Description |
 | --- | --- |
-| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](http://vaadin.github.io/components-examples/vaadin-grid/) &middot; [API](http://vaadin.github.io/components-apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. |
+| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](../../vaadin-grid/demo) &middot; [API](../doc/#vaadin-grid) | Data grid for showing large amounts of tabular data. |
 
 
 ### Quickstart
@@ -20,7 +20,6 @@ View live examples and source code side-by-side for individual custom elements.
 - &lt;**vaadin-grid**&gt;
  - [Data generated on-the-fly](http://jsfiddle.net/jounik/tvk1235r/)
  - [JSON data from a URL](http://jsfiddle.net/jounik/tLour4gv/)
-
 
 ### Installation
 
