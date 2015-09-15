@@ -1,4 +1,4 @@
-# Vaadin Component
+# Vaadin Components
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-components?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) or [discuss on the vaadin.com forum](https://vaadin.com/forum/#!/category/9848927/)
 
