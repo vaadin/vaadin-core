@@ -10,7 +10,7 @@ View live examples and source code side-by-side for individual custom elements.
 
 | Component | Description |
 | --- | --- |
-| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](../../vaadin-grid/demo) &middot; [API](../apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. |
+| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](https://cdn.vaadin.com/vaadin-components/0.3.0-snapshot/vaadin-grid/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-components/0.3.0-snapshot/vaadin-components/apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. |
 
 
 ### Quickstart

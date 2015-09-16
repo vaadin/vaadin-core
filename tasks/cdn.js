@@ -28,14 +28,9 @@ gulp.task('cdn:stage-bower_components', function() {
   });
 });
 
-gulp.task('cdn:stage-markdown', function() {
-  return gulp.src(['README.md', 'LICENSE.md'])
-    .pipe(markdown())
-    .pipe(gulp.dest(stagingPath + "/vaadin-components"));
-});
-
-gulp.task('cdn:stage-vaadin-components', ['cdn:stage-markdown'], function() {
-  return gulp.src(['vaadin-components.html', 'demo/*', 'apidoc/*'], {base:"."})
+gulp.task('cdn:stage-vaadin-components', function() {
+  return gulp.src(['README.md', 'LICENSE.html', 'vaadin-components.html', 'demo/*', 'apidoc/*'], {base:"."})
+    .pipe(replace('https://cdn.vaadin.com/vaadin-components/0.3.0-snapshot/', '../../'))
     .pipe(gulp.dest(stagingPath + "/vaadin-components"));
 });
 
