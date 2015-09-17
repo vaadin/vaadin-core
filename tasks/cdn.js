@@ -32,7 +32,7 @@ gulp.task('cdn:stage-bower_components', function() {
 
 gulp.task('cdn:stage-vaadin-components', function() {
   return gulp.src(['README.md', 'LICENSE.html', 'vaadin-components.html', 'demo/*', 'apidoc/*'], {base:"."})
-    .pipe(replace('https://cdn.vaadin.com/vaadin-components/0.3.0-snapshot/', '../../'))
+    .pipe(replace('https://cdn.vaadin.com/vaadin-components/latest/', '../../'))
     .pipe(gulp.dest(stagingPath + "/vaadin-components"));
 });
 

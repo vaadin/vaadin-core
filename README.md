@@ -10,7 +10,7 @@ View live examples and source code side-by-side for individual custom elements.
 
 | Component | Description |
 | --- | --- |
-| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](https://cdn.vaadin.com/vaadin-components/0.3.0-snapshot/vaadin-grid/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-components/0.3.0-snapshot/vaadin-components/apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. |
+| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](https://cdn.vaadin.com/vaadin-components/latest/vaadin-grid/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-components/latest/vaadin-components/apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. |
 
 
 ### Quickstart
@@ -54,7 +54,7 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
 
  You can use Vaadin Components from CDN (see example below). This is especially convenient for services like JSFiddle, Codepen.io, etc.
 
-   `https://cdn.vaadin.com/vaadin-components/0.3.0-beta7/vaadin-grid/vaadin-grid.html`
+   `https://cdn.vaadin.com/vaadin-components/latest/vaadin-grid/vaadin-grid.html`
 
  _*Note*: that we have a fragment in the url with the version to use, so you could for instance replace it with the snapshot version_
 
@@ -79,8 +79,8 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
     <!-- Import Web Component polyfills and the components that you want -->
 
     <!-- CDN -->
-    <script src="https://cdn.vaadin.com/vaadin-components/0.3.0-beta7/webcomponentsjs/webcomponents-lite.js"></script>
-    <link href="https://cdn.vaadin.com/vaadin-components/0.3.0-beta7/vaadin-grid/vaadin-grid.html" rel="import">
+    <script src="https://cdn.vaadin.com/vaadin-components/latest/webcomponentsjs/webcomponents-lite.js"></script>
+    <link href="https://cdn.vaadin.com/vaadin-components/latest/vaadin-grid/vaadin-grid.html" rel="import">
 
     <!-- Bower -->
     <!-- <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
