@@ -12,7 +12,9 @@ var args = require('yargs').argv;
 var git = require('gulp-git');
 
 var stagingBasePath = config.paths.staging.cdn;
-var version = args.release || args.preRelease || args.autoRevert ? config.version : config.snapshotVersion;
+var version = config.version;
+var host = config.cdnHost;
+var permalink = config.permalink;
 var stagingPath = stagingBasePath + '/' + version;
 var testPath = process.cwd() + '/' + stagingPath + '/test';
 
@@ -36,16 +38,13 @@ gulp.task('cdn:stage-vaadin-components', function() {
 
 gulp.task('stage:cdn', [ 'clean:cdn', 'cdn:stage-bower_components', 'cdn:stage-vaadin-components' ]);
 
-gulp.task('deploy:cdn', ['stage:cdn'], function() {
+gulp.task('upload:cdn', ['stage:cdn'], function() {
   common.checkArguments(['cdnUsername', 'cdnDestination']);
-  var hostName = args.cdnHostname || 'cdn.vaadin.com';
-
-  gutil.log('Uploading to cdn (rsync): ' + stagingPath + ' -> '+ args.cdnUsername + '@' + hostName + ':' + args.cdnDestination + version);
-
+  gutil.log('Uploading to cdn (rsync): ' + stagingPath + ' -> '+ args.cdnUsername + '@' + host + ':' + args.cdnDestination + version);
   return gulp.src(stagingPath)
     .pipe(rsync({
       username: args.cdnUsername,
-      hostname: hostName,
+      hostname: host,
       root: stagingPath,
       emptyDirectories: false,
       recursive: true,
@@ -53,6 +52,26 @@ gulp.task('deploy:cdn', ['stage:cdn'], function() {
       silent: true,
       destination: args.cdnDestination + version
     }));
+});
+
+gulp.task('deploy:cdn', ['upload:cdn'], function(done) {
+  if (permalink) {
+    var cmd = 'rm -f ' + args.cdnDestination + permalink + '; ln -s ' + version + ' ' +  args.cdnDestination + permalink + '; ls -l ' + args.cdnDestination;
+    gutil.log('Deploying CDN : ssh ' + args.cdnUsername + '@' + host + ' ' +  cmd);
+    require('node-ssh-exec')({
+      host: host,
+      username: args.cdnUsername,
+      privateKey: config.paths.privateKey()
+    }, cmd, function (error, response) {
+      if (error) {
+        throw error;
+      }
+      gutil.log(response);
+      done();
+    });
+  } else {
+    done();
+  }
 });
 
 gulp.task('cdn-test:clean', function() {
@@ -100,7 +119,7 @@ gulp.task('verify:cdn', ['cdn-test:stage'], function(done) {
         gutil.log('Deleting folder ' + args.cdnDestination + version);
 
         require('node-ssh-exec')({
-          host: 'cdn.vaadin.com',
+          host: host,
           username: args.cdnUsername,
           privateKey: config.paths.privateKey()
         }, 'rm -rf ' + args.cdnDestination + version, function (error, response) {

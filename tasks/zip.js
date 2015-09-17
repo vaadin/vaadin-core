@@ -12,7 +12,8 @@ var unzip = require('gulp-unzip');
 var zip = require('gulp-zip');
 
 var stagingPath = config.paths.staging.zip;
-var version = args.release || args.preRelease ? config.version : config.snapshotVersion;
+var version = config.version;
+var host = config.zipHost;
 var filename = 'vaadin-components-' + version + '.zip';
 var majorMinorVersion = version.replace(/(\d+\.\d+)(\.|-)(.*)/, '$1');
 
@@ -29,13 +30,12 @@ gulp.task('stage:zip', ['clean:zip', 'stage:cdn'], function() {
 
 gulp.task('zip:upload', ['stage:zip'], function(done) {
   common.checkArguments(['zipUsername', 'zipDestination']);
-  var hostName = args.zipHostname || 'vaadin.com';
   var path = args.zipDestination + majorMinorVersion + '/' + version + '/' + filename;
 
-  gutil.log('Uploading zip package (scp): ' + stagingPath + '/' + filename + ' -> ' + args.zipUsername + '@' + hostName + ':' + path);
+  gutil.log('Uploading zip package (scp): ' + stagingPath + '/' + filename + ' -> ' + args.zipUsername + '@' + host + ':' + path);
 
   require('scp2').scp(stagingPath + '/' + filename, {
-    host: hostName,
+    host: host,
     username: args.zipUsername,
     privateKey: config.paths.privateKey(),
     path: path
@@ -45,11 +45,10 @@ gulp.task('zip:upload', ['stage:zip'], function(done) {
 });
 
 function ssh(command, done) {
-  var hostName = args.sshHostname || 'vaadin.com';
-  gutil.log('SSH: ' + hostName + ' -> ' + command);
+  gutil.log('SSH: ' + host + ' -> ' + command);
 
   require('node-ssh-exec')({
-      host: hostName,
+      host: host,
       username: args.zipUsername,
       privateKey: config.paths.privateKey()
     }, command,

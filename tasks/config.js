@@ -5,8 +5,10 @@ var userhome = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFI
 
 module.exports = {
   components: ['vaadin-grid'],
-  snapshotVersion: 'master',
-  version: args.version || this.snapshotVersion,
+  version: args.version || 'master',
+  permalink: args.version ? 'latest' : '',
+  cdnHost: args.cdnHostname || 'cdn.vaadin.com',
+  zipHost: args.zipHostname || 'vaadin.com',
   paths: {
     staging: {
       bower: 'target/bower',
