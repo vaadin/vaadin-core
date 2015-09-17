@@ -81,15 +81,15 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
 
     <!-- CDN -->
     <script src="https://cdn.vaadin.com/vaadin-components/0.3.0-beta8/webcomponentsjs/webcomponents-lite.js"></script>
-    <link href="https://cdn.vaadin.com/vaadin-components/0.3.0-beta8/vaadin-grid/vaadin-grid.html" rel="import">
+    <link href="https://cdn.vaadin.com/vaadin-components/0.3.0-beta8/vaadin-components/vaadin-components.html" rel="import">
 
     <!-- Bower -->
     <!-- <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <link href="bower_components/vaadin-components/vaadin-grid/vaadin-grid.html" rel="import"> -->
+    <link href="bower_components/vaadin-components/vaadin-components.html" rel="import"> -->
 
     <!-- ZIP archive -->
     <!-- <script src="deps/vaadin-components/webcomponentsjs/webcomponents-lite.js"></script>
-    <link href="deps/vaadin-components/vaadin-grid/vaadin-grid.html" rel="import"> -->
+    <link href="deps/vaadin-components/vaadin-components/vaadin-components.html" rel="import"> -->
   </head>
   <body>
 
