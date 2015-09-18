@@ -1,3 +1,13 @@
+
+
+## Vaadin Components 0.3.0.beta9 (2015-09-18)
+
+- Host apidoc and demo launch pages in vaadin-components instead of
+maintaining independent project for those
+(deprecated components-examples & components-apidoc)
+- Examples and apidoc are bundled with vaadin-components so as it is
+possible to run them either local or wen deployed in CDN.
+
 ## Vaadin Components 0.3.0.beta8 (2015-09-11)
 
 - vaadin-components becomes a repository with references to vaadin components.
