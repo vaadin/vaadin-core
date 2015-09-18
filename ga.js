@@ -8,7 +8,7 @@
 ga('create', 'UA-658457-6', 'auto');
 
 function locationHashChanged() {
-  if(window.location.hostname === 'vaadin.github.io') {
+  if(/vaadin/.test(window.location.hostname)) {
     var pageViewUrl = (window.location.pathname + window.location.hash).replace('#', '/');
     ga('send', 'pageview', pageViewUrl)
   }
