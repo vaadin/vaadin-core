@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <title>Vaadin Components Code Examples</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="../../marked/lib/marked.js"></script>
+
+  <script src="../../code-example/vendor/prismjs/prism.js"></script>
+  <link rel="stylesheet" href="../../code-example/vendor/prismjs/prism.css">
+  <link rel="stylesheet" href="../../components-demo-resources/demo.css">
+
+  <script src="../ga.js"></script>
+  <style type="text/css">
+    #readme code {
+      font-size: 12px;
+      max-height: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="readme">
+  </section>
+  <script>
+    var readme = document.getElementById("readme");
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onload = function (e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          readme.innerHTML = marked(xhr.responseText);
+          [].forEach.call(readme.querySelectorAll("pre"), function(pre) {
+            var code = document.createElement("code");
+            code.innerHTML = pre.innerHTML;
+            var parent = pre.parentElement;
+            parent.insertBefore(code, pre);
+            parent.removeChild(pre);
+
+            code.className = "language-markup";
+            Prism.highlightElement(code);
+          });
+        } else {
+          console.error(xhr.statusText);
+        }
+      }
+    };
+    xhr.onerror = function (e) {
+      console.error(xhr.statusText);
+    };
+    xhr.open("GET", "../README.md");
+    xhr.send();
+
+  </script>
+
+</body>
+</html>

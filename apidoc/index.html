@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+
+  <script src="../ga.js"></script>
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../lodash/lodash.js"></script>
+  <link rel="import" href="../../polymer/polymer.html">
+  <link rel="import" href="../../hydrolysis/hydrolysis-analyzer.html">
+  <link rel="import" href="../../iron-doc-viewer/iron-doc-viewer.html">
+</head>
+<body>
+  <div id="container" style="display:none">
+    <div id="viewer" style="width: 60%;left: 20%; position: absolute;">
+      <iron-doc-viewer></iron-doc-viewer>
+    </div>
+  </div>
+  <script>
+    window.addEventListener("WebComponentsReady", function() {
+      var hyd = require('hydrolysis');
+
+      function hidePrivateToggle() {
+        document.querySelector('#togglePrivate').setAttribute('style', 'display:none');
+      }
+
+      function hideCollapsedToggle() {
+        var collapsed = document.querySelector('#toggleCollapsed');
+        if(collapsed) {
+          collapsed.setAttribute('style', 'display:none');
+        }
+      }
+
+      function getElementTag() {
+        var elementTag = window.location.search.replace('?', '');
+        if(elementTag === '') {
+          elementTag = 'vaadin-grid';
+        }
+
+        return elementTag;
+      }
+
+      function getPropertyType(type) {
+        return type.textContent.replace('Array.<', '').replace('>', '');
+      }
+
+      function createLinkElement(type) {
+        var a = document.createElement('a');
+        a.textContent = type.textContent;
+        a.setAttribute('href', '?' + getPropertyType(type));
+
+        return a;
+      }
+
+      function addLinkElementsForDocumentedTypes(result) {
+        var types = document.querySelectorAll('.type');
+
+        for(var i=0;i < types.length; i++) {
+          var type = getPropertyType(types[i]);
+
+          if(result.elementsByTagName[type]) {
+            var a = createLinkElement(types[i]);
+
+            types[i].textContent = '';
+            types[i].appendChild(a);
+          }
+        }
+
+        return result;
+      }
+
+      function hidePropertySetterMethods() {
+        var propertyNames = _.map(document.querySelector('#properties').querySelectorAll('.name'), function(p) {
+          return p.textContent;
+        });
+
+        var methods = document.querySelector('#methods').querySelectorAll('iron-doc-property');
+
+        _.forEach(methods, function(m) {
+          if(_.contains(propertyNames, m.querySelector('.name').textContent)) {
+            m.setAttribute('style', 'display:none');
+          }
+        });
+      }
+
+      function hideDefaultValuesForNonPrimitiveTypes(result) {
+        function isPrimitiveType(t) {
+          return /^([Nn]umber|[Bb]oolean|[Ss]tring).*/.test(t);
+        }
+
+        _.forEach(document.querySelector('#properties').querySelectorAll('iron-doc-property'), function(p) {
+          if(!isPrimitiveType(p.querySelector('#type').textContent)) {
+            p.querySelector('#default').setAttribute('style', 'display:none');
+          }
+        });
+
+        return result;
+      }
+
+      function showDocViewer() {
+        document.querySelector('#container').setAttribute('style', 'display:block');
+      }
+
+      //*** Main script starts here. ***//
+
+      hidePrivateToggle();
+      hideCollapsedToggle();
+
+      hyd.Analyzer.analyze('../../vaadin-grid/vaadin-grid-doc.html')
+          .then(function(result) {
+            document.querySelector('iron-doc-viewer').descriptor = result.elementsByTagName[getElementTag()];
+
+            return result;
+          })
+          .then(hideDefaultValuesForNonPrimitiveTypes)
+          .then(addLinkElementsForDocumentedTypes)
+          .then(hidePropertySetterMethods)
+          .then(showDocViewer);
+    });
+</script>
+</body>
+</html>
