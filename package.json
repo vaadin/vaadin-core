@@ -16,7 +16,9 @@
     "gulp-util": "latest",
     "web-component-tester": "3.3.10",
     "yargs": "latest",
-    "gulp-git": "latest"
+    "gulp-git": "latest",
+    "gulp-add-src": "latest"
+
   },
   "devDependencies": {
     "chalk": "latest",

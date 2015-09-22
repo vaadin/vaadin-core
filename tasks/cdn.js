@@ -10,6 +10,7 @@ var gutil = require('gulp-util');
 var _ = require('lodash');
 var args = require('yargs').argv;
 var git = require('gulp-git');
+var addsrc = require('gulp-add-src');
 
 var stagingBasePath = config.paths.staging.cdn;
 var version = config.version;
@@ -31,8 +32,9 @@ gulp.task('cdn:stage-bower_components', function() {
 });
 
 gulp.task('cdn:stage-vaadin-components', function() {
-  return gulp.src(['README.md', 'LICENSE.html', 'ga.js', 'vaadin-components.html', 'demo/*', 'apidoc/*'], {base:"."})
+  return gulp.src(['LICENSE.html', 'ga.js', 'vaadin-components.html', 'demo/*', 'apidoc/*'], {base:"."})
     .pipe(replace('https://cdn.vaadin.com/vaadin-components/latest/', '../../'))
+    .pipe(addsrc('README.md'))
     .pipe(gulp.dest(stagingPath + "/vaadin-components"));
 });
 
