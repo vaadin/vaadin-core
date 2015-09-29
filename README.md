@@ -44,19 +44,19 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
 
  This will download Vaadin Components and its dependencies to the `bower_components` folder inside your project's folder.
 
- If you want to experiment with current development code, download the snapshot version running:
-
- ```shell
- $ bower install --save vaadin-components#master
- ```
-
 - ##### CDN
 
  You can use Vaadin Components from CDN (see example below). This is especially convenient for services like JSFiddle, Codepen.io, etc.
 
+For example, to import vaadin-grid, use the following URL:
+
    `https://cdn.vaadin.com/vaadin-components/latest/vaadin-grid/vaadin-grid.html`
 
- _*Note*: that we have a fragment in the url with the version to use, so you could for instance replace it with the snapshot version_
+To import all Vaadin Components, use the following URL:
+
+   `https://cdn.vaadin.com/vaadin-components/latest/vaadin-components/vaadin-components.html`
+
+ > You can also use the nightly snapshot versions of any component, e.g. https://cdn.vaadin.com/vaadin-components/master/vaadin-grid/vaadin-grid.html
 
 
 - ##### Download ZIP
@@ -68,7 +68,7 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
 
  Create a new HTML file inside your project folder and copy the following code into it (choose one of the options how to import Vaadin Components in the `<head>` section):
 
- > **Note on serving the files during development**, when using Bower or the ZIP archive:
+ > **Serving the files during development**, when using Bower or the ZIP archive:
 
  > Due to browser security restrictions, serving HTML imports from a `file:///` URL does not work. You need a web server to view pages where you use custom elements. One simple option is to use the [`serve`](https://www.npmjs.com/package/serve) NPM package.
 
