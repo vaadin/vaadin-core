@@ -18,6 +18,7 @@ var host = config.cdnHost;
 var permalink = config.permalink;
 var stagingPath = stagingBasePath + '/' + version;
 var testPath = process.cwd() + '/' + stagingPath + '/test';
+var docPath = stagingPath + '/docsite';
 
 gulp.task('clean:cdn', function() {
   fs.removeSync(stagingBasePath);
@@ -85,6 +86,35 @@ gulp.task('cdn-test:install-dependencies', function() {
     directory: stagingPath,
     cmd: 'install'
   }, [['web-component-tester#2.2.6']]);
+});
+
+gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], function() {
+  gutil.log('Copying bower components from ' + stagingPath + ' to ' + docPath + '/bower_components');
+  return gulp.src([stagingPath + '/**'])
+    .pipe(gulp.dest(docPath + '/bower_components'));
+});
+
+config.components.forEach(function (n) {
+  gulp.task('cdn:docsite:' + n,  ['cdn:docsite:bower_components'], function(done) {
+    var componentDoc = docPath + '/' + n;
+    var componentOrg = stagingPath + '/' + n + '/demo/**';
+    gutil.log('Generating site documentation from '  + componentOrg + ' into ' + componentDoc);
+    fs.mkdirsSync(componentDoc);
+    return gulp.src(componentOrg)
+      // Remove bad tags
+      .pipe(replace(/^.*<(!doctype|\/?html|\/?head|\/?body|meta|title).*>.*\n/img, ''))
+      // Uncomment metainfo
+      .pipe(replace(/^.*<!--[ \n]+([\s\S]*?title:[\s\S]*?)[ \n]+-->.*\n/img, '---\n$1\n---\n'))
+      // Remove Analytics
+      .pipe(replace(/^.*<script.*?ga\.js[\"'].*?<\/script>\s*?\n?/img, ''))
+      // Adjust location of the current component in bower_components (..)
+      .pipe(replace(/(src|href)=("|')\.\.(\/\w)/mg, '$1=$2../bower_components/' + n + '$3'))
+      // Adjust location of dependencies in bower_components (../..)
+      .pipe(replace(/(src|href)=("|')(.*?)\.\.\/\.\.\//mg, '$1=$2../bower_components/'))
+      // Remove the section with table-of-contents
+      .pipe(replace(/^.*<section>[\s\S]*?table-of-contents[\s\S]*?<\/section>.*\n/im, ''))
+      .pipe(gulp.dest(componentDoc));
+  });
 });
 
 config.components.forEach(function (n) {
