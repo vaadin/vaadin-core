@@ -76,19 +76,19 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
 <!doctype html>
 <html>
   <head>
-    <!-- Import Web Component polyfills and the components that you want -->
+    <!-- Import Web Component polyfills and all Vaadin Components -->
 
     <!-- CDN -->
-    <script src="https://cdn.vaadin.com/vaadin-components/latest/webcomponentsjs/webcomponents-lite.js"></script>
-    <link href="https://cdn.vaadin.com/vaadin-components/latest/vaadin-grid/vaadin-grid.html" rel="import">
+    <script src="https://cdn.vaadin.com/vaadin-components/latest/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link href="https://cdn.vaadin.com/vaadin-components/latest/vaadin-components/vaadin-components.html" rel="import">
 
     <!-- Bower -->
-    <!-- <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link href="bower_components/vaadin-components/vaadin-components.html" rel="import"> -->
 
     <!-- ZIP archive -->
-    <!-- <script src="deps/vaadin-components/webcomponentsjs/webcomponents-lite.js"></script>
-    <link href="deps/vaadin-components/vaadin-components/vaadin-components.html" rel="import"> -->
+    <!-- <script src="deps/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link href="deps/vaadin-components/vaadin-components.html" rel="import"> -->
   </head>
   <body>
 
