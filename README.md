@@ -48,11 +48,11 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
 
  You can use Vaadin Components from CDN (see example below). This is especially convenient for services like JSFiddle, Codepen.io, etc.
 
-For example, to import vaadin-grid, use the following URL:
+ For example, to import vaadin-grid, use the following URL:
 
    `https://cdn.vaadin.com/vaadin-components/latest/vaadin-grid/vaadin-grid.html`
 
-To import all Vaadin Components, use the following URL:
+ To import all Vaadin Components, use the following URL:
 
    `https://cdn.vaadin.com/vaadin-components/latest/vaadin-components/vaadin-components.html`
 
