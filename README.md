@@ -43,6 +43,12 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
  ```
 
  This will download Vaadin Components and its dependencies to the `bower_components` folder inside your project's folder.
+ 
+ If you wish to use the development snapshot version of some component, you can install/update that separately:
+ 
+ ```shell
+ $ bower install --save vaadin-grid#master
+ ```
 
 - ##### CDN
 
