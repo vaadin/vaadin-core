@@ -113,6 +113,12 @@ config.components.forEach(function (n) {
       .pipe(replace(/(src|href)=("|')(.*?)\.\.\/\.\.\//mg, '$1=$2../bower_components/'))
       // Remove the section with table-of-contents
       .pipe(replace(/^.*<section>[\s\S]*?table-of-contents[\s\S]*?<\/section>.*\n/im, ''))
+      // Add ids to headers, so as site configures permalinks
+      .pipe(replace(/<h(\d+)>(.*)(<\/h\d+>)/img, function($0, $1, $2, $3){
+        var id = $2.trim().toLowerCase().replace(/[^\w]+/g,'_');
+        return '<h' + $1 + ' id="' + id + '">' + $2 + $3;
+      }))
+
       .pipe(gulp.dest(componentDoc));
   });
 });
