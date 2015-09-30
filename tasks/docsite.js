@@ -8,7 +8,7 @@ var rsync = require('gulp-rsync');
 var gutil = require('gulp-util');
 var zip = require('gulp-zip');
 var args = require('yargs').argv;
-
+var addsrc = require('gulp-add-src');
 
 var stagingBasePath = config.paths.staging.cdn;
 var docPath = config.paths.staging.doc;
@@ -32,17 +32,11 @@ config.components.forEach(function (n) {
     var componentOrg = stagingPath + '/' + n + '/demo/**';
     gutil.log('Generating site documentation from '  + componentOrg + ' into ' + componentDoc);
     fs.mkdirsSync(componentDoc);
-    return gulp.src(componentOrg)
+    return gulp.src([componentOrg, '!**/*-embed.html'])
       // Remove bad tags
       .pipe(replace(/^.*<(!doctype|\/?html|\/?head|\/?body|meta|title).*>.*\n/img, ''))
-      // Uncomment metainfo
-      .pipe(replace(/^.*<!--[ \n]+([\s\S]*?title:[\s\S]*?)[ \n]+-->.*\n/img, '---\n$1\n---\n'))
-      // Remove Analytics
-      .pipe(replace(/^.*<script.*?ga\.js[\"'].*?<\/script>\s*?\n?/img, ''))
-      // Adjust location of the current component in bower_components (..)
-      .pipe(replace(/(src|href)=("|')\.\.(\/\w)/mg, '$1=$2../bower_components/' + n + '$3'))
-      // Adjust location of dependencies in bower_components (../..)
-      .pipe(replace(/(src|href)=("|')(.*?)\.\.\/\.\.\//mg, '$1=$2../bower_components/'))
+      // Uncomment metainfo, and enclose all the example in {% raw %} ... {% endraw %} to avoid liquid conflicts
+      .pipe(replace(/^.*<!--[ \n]+([\s\S]*?title:[\s\S]*?)[ \n]+-->.*\n([\s\S]*)/img, '---\n$1\n---\n{% raw %}\n$2\n{% endraw %}'))
       // Remove the section with table-of-contents
       .pipe(replace(/^.*<section>[\s\S]*?table-of-contents[\s\S]*?<\/section>.*\n/im, ''))
       // Add ids to headers, so as site configures permalinks
@@ -50,6 +44,14 @@ config.components.forEach(function (n) {
         var id = $2.trim().toLowerCase().replace(/[^\w]+/g,'_');
         return '<h' + $1 + ' id="' + id + '">' + $2 + $3;
       }))
+      // embed files are displayed as iframe, we don't remove above fragments like body
+      .pipe(addsrc(componentOrg + '/*-embed.html'))
+      // Remove Analytics
+      .pipe(replace(/^.*<script.*?ga\.js[\"'].*?<\/script>\s*?\n?/img, ''))
+      // Adjust location of the current component in bower_components (..)
+      .pipe(replace(/(src|href)=("|')\.\.(\/\w)/mg, '$1=$2../bower_components/' + n + '$3'))
+      // Adjust location of dependencies in bower_components (../..)
+      .pipe(replace(/(src|href)=("|')(.*?)\.\.\/\.\.\//mg, '$1=$2../bower_components/'))
 
       .pipe(gulp.dest(componentDoc));
   });
