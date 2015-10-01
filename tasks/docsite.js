@@ -17,6 +17,14 @@ var host = config.cdnHost;
 var permalink = config.permalink;
 var stagingPath = stagingBasePath + '/' + version;
 var modify = require('gulp-modify');
+var rootZip = 'target/';
+var fileZip = 'docsite.zip'
+
+
+gulp.task('cdn:docsite:clean', function() {
+  fs.removeSync(docPath);
+  fs.removeSync(rootZip + fileZip);
+});
 
 gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], function() {
   gutil.log('Copying bower components from ' + stagingPath + ' to ' + docPath + '/bower_components');
@@ -66,23 +74,19 @@ config.components.forEach(function (n) {
 });
 
 gulp.task('cdn:docsite:zip', doctasks, function() {
-  var src = docPath + '/../**/*';
-  var root = 'target';
-  var file = 'docsite.zip';
-  gutil.log("Creating docsite zip " + docPath + " -> " + root + '/' + file);
+  var src = docPath + '/**/*';
+  gutil.log("Creating docsite zip " + docPath + " -> " + rootZip +  fileZip);
   return gulp.src(src)
-    .pipe(zip(file))
-    .pipe(gulp.dest(root));
+    .pipe(zip(fileZip))
+    .pipe(gulp.dest(rootZip));
 });
 
-gulp.task('cdn:docsite:upload', ['cdn:docsite:zip'], function(done) {
+gulp.task('cdn:docsite:upload', ['cdn:docsite:clean', 'cdn:docsite:zip'], function(done) {
   common.checkArguments(['cdnUsername', 'cdnDestination']);
-  var root = 'target';
-  var file = 'docsite.zip';
 
-  gutil.log('Uploading docsite (scp): ' + root + '/' + file + ' -> ' + args.cdnUsername + '@' + host + ':' + args.cdnDestination + version);
+  gutil.log('Uploading docsite (scp): ' + rootZip + fileZip + ' -> ' + args.cdnUsername + '@' + host + ':' + args.cdnDestination + version);
 
-  require('scp2').scp(root + '/' + file, {
+  require('scp2').scp(rootZip + fileZip, {
     host: host,
     username: args.cdnUsername,
     privateKey: config.paths.privateKey(),
