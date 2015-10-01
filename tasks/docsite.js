@@ -16,6 +16,7 @@ var version = config.version;
 var host = config.cdnHost;
 var permalink = config.permalink;
 var stagingPath = stagingBasePath + '/' + version;
+var modify = require('gulp-modify');
 
 gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], function() {
   gutil.log('Copying bower components from ' + stagingPath + ' to ' + docPath + '/bower_components');
@@ -36,8 +37,15 @@ config.components.forEach(function (n) {
       // Remove bad tags
       .pipe(replace(/^.*<(!doctype|\/?html|\/?head|\/?body|meta|title).*>.*\n/img, ''))
       // Uncomment metainfo, and enclose all the example in {% raw %} ... {% endraw %} to avoid liquid conflicts
-      .pipe(replace(/^.*<!--[ \n]+([\s\S]*?title:[\s\S]*?)[ \n]+-->.*\n([\s\S]*)/img, '---\n$1\n---\n{% raw %}\n$2\n{% endraw %}'))
-      // Remove the section with table-of-contents
+      // We use gulp-modify instead of replace in order to handle the github url for this file
+      .pipe(modify({
+        fileModifier: function(file, contents) {
+          var re = new RegExp(".*/" + n + "/");
+          var gh = 'https://github.com/vaadin/' + n + '/edit/master/' + file.path.replace(re, '');
+          return contents.replace(/^.*<!--[ \n]+([\s\S]*?title:[\s\S]*?)[ \n]+-->.*\n([\s\S]*)/img,
+              '---\n$1\nsourceurl: ' + gh + '\n---\n{% raw %}\n$2\n{% endraw %}');
+        }
+      }))
       .pipe(replace(/^.*<section>[\s\S]*?table-of-contents[\s\S]*?<\/section>.*\n/im, ''))
       // Add ids to headers, so as site configures permalinks
       .pipe(replace(/<h(\d+)>(.*)(<\/h\d+>)/img, function($0, $1, $2, $3){

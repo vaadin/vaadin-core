@@ -18,7 +18,6 @@ var host = config.cdnHost;
 var permalink = config.permalink;
 var stagingPath = stagingBasePath + '/' + version;
 var testPath = process.cwd() + '/' + stagingPath + '/test';
-var docPath = stagingPath + '/docsite';
 
 gulp.task('clean:cdn', function() {
   fs.removeSync(stagingBasePath);

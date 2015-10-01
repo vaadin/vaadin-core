@@ -18,7 +18,7 @@
     "**/tests"
   ],
   "dependencies": {
-    "vaadin-grid": "vaadin/vaadin-grid#master"
+    "vaadin-grid": "vaadin/vaadin-grid#0.9.0-beta2"
   },
   "devDependencies": {
     "iron-doc-viewer": "polymerelements/iron-doc-viewer#~1.0.3",
