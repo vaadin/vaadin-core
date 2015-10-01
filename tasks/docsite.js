@@ -20,7 +20,6 @@ var modify = require('gulp-modify');
 var rootZip = 'target/';
 var fileZip = 'docsite.zip'
 
-
 gulp.task('cdn:docsite:clean', function() {
   fs.removeSync(docPath);
   fs.removeSync(rootZip + fileZip);
@@ -32,16 +31,22 @@ gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], functi
     .pipe(gulp.dest(docPath + '/bower_components'));
 });
 
-var doctasks = [];
+gulp.task('cdn:docsite:components', function() {
+  return gulp.src('doc/*')
+    .pipe(gulp.dest(docPath));
+});
+
+var doctasks = ['cdn:docsite:components'];
 config.components.forEach(function (n) {
   var task = 'cdn:docsite:' + n;
   doctasks.push(task);
   gulp.task(task, ['cdn:docsite:bower_components'], function(done) {
-    var componentDoc = docPath + '/' + n;
-    var componentOrg = stagingPath + '/' + n + '/demo/**';
-    gutil.log('Generating site documentation from '  + componentOrg + ' into ' + componentDoc);
-    fs.mkdirsSync(componentDoc);
-    return gulp.src([componentOrg, '!**/*-embed.html'])
+    var componentDocsite = docPath + '/' + n;
+    var componentDemo = stagingPath + '/' + n + '/demo/**';
+
+    gutil.log('Generating site documentation from '  + componentDemo + ' into ' + componentDocsite);
+    fs.mkdirsSync(componentDocsite);
+    return gulp.src([componentDemo, '!**/*-embed.html'])
       // Remove bad tags
       .pipe(replace(/^.*<(!doctype|\/?html|\/?head|\/?body|meta|title).*>.*\n/img, ''))
       // Uncomment metainfo, and enclose all the example in {% raw %} ... {% endraw %} to avoid liquid conflicts
@@ -61,7 +66,7 @@ config.components.forEach(function (n) {
         return '<h' + $1 + ' id="' + id + '">' + $2 + $3;
       }))
       // embed files are displayed as iframe, we don't remove above fragments like body
-      .pipe(addsrc(componentOrg + '/*-embed.html'))
+      .pipe(addsrc(componentDemo + '/*-embed.html'))
       // Remove Analytics
       .pipe(replace(/^.*<script.*?ga\.js[\"'].*?<\/script>\s*?\n?/img, ''))
       // Adjust location of the current component in bower_components (..)
@@ -69,7 +74,7 @@ config.components.forEach(function (n) {
       // Adjust location of dependencies in bower_components (../..)
       .pipe(replace(/(src|href)=("|')(.*?)\.\.\/\.\.\//mg, '$1=$2../bower_components/'))
 
-      .pipe(gulp.dest(componentDoc));
+      .pipe(gulp.dest(componentDocsite));
   });
 });
 
