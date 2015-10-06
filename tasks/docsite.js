@@ -73,6 +73,8 @@ config.components.forEach(function (n) {
       .pipe(replace(/(src|href)=("|')\.\.(\/\w)/mg, '$1=$2../bower_components/' + n + '$3'))
       // Adjust location of dependencies in bower_components (../..)
       .pipe(replace(/(src|href)=("|')(.*?)\.\.\/\.\.\//mg, '$1=$2../bower_components/'))
+      // Remove references to demo.css file
+      .pipe(replace(/^.*demo.css.*\n/im, ''))
 
       .pipe(gulp.dest(componentDocsite));
   });
