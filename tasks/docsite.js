@@ -74,7 +74,7 @@ config.components.forEach(function (n) {
       // Adjust location of dependencies in bower_components (../..)
       .pipe(replace(/(src|href)=("|')(.*?)\.\.\/\.\.\//mg, '$1=$2../bower_components/'))
       // Remove references to demo.css file
-      .pipe(replace(/^.*demo.css.*\n/im, ''))
+      .pipe(replace(/^.*<link.*demo.css.*\n/im, ''))
       // Remove table of contents
       .pipe(replace(/^.*table-of-contents.html.*\n/im, ''))
 
