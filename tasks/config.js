@@ -7,7 +7,7 @@ module.exports = {
   components: ['vaadin-grid'],
   version: args.version || 'master',
   permalink: args.version ? 'latest' : '',
-  cdnHost: args.cdnHostname || 'tools.vaadin.com',
+  toolsHost: args.toolsHostname || 'tools.vaadin.com',
   zipHost: args.zipHostname || 'vaadin.com',
   paths: {
     staging: {
