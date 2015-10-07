@@ -69,6 +69,8 @@ config.components.forEach(function (n) {
       .pipe(addsrc(componentDemo + '/*-embed.html'))
       // Remove Analytics
       .pipe(replace(/^.*<script.*?ga\.js[\"'].*?<\/script>\s*?\n?/img, ''))
+      // Adjust bowerComponents variable in common.html
+      .pipe(replace(/(bowerComponents *= *)'..\/..\/'/, "$1'../bower_components/'"))
       // Adjust location of the current component in bower_components (..)
       .pipe(replace(/(src|href)=("|')\.\.(\/\w)/mg, '$1=$2../bower_components/' + n + '$3'))
       // Adjust location of dependencies in bower_components (../..)
@@ -77,7 +79,6 @@ config.components.forEach(function (n) {
       .pipe(replace(/^.*<link.*demo.css.*\n/im, ''))
       // Remove table of contents
       .pipe(replace(/^.*table-of-contents.html.*\n/im, ''))
-
       .pipe(gulp.dest(componentDocsite));
   });
 });
