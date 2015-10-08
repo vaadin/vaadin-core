@@ -14,7 +14,7 @@ var addsrc = require('gulp-add-src');
 
 var stagingBasePath = config.paths.staging.cdn;
 var version = config.version;
-var host = config.cdnHost;
+var host = config.toolsHost;
 var permalink = config.permalink;
 var stagingPath = stagingBasePath + '/' + version;
 var testPath = process.cwd() + '/' + stagingPath + '/test';
