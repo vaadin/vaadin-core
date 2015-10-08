@@ -75,7 +75,9 @@ config.components.forEach(function (n) {
         var id = $2.trim().toLowerCase().replace(/[^\w]+/g,'_');
         return '<h' + $1 + ' id="' + id + '">' + $2 + $3;
       }))
-      // embed files are displayed as iframe, we don't remove above fragments like body
+      // Remove webcomponents polyfill since it's added at top of the site
+      .pipe(replace(/^.*<script.*?\/webcomponents.*\.js[\"'].*?<\/script>\s*?\n?/img, ''))
+      // embed files are displayed as iframe, we don't remove above fragments like body or polyfill
       .pipe(addsrc(componentDemo + '/*-embed.html'))
       // Remove Analytics
       .pipe(replace(/^.*<script.*?ga\.js[\"'].*?<\/script>\s*?\n?/img, ''))
