@@ -28,6 +28,16 @@ gulp.task('cdn:docsite:clean', function() {
 gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], function() {
   gutil.log('Copying bower components from ' + stagingPath + ' to ' + docPath + '/bower_components');
   return gulp.src([stagingPath + '/**'])
+    // Temporary patch until #180 is fixed:
+    // https://github.com/webcomponents/webcomponentsjs/issues/180
+    .pipe(modify({
+      fileModifier: function(file, contents) {
+        if (/webcomponents-lite.*js/.test(file.path)) {
+          contents = contents.replace(/(if ?\()(\w+\.log)(\))/mg, '$1$2 && $2.split$3')
+        }
+        return contents;
+      }
+    }))
     .pipe(gulp.dest(docPath + '/bower_components'));
 });
 
