@@ -13,7 +13,8 @@ module.exports = {
     staging: {
       bower: 'target/bower',
       cdn: 'target/cdn',
-      zip: 'target/zip'
+      zip: 'target/zip',
+      doc: 'target/docsite'
     },
     userhome: userhome,
     privateKey: function() {
