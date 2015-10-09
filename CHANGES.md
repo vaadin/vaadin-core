@@ -1,6 +1,7 @@
+## Vaadin Components 0.3.0-beta10 (2015-10-09)
+- `<vaadin-grid>` updated to 0.9.0-beta3.
 
-
-## Vaadin Components 0.3.0.beta9 (2015-09-18)
+## Vaadin Components 0.3.0-beta9 (2015-09-18)
 
 - Host apidoc and demo launch pages in vaadin-components instead of
 maintaining independent project for those
@@ -8,12 +9,12 @@ maintaining independent project for those
 - Examples and apidoc are bundled with vaadin-components so as it is
 possible to run them either local or wen deployed in CDN.
 
-## Vaadin Components 0.3.0.beta8 (2015-09-11)
+## Vaadin Components 0.3.0-beta8 (2015-09-11)
 
 - vaadin-components becomes a repository with references to vaadin components.
 - `<vaadin-grid>` is split in a new project.
 
-## Vaadin Components 0.3.0.beta7 (2015-09-02)
+## Vaadin Components 0.3.0-beta7 (2015-09-02)
 
 - Polymer updated to v1.1.1
 - Renamed component `<v-grid>` to `<vaadin-grid>`
