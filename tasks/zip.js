@@ -14,7 +14,7 @@ var zip = require('gulp-zip');
 var stagingPath = config.paths.staging.zip;
 var version = config.version;
 var host = config.zipHost;
-var filename = 'vaadin-components-' + version + '.zip';
+var filename = 'vaadin-elements-' + version + '.zip';
 var majorMinorVersion = version.replace(/(\d+\.\d+)(\.|-)(.*)/, '$1');
 
 
@@ -61,11 +61,11 @@ gulp.task('zip:update-references', ['zip:upload'], function(done) {
   common.checkArguments(['zipUsername', 'zipDestination']);
 
   if(args.release) {
-    ssh("sed -i '1i components/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'VERSIONS', done);
+    ssh("sed -i '1i elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'VERSIONS', done);
   } else if(args.preRelease) {
-    ssh("sed -i '1i components/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'PRERELEASES', done);
+    ssh("sed -i '1i elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'PRERELEASES', done);
   } else {
-    ssh('echo components/' + majorMinorVersion + '/' + version + ' > ' + args.zipDestination + 'SNAPSHOT', done);
+    ssh('echo elements/' + majorMinorVersion + '/' + version + ' > ' + args.zipDestination + 'SNAPSHOT', done);
   }
 });
 
@@ -76,7 +76,7 @@ gulp.task('zip-test:clean', function() {
 });
 
 gulp.task('zip-test:download', ['zip-test:clean'],  function() {
-  var url = args.zipUrl || 'https://vaadin.com/download/components';
+  var url = args.zipUrl || 'https://vaadin.com/download/elements';
   return download(url + '/' + majorMinorVersion +'/' + version + '/' + filename)
     .pipe(gulp.dest(stagingPath + '/test'));
 });
@@ -97,9 +97,9 @@ gulp.task('zip-test:install-wct', ['zip-test:download'], function() {
 
 // TODO: Haven't been fixed for the new project structure. Once the tests are in use,
 // apply similar changes as in cdn.js
-config.components.forEach(function (n) {
+config.elements.forEach(function (n) {
   gulp.task('zip-test:stage:' + n, ['zip-test:download'], function() {
-    return gulp.src('vaadin-components/' + n + '/test/**/*')
+    return gulp.src('vaadin-elements/' + n + '/test/**/*')
       .pipe(replace(/(src|href)=("|')(.*?)\.\.\/\.\.\/\.\.\/\.\.\/(bower_components|node_modules)\//mg, '$1=$2../../$3'))
       .pipe(replace(/(src|href)=("|')(.*?)\.\.\/\.\.\/\.\.\/(bower_components|node_modules)\//mg, '$1=$2../../$3'))
       .pipe(replace(/(src|href)=("|')(.*?)\.\.\/(vaadin-)/mg, '$1=$2../../' + n + '/$3$4'))
@@ -107,7 +107,7 @@ config.components.forEach(function (n) {
   });
 });
 
-gulp.task('zip-test:stage', _.map(config.components, function(n) {
+gulp.task('zip-test:stage', _.map(config.elements, function(n) {
     return 'zip-test:stage:'+n;
 }));
 
@@ -119,7 +119,7 @@ gulp.task('verify:zip', ['zip-test:unzip', 'zip-test:install-wct', 'zip-test:sta
   common.testSauce(
     ['target/zip/test/test/**/index.html'],
     ['Windows 7/internet explorer@11'],
-    'vaadin-components / vaadin.com / ' + version,
+    'vaadin-elements / vaadin.com / ' + version,
     function(err) {
       common.autoRevert(err, function() {
         var path = args.zipDestination + majorMinorVersion + '/' + version;
@@ -127,7 +127,7 @@ gulp.task('verify:zip', ['zip-test:unzip', 'zip-test:install-wct', 'zip-test:sta
         gutil.log('Deleting package ' + path);
 
         // remove the version from VERSIONS
-        ssh('grep -v "components/' + majorMinorVersion + '/' + version + '" ' +
+        ssh('grep -v "elements/' + majorMinorVersion + '/' + version + '" ' +
           args.zipDestination + 'VERSIONS > temp && mv temp ' + args.zipDestination + 'VERSIONS', function(error) {
           if(error) done(error);
 
