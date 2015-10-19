@@ -1,5 +1,5 @@
 {
-  "name": "vaadin-components",
+  "name": "vaadin-elements",
   "version": "0.3.0",
   "description": "A set of high-quality Web Components with a customizable Sass based theme",
   "author": "Vaadin Ltd",
@@ -38,7 +38,7 @@
   },
   "keywords": [
     "vaadin",
-    "components",
+    "elements",
     "web",
     "components",
     "webcomponents",

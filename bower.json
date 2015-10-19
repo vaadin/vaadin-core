@@ -1,5 +1,5 @@
 {
-  "name": "vaadin-components",
+  "name": "vaadin-elements",
   "version": "0.3.0-snapshot",
   "authors": [
     "Vaadin Ltd"
@@ -9,7 +9,7 @@
   "keywords": [
     "web-components"
   ],
-  "main": "vaadin-components.html",
+  "main": "vaadin-elements.html",
   "ignore": [
     "**/.*",
     "**/node_modules",
