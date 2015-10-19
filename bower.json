@@ -18,7 +18,8 @@
     "**/tests"
   ],
   "dependencies": {
-    "vaadin-grid": "vaadin/vaadin-grid#rename-components"
+    "vaadin-grid": "vaadin/vaadin-grid#rename-components",
+    "elements-demo-resources": "vaadin/elements-demo-resources#master"
   },
   "devDependencies": {
     "iron-doc-viewer": "polymerelements/iron-doc-viewer#~1.0.3",
