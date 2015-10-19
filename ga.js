@@ -10,7 +10,7 @@ ga('create', 'UA-658457-6', 'auto');
 function locationHashChanged() {
   if(/vaadin/.test(window.location.hostname)) {
     var pageViewUrl = (window.location.pathname + window.location.hash)
-      .replace(/vaadin-components\/latest\/(.+)\/demo/, 'components-examples/$1')
+      .replace(/vaadin-elements\/latest\/(.+)\/demo/, 'components-examples/$1')
       .replace('#', '/');
     ga('send', 'pageview', pageViewUrl)
   }
