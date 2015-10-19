@@ -1,8 +1,8 @@
-# Vaadin Components
+# Vaadin Elements
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-elements?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) or [discuss on the vaadin.com forum](https://vaadin.com/forum/#!/category/9848927/)
 
-Vaadin Components is an evolving set of custom HTML elements, built using [Polymer](https://www.polymer-project.org), for building mobile and desktop web applications in modern browsers.
+Vaadin Elements is an evolving set of custom HTML elements, built using [Polymer](https://www.polymer-project.org), for building mobile and desktop web applications in modern browsers.
 
 ### Component examples and documentation
 
@@ -23,7 +23,7 @@ View live examples and source code side-by-side for individual custom elements.
 
 ### Installation
 
-We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP archive. The only difference between the options is the URL you use to import the necessary files into your HTML page.
+We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP archive. The only difference between the options is the URL you use to import the necessary files into your HTML page.
 
 #### 1. Create a new folder for your project
 
@@ -32,7 +32,7 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
  $ cd my-project
  ```
 
-#### 2. Install Vaadin Components
+#### 2. Install Vaadin Elements
 
 - ##### Bower
 
@@ -42,7 +42,7 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
  $ bower install --save vaadin-elements
  ```
 
- This will download Vaadin Components and its dependencies to the `bower_components` folder inside your project's folder.
+ This will download Vaadin Elements and its dependencies to the `bower_components` folder inside your project's folder.
  
  If you wish to use the development snapshot version of some component, you can install/update that separately:
  
@@ -52,13 +52,13 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
 
 - ##### CDN
 
- You can use Vaadin Components from CDN (see example below). This is especially convenient for services like JSFiddle, Codepen.io, etc.
+ You can use Vaadin Elements from CDN (see example below). This is especially convenient for services like JSFiddle, Codepen.io, etc.
 
  For example, to import vaadin-grid, use the following URL:
 
    `https://cdn.vaadin.com/vaadin-elements/latest/vaadin-grid/vaadin-grid.html`
 
- To import all Vaadin Components, use the following URL:
+ To import all Vaadin Elements, use the following URL:
 
    `https://cdn.vaadin.com/vaadin-elements/latest/vaadin-elements/vaadin-elements.html`
 
@@ -72,7 +72,7 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
 
 #### 3. Create a HTML file
 
- Create a new HTML file inside your project folder and copy the following code into it (choose one of the options how to import Vaadin Components in the `<head>` section):
+ Create a new HTML file inside your project folder and copy the following code into it (choose one of the options how to import Vaadin Elements in the `<head>` section):
 
  > **Serving the files during development**, when using Bower or the ZIP archive:
 
@@ -82,7 +82,7 @@ We offer three ways to use Vaadin Components in your project: Bower, CDN and ZIP
 <!doctype html>
 <html>
   <head>
-    <!-- Import Web Component polyfills and all Vaadin Components -->
+    <!-- Import Web Component polyfills and all Vaadin Elements -->
 
     <!-- CDN -->
     <script src="https://cdn.vaadin.com/vaadin-elements/latest/webcomponentsjs/webcomponents-lite.min.js"></script>

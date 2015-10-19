@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var fs = require('fs-extra');
 var markdown = require('gulp-markdown');
 var replace = require('gulp-replace');
+var modify = require('gulp-modify');
 var rsync = require('gulp-rsync');
 var gutil = require('gulp-util');
 var _ = require('lodash');
@@ -32,9 +33,17 @@ gulp.task('cdn:stage-bower_components', function() {
 });
 
 gulp.task('cdn:stage-vaadin-elements', function() {
-  return gulp.src(['LICENSE.html', 'ga.js', 'vaadin-elements.html', 'demo/*', 'apidoc/*'], {base:"."})
-    .pipe(replace('https://cdn.vaadin.com/vaadin-elements/latest/', '../../'))
-    .pipe(addsrc('README.md'))
+  return gulp.src(['LICENSE.html', 'README.md', 'ga.js', 'vaadin-elements.html', 'demo/*', 'apidoc/*'], {base:"."})
+    .pipe(modify({
+        fileModifier: function(file, contents) {
+          if (/README.md/.test(file.path)) {
+            contents = contents.replace(/\/latest\//mg, '/' + version + '/')
+          } else {
+            contents.replace('https://cdn.vaadin.com/vaadin-elements/latest/', '../../');
+          }
+          return contents;
+        }
+      }))
     .pipe(gulp.dest(stagingPath + "/vaadin-elements"));
 });
 
