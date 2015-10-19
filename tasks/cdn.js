@@ -69,17 +69,7 @@ gulp.task('deploy:cdn', ['upload:cdn'], function(done) {
   if (permalink) {
     var cmd = 'rm -f ' + args.cdnDestination + permalink + '; ln -s ' + version + ' ' +  args.cdnDestination + permalink + '; ls -l ' + args.cdnDestination;
     gutil.log('Deploying CDN : ssh ' + args.cdnUsername + '@' + host + ' ' +  cmd);
-    require('node-ssh-exec')({
-      host: host,
-      username: args.cdnUsername,
-      privateKey: config.paths.privateKey()
-    }, cmd, function (error, response) {
-      if (error) {
-        throw error;
-      }
-      gutil.log(response);
-      done();
-    });
+    common.ssh(args.cdnUsername, host, cmd, done);
   } else {
     done();
   }

@@ -14,9 +14,9 @@ var zip = require('gulp-zip');
 var stagingPath = config.paths.staging.zip;
 var version = config.version;
 var host = config.zipHost;
+var user = args.zipUsername;
 var filename = 'vaadin-elements-' + version + '.zip';
 var majorMinorVersion = version.replace(/(\d+\.\d+)(\.|-)(.*)/, '$1');
-
 
 gulp.task('clean:zip', function() {
   fs.removeSync(stagingPath);
@@ -28,44 +28,40 @@ gulp.task('stage:zip', ['clean:zip', 'stage:cdn'], function() {
     .pipe(gulp.dest(stagingPath));
 });
 
-gulp.task('zip:upload', ['stage:zip'], function(done) {
+function computeDestination() {
   common.checkArguments(['zipUsername', 'zipDestination']);
-  var path = args.zipDestination + majorMinorVersion + '/' + version + '/' + filename;
+  var path = majorMinorVersion != version ? majorMinorVersion + '/' + version : version;
+  path = args.zipDestination + path + '/' + filename;
+  return path;
+}
 
-  gutil.log('Uploading zip package (scp): ' + stagingPath + '/' + filename + ' -> ' + args.zipUsername + '@' + host + ':' + path);
-
-  require('scp2').scp(stagingPath + '/' + filename, {
+gulp.task('zip:upload', ['stage:zip'], function(done) {
+  done();
+  return;
+  var src = stagingPath + '/' + filename;
+  var dst = computeDestination();
+  gutil.log('Uploading zip package (scp): ' + src + ' -> ' + user + '@' + host + ':' + dst);
+  require('scp2').scp(src, {
     host: host,
-    username: args.zipUsername,
+    username: user,
     privateKey: config.paths.privateKey(),
-    path: path
+    path: dst
   }, function(err) {
     done(err);
   })
 });
 
-function ssh(command, done) {
-  gutil.log('SSH: ' + host + ' -> ' + command);
-
-  require('node-ssh-exec')({
-      host: host,
-      username: args.zipUsername,
-      privateKey: config.paths.privateKey()
-    }, command,
-    function (err) {
-      done(err);
-    });
-}
-
 gulp.task('zip:update-references', ['zip:upload'], function(done) {
-  common.checkArguments(['zipUsername', 'zipDestination']);
-
+  var dst = computeDestination();
+  var latest = '/var/www/vaadin/download/elements/latest/vaadin-elements-latest.zip';
+  var cmd = 'rm -f ' + latest + '; ln -s ' + dst + ' ' + latest;
+  common.ssh(user, host, cmd);
   if(args.release) {
-    ssh("sed -i '1i elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'VERSIONS', done);
+    common.ssh(user, host, "sed -i '1i elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'VERSIONS', done);
   } else if(args.preRelease) {
-    ssh("sed -i '1i elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'PRERELEASES', done);
+    common.ssh(user, host, "sed -i '1i elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'PRERELEASES', done);
   } else {
-    ssh('echo elements/' + majorMinorVersion + '/' + version + ' > ' + args.zipDestination + 'SNAPSHOT', done);
+    common.ssh(user, host, 'echo elements/' + majorMinorVersion + '/' + version + ' > ' + args.zipDestination + 'SNAPSHOT', done);
   }
 });
 
@@ -127,12 +123,11 @@ gulp.task('verify:zip', ['zip-test:unzip', 'zip-test:install-wct', 'zip-test:sta
         gutil.log('Deleting package ' + path);
 
         // remove the version from VERSIONS
-        ssh('grep -v "elements/' + majorMinorVersion + '/' + version + '" ' +
+        common.ssh(user, host, 'grep -v "elements/' + majorMinorVersion + '/' + version + '" ' +
           args.zipDestination + 'VERSIONS > temp && mv temp ' + args.zipDestination + 'VERSIONS', function(error) {
           if(error) done(error);
-
           // remove the package
-          ssh('rm -rf ' + path, done);
+          common.ssh(user, host, 'rm -rf ' + path, done);
         });
         }, done);
       });

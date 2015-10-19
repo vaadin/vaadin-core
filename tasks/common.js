@@ -3,6 +3,7 @@ var chalk = require('chalk');
 var wct = require('web-component-tester').test;
 var _ = require('lodash');
 var gutil = require('gulp-util');
+var config = require('./config');
 
 function cleanDone(done) {
   return function(error) {
@@ -40,9 +41,19 @@ function test(options, done) {
   wct(options, cleanDone(done));
 }
 
+function ssh(user, host, command, done) {
+  gutil.log('SSH: ' + host + ' -> ' + command);
+  require('node-ssh-exec')({
+      host: host,
+      username: user,
+      privateKey: config.paths.privateKey()
+    }, command, done);
+}
+
 module.exports = {
   localAddress: localAddress,
   test: test,
+  ssh: ssh,
   checkArguments: checkArguments,
 
   testSauce: function(suites, browsers, build, done) {
