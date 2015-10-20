@@ -36,8 +36,6 @@ function computeDestination() {
 }
 
 gulp.task('zip:upload', ['stage:zip'], function(done) {
-  done();
-  return;
   var src = stagingPath + '/' + filename;
   var dst = computeDestination();
   gutil.log('Uploading zip package (scp): ' + src + ' -> ' + user + '@' + host + ':' + dst);
