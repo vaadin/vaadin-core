@@ -41,22 +41,22 @@ gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], functi
     .pipe(gulp.dest(docPath + '/bower_components'));
 });
 
-gulp.task('cdn:docsite:components', function() {
+gulp.task('cdn:docsite:elements', function() {
   return gulp.src('doc/*')
     .pipe(gulp.dest(docPath));
 });
 
-var doctasks = ['cdn:docsite:components'];
-config.components.forEach(function (n) {
+var doctasks = ['cdn:docsite:elements'];
+config.elements.forEach(function (n) {
   var task = 'cdn:docsite:' + n;
   doctasks.push(task);
   gulp.task(task, ['cdn:docsite:bower_components'], function(done) {
-    var componentDocsite = docPath + '/' + n;
-    var componentDemo = stagingPath + '/' + n + '/demo/**';
+    var elementDocsite = docPath + '/' + n;
+    var elementDemo = stagingPath + '/' + n + '/demo/**';
 
-    gutil.log('Generating site documentation from '  + componentDemo + ' into ' + componentDocsite);
-    fs.mkdirsSync(componentDocsite);
-    return gulp.src([componentDemo, '!**/*-embed.html'])
+    gutil.log('Generating site documentation from '  + elementDemo + ' into ' + elementDocsite);
+    fs.mkdirsSync(elementDocsite);
+    return gulp.src([elementDemo, '!**/*-embed.html'])
       // Remove bad tags
       .pipe(replace(/^.*<(!doctype|\/?html|\/?head|\/?body|meta|title).*>.*\n/img, ''))
       // Uncomment metainfo, and enclose all the example in {% raw %} ... {% endraw %} to avoid liquid conflicts
@@ -78,7 +78,7 @@ config.components.forEach(function (n) {
       // Remove webcomponents polyfill since it's added at top of the site
       .pipe(replace(/^.*<script.*?\/webcomponents.*\.js[\"'].*?<\/script>\s*?\n?/img, ''))
       // embed files are displayed as iframe, we don't remove above fragments like body or polyfill
-      .pipe(addsrc(componentDemo + '/*-embed.html'))
+      .pipe(addsrc(elementDemo + '/*-embed.html'))
       // Remove Analytics
       .pipe(replace(/^.*<script.*?ga\.js[\"'].*?<\/script>\s*?\n?/img, ''))
       // Adjust bowerComponents variable in common.html
@@ -91,7 +91,7 @@ config.components.forEach(function (n) {
       .pipe(replace(/^.*<link.*demo.css.*\n/im, ''))
       // Remove table of contents
       .pipe(replace(/^.*table-of-contents.html.*\n/im, ''))
-      .pipe(gulp.dest(componentDocsite));
+      .pipe(gulp.dest(elementDocsite));
   });
 });
 

@@ -1,15 +1,15 @@
 {
-  "name": "vaadin-components",
+  "name": "vaadin-elements",
   "version": "0.3.0-snapshot",
   "authors": [
     "Vaadin Ltd"
   ],
-  "description": "Vaadin Components is an evolving set of custom HTML elements, built using Polymer, for building mobile and desktop web applications in modern browsers.",
+  "description": "Vaadin Elements is an evolving set of custom HTML elements, built using Polymer, for building mobile and desktop web applications in modern browsers.",
   "license": "Apache License 2.0",
   "keywords": [
     "web-components"
   ],
-  "main": "vaadin-components.html",
+  "main": "vaadin-elements.html",
   "ignore": [
     "**/.*",
     "**/node_modules",
@@ -18,7 +18,8 @@
     "**/tests"
   ],
   "dependencies": {
-    "vaadin-grid": "vaadin/vaadin-grid#0.9.0-beta3"
+    "vaadin-grid": "vaadin/vaadin-grid#0.9.0-beta4",
+    "elements-demo-resources": "vaadin/elements-demo-resources#master"
   },
   "devDependencies": {
     "iron-doc-viewer": "polymerelements/iron-doc-viewer#~1.0.3",
