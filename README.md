@@ -90,7 +90,7 @@ We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP a
 
     <!-- Bower -->
     <!-- <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link href="bower_components/vaadin-components/vaadin-elements.html" rel="import"> -->
+    <link href="bower_components/vaadin-elements/vaadin-elements.html" rel="import"> -->
 
     <!-- ZIP archive -->
     <!-- <script src="deps/webcomponentsjs/webcomponents-lite.min.js"></script>
