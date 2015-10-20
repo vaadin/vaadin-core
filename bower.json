@@ -18,7 +18,7 @@
     "**/tests"
   ],
   "dependencies": {
-    "vaadin-grid": "vaadin/vaadin-grid#rename-components",
+    "vaadin-grid": "vaadin/vaadin-grid#0.9.0-beta4",
     "elements-demo-resources": "vaadin/elements-demo-resources#master"
   },
   "devDependencies": {

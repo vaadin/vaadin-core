@@ -1,5 +1,6 @@
-## Vaadin Elements 0.3.0-beta10 (2015-10-19)
+## Vaadin Elements 0.3.0-beta11 (2015-10-20)
 - Vaadin Components has been renamed to Vaadin Elements.
+- `<vaadin-grid>` updated to 0.9.0-beta4.
 
 ## Vaadin Components 0.3.0-beta10 (2015-10-09)
 - `<vaadin-grid>` updated to 0.9.0-beta3.
