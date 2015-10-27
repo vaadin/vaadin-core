@@ -126,7 +126,7 @@ We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP a
 
               // Use the returned data array directly as the data source
               // (keeping all the data source items in the browser's memory)
-              grid.datasource = json.results;
+              grid.items = json.results;
             }
           }
         }
