@@ -59,7 +59,7 @@
         for(var i=0;i < types.length; i++) {
           var type = getPropertyType(types[i]);
 
-          if(result.elementsByTagName[type]) {
+          if(result.elementsByTagName[type] || result.behaviorsByName[type]) {
             var a = createLinkElement(types[i]);
 
             types[i].textContent = '';
@@ -91,7 +91,7 @@
 
         _.forEach(document.querySelector('#properties').querySelectorAll('iron-doc-property'), function(p) {
           if(!isPrimitiveType(p.querySelector('#type').textContent)) {
-            p.querySelector('#default').setAttribute('style', 'display:none');
+            p.querySelector('.annotation').setAttribute('style', 'display:none');
           }
         });
 
@@ -109,7 +109,8 @@
 
       hyd.Analyzer.analyze('../../vaadin-grid/vaadin-grid-doc.html')
           .then(function(result) {
-            document.querySelector('iron-doc-viewer').descriptor = result.elementsByTagName[getElementTag()];
+            var descriptor = result.elementsByTagName[getElementTag()] || result.behaviorsByName[getElementTag()];
+            document.querySelector('iron-doc-viewer').descriptor = descriptor;
 
             return result;
           })
