@@ -50,10 +50,6 @@ gulp.task('zip:upload', ['stage:zip'], function(done) {
 });
 
 gulp.task('zip:update-references', ['zip:upload'], function(done) {
-  var dst = computeDestination();
-  var latest = '/var/www/vaadin/download/elements/latest/vaadin-elements-latest.zip';
-  var cmd = 'rm -f ' + latest + '; ln -s ' + dst + ' ' + latest;
-  common.ssh(user, host, cmd);
   if(args.release) {
     common.ssh(user, host, "sed -i '1i elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'VERSIONS', done);
   } else if(args.preRelease) {
