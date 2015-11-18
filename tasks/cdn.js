@@ -33,11 +33,11 @@ gulp.task('cdn:stage-bower_components', function() {
 });
 
 gulp.task('cdn:stage-vaadin-elements', function() {
-  return gulp.src(['LICENSE.html', 'README.md', 'ga.js', 'vaadin-elements.html', 'demo/*', 'apidoc/*'], {base:"."})
+  return gulp.src(['LICENSE.html', 'README.md', 'vaadin-elements.html', 'demo/*', 'apidoc/*'], {base:"."})
     .pipe(modify({
         fileModifier: function(file, contents) {
           if (/README.md/.test(file.path)) {
-            contents = contents.replace(/\/latest\//mg, '/' + version + '/')
+            contents = contents.replace(/\/latest\//mg, '/' + version + '/');
           } else {
             contents.replace('https://cdn.vaadin.com/vaadin-elements/latest/', '../../');
           }
@@ -133,5 +133,5 @@ gulp.task('verify:cdn', ['cdn-test:stage'], function(done) {
           done(err);
         });
 
-      }, done)});
+      }, done);});
 });
