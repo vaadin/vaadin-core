@@ -18,13 +18,11 @@
     "**/tests"
   ],
   "dependencies": {
-    "vaadin-grid": "vaadin/vaadin-grid#0.9.0-beta5",
-    "elements-demo-resources": "vaadin/elements-demo-resources#master"
+    "vaadin-grid": "vaadin/vaadin-grid#0.9.0-beta5"
   },
   "devDependencies": {
-    "iron-doc-viewer": "polymerelements/iron-doc-viewer#~1.0.3",
-    "hydrolysis": "polymer/hydrolysis#~1.15.1",
-    "lodash": "~3.9.3"
+    "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
+    "elements-demo-resources": "vaadin/elements-demo-resources#master"
   },
   "resolutions": {
     "polymer": "v1.1.1"
