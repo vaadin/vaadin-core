@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "vaadin-grid": "vaadin/vaadin-grid#0.9.0-beta5",
-    "vaadin-combo-box": "vaadin/vaadin-combo-box#master"
+    "vaadin-combo-box": "vaadin/vaadin-combo-box#1.0.0-alpha2"
   },
   "devDependencies": {
     "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
