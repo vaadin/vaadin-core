@@ -1,4 +1,4 @@
-var bower =  require('gulp-bower');
+var bower = require('gulp-bower');
 var config = require('./config');
 var common = require('./common');
 var gulp = require('gulp');
@@ -28,25 +28,27 @@ gulp.task('cdn:stage-bower_components', function() {
 });
 
 gulp.task('cdn:stage-vaadin-elements', function() {
-  return gulp.src(['LICENSE.html', 'README.md', 'vaadin-elements.html', 'demo/*', 'apidoc/*'], {base:"."})
+  return gulp.src(['LICENSE.html', 'README.md', 'vaadin-elements.html', 'demo/*', 'apidoc/*'], {
+      base: "."
+    })
     .pipe(modify({
-        fileModifier: function(file, contents) {
-          if (/README.md/.test(file.path)) {
-            contents = contents.replace(/\/latest\//mg, '/' + version + '/');
-          } else {
-            contents.replace('https://cdn.vaadin.com/vaadin-elements/latest/', '../../');
-          }
-          return contents;
+      fileModifier: function(file, contents) {
+        if (/README.md/.test(file.path)) {
+          contents = contents.replace(/\/latest\//mg, '/' + version + '/');
+        } else {
+          contents.replace('https://cdn.vaadin.com/vaadin-elements/latest/', '../../');
         }
-      }))
+        return contents;
+      }
+    }))
     .pipe(gulp.dest(stagingPath + "/vaadin-elements"));
 });
 
-gulp.task('stage:cdn', [ 'clean:cdn', 'cdn:stage-bower_components', 'cdn:stage-vaadin-elements' ]);
+gulp.task('stage:cdn', ['clean:cdn', 'cdn:stage-bower_components', 'cdn:stage-vaadin-elements']);
 
 gulp.task('upload:cdn', ['stage:cdn'], function() {
   common.checkArguments(['cdnUsername', 'cdnDestination']);
-  gutil.log('Uploading to cdn (rsync): ' + stagingPath + ' -> '+ args.cdnUsername + '@' + host + ':' + args.cdnDestination + version);
+  gutil.log('Uploading to cdn (rsync): ' + stagingPath + ' -> ' + args.cdnUsername + '@' + host + ':' + args.cdnDestination + version);
   return gulp.src(stagingPath)
     .pipe(rsync({
       username: args.cdnUsername,
@@ -62,8 +64,8 @@ gulp.task('upload:cdn', ['stage:cdn'], function() {
 
 gulp.task('deploy:cdn', ['upload:cdn'], function(done) {
   if (permalink) {
-    var cmd = 'rm -f ' + args.cdnDestination + permalink + '; ln -s ' + version + ' ' +  args.cdnDestination + permalink + '; ls -l ' + args.cdnDestination;
-    gutil.log('Deploying CDN : ssh ' + args.cdnUsername + '@' + host + ' ' +  cmd);
+    var cmd = 'rm -f ' + args.cdnDestination + permalink + '; ln -s ' + version + ' ' + args.cdnDestination + permalink + '; ls -l ' + args.cdnDestination;
+    gutil.log('Deploying CDN : ssh ' + args.cdnUsername + '@' + host + ' ' + cmd);
     common.ssh(args.cdnUsername, host, cmd, done);
   } else {
     done();
