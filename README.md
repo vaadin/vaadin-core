@@ -11,7 +11,7 @@ View live examples and source code side-by-side for individual custom elements.
 | Element | Description | Status
 | --- | --- | --- |
 | [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](https://cdn.vaadin.com/vaadin-elements/latest/vaadin-grid/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-elements/latest/vaadin-grid/) | Data grid for showing large amounts of tabular data. | Beta |
-| [<**vaadin-combo-box**>](https://github.com/vaadin/vaadin-combo-box) &middot; [Examples](https://cdn.vaadin.com/vaadin-elements/master/vaadin-combo-box/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-elements/master/vaadin-combo-box/) | A filterable select element for a large set of items. | Alpha |
+| [<**vaadin-combo-box**>](https://github.com/vaadin/vaadin-combo-box) &middot; [Examples](https://cdn.vaadin.com/vaadin-elements/master/vaadin-combo-box/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-elements/master/vaadin-combo-box/) | Filterable select element for a large set of items. | Alpha |
 
 
 ### Installation
