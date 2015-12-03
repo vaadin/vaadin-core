@@ -4,22 +4,15 @@
 
 Vaadin Elements is an evolving set of custom HTML elements, built using [Polymer](https://www.polymer-project.org), for building mobile and desktop web applications in modern browsers.
 
-### Component examples and documentation
+### Examples and Documentation
 
 View live examples and source code side-by-side for individual custom elements.
 
-| Component | Description |
-| --- | --- |
-| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](https://cdn.vaadin.com/vaadin-elements/latest/vaadin-grid/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-elements/latest/vaadin-elements/apidoc/#vaadin-grid) | Data grid for showing large amounts of tabular data. |
+| Element | Description | Status
+| --- | --- | --- |
+| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](https://cdn.vaadin.com/vaadin-elements/latest/vaadin-grid/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-elements/latest/vaadin-grid/) | Data grid for showing large amounts of tabular data. | Beta |
+| [<**vaadin-combo-box**>](https://github.com/vaadin/vaadin-combo-box) &middot; [Examples](https://cdn.vaadin.com/vaadin-elements/master/vaadin-combo-box/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-elements/master/vaadin-combo-box/) | A filterable select element for a large set of items. | Alpha |
 
-
-### Quickstart
-
- Get a quick test-drive of the custom elements by forking one of the following JSFiddles:
-
-- &lt;**vaadin-grid**&gt;
- - [Data generated on-the-fly](http://jsfiddle.net/vaadin_elements/t2m5tonp/)
- - [JSON data from a URL](http://jsfiddle.net/vaadin_elements/bzn4b7ba/)
 
 ### Installation
 
@@ -101,12 +94,23 @@ We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP a
     <vaadin-grid selection-mode="multi">
       <table>
         <!-- Define the columns -->
-        <col name="index" header-text="#" width="48">
+        <col name="index" width="48">
         <col name="user.picture.thumbnail" width="54">
-        <col name="user.name.first" header-text="First Name">
-        <col name="user.name.last" header-text="Last Name">
-        <col name="user.email" header-text="Email" flex>
+        <col name="user.name.first">
+        <col name="user.name.last">
+        <col name="user.email" flex>
       </table>
+      
+      <!-- Define custom column headers -->
+      <thead>
+       <tr>
+         <th>#</th>
+         <th></th>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Email</th>
+       </tr>
+      </thead>
     </vaadin-grid>
 
     <script>
