@@ -18,8 +18,8 @@ View live examples and source code side-by-side for individual custom elements.
  Get a quick test-drive of the custom elements by forking one of the following JSFiddles:
 
 - &lt;**vaadin-grid**&gt;
- - [Data generated on-the-fly](http://jsfiddle.net/jounik/tvk1235r/)
- - [JSON data from a URL](http://jsfiddle.net/jounik/tLour4gv/)
+ - [Data generated on-the-fly](http://jsfiddle.net/vaadin_elements/t2m5tonp/)
+ - [JSON data from a URL](http://jsfiddle.net/vaadin_elements/bzn4b7ba/)
 
 ### Installation
 
