@@ -91,6 +91,7 @@ We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP a
   </head>
   <body>
 
+    <!-- Use the elements, for instance vaadin-grid -->
     <vaadin-grid selection-mode="multi">
       <table>
         <!-- Define the columns -->
@@ -118,6 +119,8 @@ We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP a
       // use to determine when the custom elements are ready to be used
       document.addEventListener("WebComponentsReady", function () {
 
+        // Configure vaadin-grid to show data
+        
         // Reference to the grid element
         var grid = document.querySelector("vaadin-grid");
 
