@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "A set of high-quality Web Components with a customizable Sass based theme",
   "author": "Vaadin Ltd",
-  "license": "Apache License 2.0",
+  "license": "Apache-2.0",
   "dependencies": {
     "bower": "latest",
     "fs-extra": "latest",
