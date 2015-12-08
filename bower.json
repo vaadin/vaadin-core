@@ -5,7 +5,7 @@
     "Vaadin Ltd"
   ],
   "description": "Vaadin Elements is an evolving set of custom HTML elements, built using Polymer, for building mobile and desktop web applications in modern browsers.",
-  "license": "Apache License 2.0",
+  "license": "Apache-2.0",
   "keywords": [
     "web-components"
   ],
