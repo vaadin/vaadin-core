@@ -27,8 +27,8 @@ gulp.task('cdn:stage-bower_components', function() {
   });
 });
 
-gulp.task('cdn:stage-vaadin-elements', function() {
-  return gulp.src(['LICENSE.html', 'README.md', 'vaadin-elements.html', 'demo/*', 'apidoc/*'], {
+gulp.task('cdn:stage-vaadin-core-elements', function() {
+  return gulp.src(['LICENSE.html', 'README.md', 'vaadin-core-elements.html', 'demo/*', 'apidoc/*'], {
       base: "."
     })
     .pipe(modify({
@@ -36,15 +36,15 @@ gulp.task('cdn:stage-vaadin-elements', function() {
         if (/README.md/.test(file.path)) {
           contents = contents.replace(/\/latest\//mg, '/' + version + '/');
         } else {
-          contents.replace('https://cdn.vaadin.com/vaadin-elements/latest/', '../../');
+          contents.replace('https://cdn.vaadin.com/vaadin-core-elements/latest/', '../../');
         }
         return contents;
       }
     }))
-    .pipe(gulp.dest(stagingPath + "/vaadin-elements"));
+    .pipe(gulp.dest(stagingPath + "/vaadin-core-elements"));
 });
 
-gulp.task('stage:cdn', ['clean:cdn', 'cdn:stage-bower_components', 'cdn:stage-vaadin-elements']);
+gulp.task('stage:cdn', ['clean:cdn', 'cdn:stage-bower_components', 'cdn:stage-vaadin-core-elements']);
 
 gulp.task('upload:cdn', ['stage:cdn'], function() {
   common.checkArguments(['cdnUsername', 'cdnDestination']);

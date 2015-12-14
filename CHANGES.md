@@ -1,3 +1,6 @@
+## Vaadin Core Elements 0.3.0-beta... (...)
+- The product and related releases are renamed to "Vaadin Core Elements", which is the collection of custom elements (i.e. Web Components) that are licensed under the Apache License 2.0. The term "Vaadin Elements" refers to all custom elements created by Vaadin from now on, including commercial elements.
+
 ## Vaadin Elements 0.3.0-beta12 (2015-11-12)
 - `<vaadin-grid>` updated to 0.9.0-beta5.
 

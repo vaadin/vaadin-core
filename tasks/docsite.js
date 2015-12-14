@@ -41,13 +41,13 @@ gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], functi
     .pipe(gulp.dest(docPath + '/bower_components'));
 });
 
-gulp.task('cdn:docsite:elements', function() {
+gulp.task('cdn:docsite:core-elements', function() {
   return gulp.src('doc/*')
     .pipe(gulp.dest(docPath));
 });
 
-var doctasks = ['cdn:docsite:elements'];
-config.elements.forEach(function (n) {
+var doctasks = ['cdn:docsite:core-elements'];
+config.core_elements.forEach(function (n) {
   var task = 'cdn:docsite:' + n;
   doctasks.push(task);
   gulp.task(task, ['cdn:docsite:bower_components'], function(done) {
