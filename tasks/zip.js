@@ -10,7 +10,7 @@ var stagingPath = config.paths.staging.zip;
 var version = config.version;
 var host = config.zipHost;
 var user = args.zipUsername;
-var filename = 'vaadin-elements-' + version + '.zip';
+var filename = 'vaadin-core-elements-' + version + '.zip';
 var majorMinorVersion = version.replace(/(\d+\.\d+)(\.|-)(.*)/, '$1');
 
 gulp.task('clean:zip', function() {
@@ -46,11 +46,11 @@ gulp.task('zip:upload', ['stage:zip'], function(done) {
 
 gulp.task('zip:update-references', ['zip:upload'], function(done) {
   if (args.release) {
-    common.ssh(user, host, "sed -i '1i elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'VERSIONS', done);
+    common.ssh(user, host, "sed -i '1i core-elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'VERSIONS', done);
   } else if (args.preRelease) {
-    common.ssh(user, host, "sed -i '1i elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'PRERELEASES', done);
+    common.ssh(user, host, "sed -i '1i core-elements/" + majorMinorVersion + '/' + version + "' " + args.zipDestination + 'PRERELEASES', done);
   } else {
-    common.ssh(user, host, 'echo elements/' + majorMinorVersion + '/' + version + ' > ' + args.zipDestination + 'SNAPSHOT', done);
+    common.ssh(user, host, 'echo core-elements/' + majorMinorVersion + '/' + version + ' > ' + args.zipDestination + 'SNAPSHOT', done);
   }
 });
 
