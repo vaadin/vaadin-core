@@ -1,3 +1,6 @@
+## Vaadin Core Elements 0.3.0-beta... (...)
+- Added Core word, so as the bundle includes all the set of Vaadin Components licensed as Apache 2.0.
+
 ## Vaadin Elements 0.3.0-beta12 (2015-11-12)
 - `<vaadin-grid>` updated to 0.9.0-beta5.
 
