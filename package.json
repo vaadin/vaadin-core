@@ -1,7 +1,7 @@
 {
-  "name": "vaadin-elements",
+  "name": "vaadin-core-elements",
   "version": "0.3.0",
-  "description": "A set of high-quality Web Components with a customizable Sass based theme",
+  "description": "Vaadin Core Elements is an evolving set of custom HTML elements, built using Polymer, for building mobile and desktop web applications in modern browsers.",
   "author": "Vaadin Ltd",
   "license": "Apache License 2.0",
   "dependencies": {
@@ -33,6 +33,7 @@
   "keywords": [
     "vaadin",
     "elements",
+    "core",
     "web",
     "components",
     "webcomponents",
