@@ -1,8 +1,8 @@
-# Vaadin Elements
+# Vaadin Core Elements
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-elements?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-core-elements?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-Vaadin Elements is an evolving set of custom HTML elements, built using [Polymer](https://www.polymer-project.org), for building mobile and desktop web applications in modern browsers.
+Vaadin Core Elements is an evolving set of custom HTML elements, built using [Polymer](https://www.polymer-project.org), for building mobile and desktop web applications in modern browsers.
 
 ### Examples and Documentation
 
@@ -10,13 +10,13 @@ View live examples and source code side-by-side for individual custom elements.
 
 | Element | Description | Status
 | --- | --- | --- |
-| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](https://cdn.vaadin.com/vaadin-elements/latest/vaadin-grid/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-elements/latest/vaadin-grid/) | Data grid for showing large amounts of tabular data. | Beta |
-| [<**vaadin-combo-box**>](https://github.com/vaadin/vaadin-combo-box) &middot; [Examples](https://cdn.vaadin.com/vaadin-elements/master/vaadin-combo-box/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-elements/master/vaadin-combo-box/) | Filterable select element for a large set of items. | Alpha |
+| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-grid/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-grid/) | Data grid for showing large amounts of tabular data. | Beta |
+| [<**vaadin-combo-box**>](https://github.com/vaadin/vaadin-combo-box) &middot; [Examples](https://cdn.vaadin.com/vaadin-core-elements/master/vaadin-combo-box/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-core-elements/master/vaadin-combo-box/) | Filterable select element for a large set of items. | Alpha |
 
 
 ### Installation
 
-We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP archive. The only difference between the options is the URL you use to import the necessary files into your HTML page.
+We offer three ways to use Vaadin Core Elements in your project: Bower, CDN and ZIP archive. The only difference between the options is the URL you use to import the necessary files into your HTML page.
 
 #### 1. Create a new folder for your project
 
@@ -25,17 +25,17 @@ We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP a
  $ cd my-project
  ```
 
-#### 2. Install Vaadin Elements
+#### 2. Install Vaadin Core Elements
 
 - ##### Bower
 
  We recommend using [Bower](http://bower.io) for managing your front-end dependencies. Follow the [Bower installation instructions](http://bower.io/#install-bower), then run the following command inside your project folder to install the most recent stable release.
 
  ```shell
- $ bower install --save vaadin-elements
+ $ bower install --save vaadin-core-elements
  ```
 
- This will download Vaadin Elements and its dependencies to the `bower_components` folder inside your project's folder.
+ This will download Vaadin Core Elements bundle and its dependencies to the `bower_components` folder inside your project's folder.
  
  If you wish to use the development snapshot version of some component, you can install/update that separately:
  
@@ -45,17 +45,17 @@ We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP a
 
 - ##### CDN
 
- You can use Vaadin Elements from CDN (see example below). This is especially convenient for services like JSFiddle, Codepen.io, etc.
+ You can use Vaadin Core Elements from CDN (see example below). This is especially convenient for services like JSFiddle, Codepen.io, etc.
 
  For example, to import vaadin-grid, use the following URL:
 
-   `https://cdn.vaadin.com/vaadin-elements/latest/vaadin-grid/vaadin-grid.html`
+   `https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-grid/vaadin-grid.html`
 
- To import all Vaadin Elements, use the following URL:
+ To import all Vaadin Core Elements, use the following URL:
 
-   `https://cdn.vaadin.com/vaadin-elements/latest/vaadin-elements/vaadin-elements.html`
+   `https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-core-elements/vaadin-core-elements.html`
 
- > You can also use the nightly snapshot versions of any component, e.g. https://cdn.vaadin.com/vaadin-elements/master/vaadin-grid/vaadin-grid.html
+ > You can also use the nightly snapshot versions of any component, e.g. https://cdn.vaadin.com/vaadin-core-elements/master/vaadin-grid/vaadin-grid.html
 
 
 - ##### Download ZIP
@@ -75,19 +75,19 @@ We offer three ways to use Vaadin Elements in your project: Bower, CDN and ZIP a
 <!doctype html>
 <html>
   <head>
-    <!-- Import Web Component polyfills and all Vaadin Elements -->
+    <!-- Import Web Component polyfills and all Vaadin Core Elements -->
 
     <!-- CDN -->
-    <script src="https://cdn.vaadin.com/vaadin-elements/latest/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link href="https://cdn.vaadin.com/vaadin-elements/latest/vaadin-elements/vaadin-elements.html" rel="import">
+    <script src="https://cdn.vaadin.com/vaadin-core-elements/latest/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link href="https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-core-elements/vaadin-core-elements.html" rel="import">
 
     <!-- Bower -->
     <!-- <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link href="bower_components/vaadin-elements/vaadin-elements.html" rel="import"> -->
+    <link href="bower_components/vaadin-core-elements/vaadin-core-elements.html" rel="import"> -->
 
     <!-- ZIP archive -->
     <!-- <script src="deps/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link href="deps/vaadin-elements/vaadin-elements.html" rel="import"> -->
+    <link href="deps/vaadin-core-elements/vaadin-core-elements.html" rel="import"> -->
   </head>
   <body>
 
