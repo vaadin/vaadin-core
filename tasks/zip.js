@@ -41,7 +41,7 @@ gulp.task('zip:upload', ['stage:zip'], function(done) {
     path: dst
   }, function(err) {
     done(err);
-  })
+  });
 });
 
 gulp.task('zip:update-references', ['zip:upload'], function(done) {

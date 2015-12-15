@@ -33,7 +33,7 @@ gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], functi
     .pipe(modify({
       fileModifier: function(file, contents) {
         if (/webcomponents-lite.*js/.test(file.path)) {
-          contents = contents.replace(/(if ?\()(\w+\.log)(\))/mg, '$1$2 && $2.split$3')
+          contents = contents.replace(/(if ?\()(\w+\.log)(\))/mg, '$1$2 && $2.split$3');
         }
         return contents;
       }
@@ -115,9 +115,7 @@ gulp.task('cdn:docsite:upload', ['cdn:docsite:clean', 'cdn:docsite:zip'], functi
     path: args.cdnDestination + version
   }, function(err) {
     done(err);
-  })
+  });
 });
 
 gulp.task('cdn:docsite', ['cdn:docsite:upload']);
-
-
