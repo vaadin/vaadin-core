@@ -1,6 +1,6 @@
 {
   "name": "vaadin-core-elements",
-  "version": "0.3.0-beta13",
+  "version": "0.3.0",
   "authors": [
     "Vaadin Ltd"
   ],
@@ -24,7 +24,7 @@
     "**/tests"
   ],
   "dependencies": {
-    "vaadin-grid": "vaadin/vaadin-grid#1.0.0-beta1"
+    "vaadin-grid": "vaadin/vaadin-grid#~1.0.0"
   },
   "devDependencies": {
     "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
