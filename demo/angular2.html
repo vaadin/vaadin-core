@@ -1,0 +1,109 @@
+<!doctype html>
+<!--
+title: Angular 2
+order: 2
+layout: page
+-->
+
+<html>
+
+<head>
+  <title>vaadin-core-elements Code Examples - Angular 2 Integration</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="common.html">
+
+</head>
+
+<body unresolved>
+  <h1>vaadin-core-elements</h1>
+
+  <section>
+    <h3>Angular2 (beta1) Integration</h3>
+    <p>Click a row to see an enlarged user image.</p>
+    <code-example>
+      <iframe src="angular-demo-embed.html" style="width: 100%; height: 600px; border: none; display: none;"></iframe>
+      <style>
+        iframe ~ [demo] {
+          display: none !important;
+        }
+      </style>
+      <div demo>
+        <vaadin-grid [columns]="columns" [items]="items" (selected-items-changed)="onSelect()">
+        </vaadin-grid>
+
+        <img *ngIf="selected" class="user-image" src="{{selected.user.picture.large}}">
+
+        <div style="display: none">
+          <select maxlength=5 (change)="onFilterChange()">
+            <option value=''></option>
+            <option value='male'>Men only</option>
+            <option value='female'>Women only</option>
+          </select>
+        </div>
+      </div>
+      <code>
+        /*
+        // code
+        // Component file: angular-grid.ts
+        import {Component} from 'angular2/core';
+
+        @Component({
+          selector: 'angular-grid',
+          templateUrl: 'angular-grid.html'
+        })
+        export class AngularGrid {
+          selected: Object;
+          grid = document.querySelector('angular-grid vaadin-grid');
+          columns = [
+            {name: "user.picture.thumbnail", width: 100, renderer: this.pictureRenderer},
+            {name: "user.gender"},
+            {name: "user.name.first"},
+            {name: "user.name.last"},
+            {name: "user.email"},
+          ];
+
+          constructor() {
+            // Once grid is ready, add a new header row with the gender select in it
+            this.grid.then(() =>
+              this.grid.header.addRow(1, ['', document.querySelector('angular-grid select')])
+            );
+          }
+
+          pictureRenderer(cell) {
+            cell.element.innerHTML = '<img style="width: 30px" src="' + cell.data + '" />';
+          }
+
+          items(params, callback) {
+            var gender = document.querySelector('angular-grid select');
+            var url = 'https://randomuser.me/api?nat=us&gender='
+              + gender.value + '&results=' + params.count;
+            getJSON(url, data =>
+              callback(data ? data.results : [], gender.value ? 50 : 100)
+          }
+
+          onSelect() {
+            this.selected = undefined;
+            const selectedIndex = this.grid.selection.selected()[0];
+            this.grid.getItem(selectedIndex, (err, data) => this.selected = data);
+          }
+
+          onFilterChange() {
+            this.grid.refreshItems();
+            this.grid.scrollToStart();
+          }
+
+        }
+        // end-code
+        */
+
+        document.querySelector('iframe').style.display = 'inline';
+        document.body.removeAttribute('unresolved');
+      </code>
+    </code-example>
+  </section>
+
+</body>
+</html>

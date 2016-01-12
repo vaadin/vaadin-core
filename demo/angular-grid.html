@@ -1,0 +1,12 @@
+<vaadin-grid [columns]="columns" [items]="items" (selected-items-changed)="onSelect()">
+</vaadin-grid>
+
+<img *ngIf="selected" class="user-image" src="{{selected.user.picture.large}}">
+
+<div style="display: none">
+  <select maxlength=5 (change)="onFilterChange()">
+    <option value=''></option>
+    <option value='male'>Men only</option>
+    <option value='female'>Women only</option>
+  </select>
+</div>
