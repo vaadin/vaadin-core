@@ -22,7 +22,14 @@ layout: page
 
   <section>
     <h3>Angular2 (beta1) Integration</h3>
-    <p>Click a row to see an enlarged user image.</p>
+    <p>This example demonstrates integrating <code>vaadin-core-elements</code> with an Angular 2 app.
+    Notice that currently we can't declare light DOM content for a Web Component inside the component
+    template so in case of <code>vaadin-grid</code> we're required to configure the columns
+    trough the JS APIs instead of using the light dom <code>table</code> configuration.</p>
+    <p>Click a row to see an enlarged user image or change the value of the select in
+    <code>vaadin-grid</code> header to filter the results by gender.</p>
+    <p><strong>Note:</strong> IE isn't currently supported.</p>
+
     <code-example>
       <iframe src="angular-demo-embed.html" style="width: 100%; height: 600px; border: none; display: none;"></iframe>
       <style>
