@@ -4,7 +4,6 @@ var common = require('./common');
 var gulp = require('gulp');
 var fs = require('fs-extra');
 var replace = require('gulp-replace');
-var rsync = require('gulp-rsync');
 var gutil = require('gulp-util');
 var zip = require('gulp-zip');
 var args = require('yargs').argv;
