@@ -18,7 +18,7 @@ var permalink = config.permalink;
 var stagingPath = stagingBasePath + '/' + version;
 var modify = require('gulp-modify');
 var rootZip = 'target/';
-var fileZip = 'docsite.zip'
+var fileZip = 'docsite.zip';
 
 gulp.task('cdn:docsite:clean', function() {
   fs.removeSync(docPath);
