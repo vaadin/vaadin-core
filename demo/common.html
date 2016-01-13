@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="../../elements-demo-resources/demo.css">
+<script src="../../elements-demo-resources/ga.js"></script>
+
+
+<script>
+
+  window.localUserUrl = 'users.json';
+  var bowerComponents = '../../';
+
+  window.xCodeExampleSourceHead =
+  '  <script src="https://cdn.vaadin.com/vaadin-core-elements/latest/webcomponentsjs/webcomponents-lite.js"><\/script>\n' +
+  '  <link href="https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-core-elements/vaadin-core-elements.html" rel="import">\n';
+
+  if (!window.Polymer) {
+    var link = document.querySelector('link[href$="common.html"]');
+    var baseCommon = link.href.replace(/common.html/, '');
+    var base = baseCommon + bowerComponents;
+
+    var polymerImport = document.createElement('link');
+    polymerImport.rel = 'import';
+    polymerImport.href = base + 'polymer/polymer.html';
+
+    polymerImport.onload = function() {
+      window.localUserUrl = baseCommon + 'users.json';
+      Polymer.Base.importHref(base + 'code-example/code-example.html');
+      Polymer.Base.importHref(base + 'table-of-contents/table-of-contents.html');
+      Polymer.Base.importHref(base + 'vaadin-grid/vaadin-grid.html');
+      Polymer.Base.importHref(base + 'elements-demo-resources/getjson.html');
+    };
+    document.head.appendChild(polymerImport);
+  }
+</script>
