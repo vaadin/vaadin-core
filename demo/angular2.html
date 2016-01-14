@@ -98,7 +98,7 @@ layout: page
           }
 
           onFilterChange() {
-            this.grid.refreshItems();
+            this.grid.async(() => this.grid.refreshItems());
             this.grid.scrollToStart();
           }
 
