@@ -139,7 +139,7 @@ Pay attention to the following details:
 After you have created the file and you have a local server serving the files, you should be able to open up the application in your browser at [http://localhost:3000/index.html](http://localhost:3000/index.html) (notice, that the port 3000 may vary depending on the server you use).
 
 <!-- Assumes .w-arrow-button and .blue class names from vaadin.com theme. Will fallback to a plain link. -->
-<a href="vaadin-grid/datasources.html" class="w-arrow-button blue" style="display: inline-block">
+<a href="vaadin-grid/overview.html" class="w-arrow-button blue" style="display: inline-block">
   Vaadin Grid<br />
   <small>Continue to Vaadin Grid documentation</small>
 </a>
