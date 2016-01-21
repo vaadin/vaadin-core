@@ -10,7 +10,7 @@ View live examples and source code side-by-side for individual custom elements.
 
 | Element | Description | Version
 | --- | --- | --- |
-| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Examples](https://vaadin.com/docs/-/part/elements/vaadin-grid/overview.html) &middot; [API](https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-grid/) | Data grid for showing large amounts of tabular data. | ![Bower version](https://img.shields.io/bower/v/vaadin-grid.svg) |
+| [<**vaadin-grid**>](https://github.com/vaadin/vaadin-grid) &middot; [Docs](https://vaadin.com/docs/-/part/elements/vaadin-grid/overview.html) &middot; [API](https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-grid/) | Data grid for showing large amounts of tabular data. | ![Bower version](https://img.shields.io/bower/v/vaadin-grid.svg) |
 | [<**vaadin-combo-box**>](https://github.com/vaadin/vaadin-combo-box) &middot; [Examples](https://cdn.vaadin.com/vaadin-core-elements/master/vaadin-combo-box/demo/) &middot; [API](https://cdn.vaadin.com/vaadin-core-elements/master/vaadin-combo-box/) | Filterable select element for a large set of items. | ![Bower version](https://img.shields.io/bower/v/vaadin-combo-box.svg) |
 
 ### Installation
