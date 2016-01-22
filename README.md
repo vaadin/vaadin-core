@@ -1,156 +1,137 @@
+![Bower version](https://img.shields.io/bower/v/vaadin-core-elements.svg) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-core-elements?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 # Vaadin Core Elements
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-core-elements?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[Vaadin elements](https://vaadin.com/elements) are an evolving set of open sourced custom HTML elements, which seamlessly extend the [Polymer Element Catalog](https://elements.polymer-project.org) with high-quality user interface components commonly needed in modern mobile and desktop business web applications.
 
-Vaadin Core Elements is an evolving set of custom HTML elements, built using [Polymer](https://www.polymer-project.org), for building mobile and desktop web applications in modern browsers.
+Vaadin Core Elements is a bundle that contains all the free elements, licensed under the Apache License 2.0.
 
-### Examples and Documentation
+## Learn more
 
-View live examples and source code side-by-side for individual custom elements.
+See the list of elements, demos and documentation, instructions how to get started, video tutorials, application demos and more by visiting:
 
-| Element | Description | Version
-| --- | --- | --- |
-| [<**vaadin-grid**>](https://vaadin.com/elements/-/element/vaadin-grid) | Data grid for showing large amounts of tabular data. | ![Bower version](https://img.shields.io/bower/v/vaadin-grid.svg) |
-| [<**vaadin-combo-box**>](https://vaadin.com/elements/-/element/vaadin-combo-box) | Filterable select element for a large set of items. | ![Bower version](https://img.shields.io/bower/v/vaadin-combo-box.svg) |
+### [vaadin.com/elements ›](https://vaadin.com/elements)
 
-### Installation
+---
 
-We offer three ways to use Vaadin Core Elements in your project: Bower, CDN and ZIP archive. The only difference between the options is the URL you use to import the necessary files into your HTML page.
+## Roadmap
 
-#### 1. Create a new folder for your project
+This is a high level view of the upcoming releases for Vaadin Core Elements. The nearest releases are more likely to include what is stated here, but further plans have a higher risk of changing.
 
- ```shell
- $ mkdir my-project
- $ cd my-project
- ```
+Individual elements of the Core Elements bundle are released separately, and you can track their progress from their relevant milestones (TBA). The bundle version is released once all individual element milestones for it are finished.
 
-#### 2. Install Vaadin Core Elements
+You can see more detailed roadmaps of each element from their respective GitHub repositories.
 
-- ##### Bower
+#### Version 0.4
+- `<vaadin-combo-box>` 1.0
+- `<vaadin-icons>` 1.0
 
- We recommend using [Bower](http://bower.io) for managing your front-end dependencies. Follow the [Bower installation instructions](http://bower.io/#install-bower), then run the following command inside your project folder to install the most recent stable release.
+#### Version 0.5
+- `<vaadin-date-picker>` 1.0
+- `<vaadin-grid>` 1.1
 
- ```shell
- $ bower install --save vaadin-core-elements
- ```
+#### Version 1.0
+  - `<vaadin-upload>` 1.0
 
- This will download Vaadin Core Elements bundle and its dependencies to the `bower_components` folder inside your project's folder.
+#### Version 1.1
+- `<vaadin-grid>` 1.2
+- `<vaadin-combo-box>` 1.1
+- `<vaadin-date-picker>` 1.1
 
- If you wish to use the development snapshot version of some component, you can install/update that separately:
+##### Version labels
 
- ```shell
- $ bower install --save vaadin-grid#master
- ```
+On top of the common version numbering (major.minor.patch) Vaadin uses labels to indicate the maturity of a version.
 
-- ##### CDN
+*Examples: `1.0.0-alpha2`, `1.0.0-beta4`, `1.0.0-rc1`*
 
- You can use Vaadin Core Elements from CDN (see example below). This is especially convenient for services like JSFiddle, Codepen.io, etc.
+- **Alpha**: A snapshot mainly to gather feedback from users. All features and implementation details are still subject to change.
 
- For example, to import vaadin-grid, use the following URL:
+- **Beta**: Feature-complete release of the upcoming version. The API may change a bit here and there, but no changes in functionality are to be expected.
 
-   `https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-grid/vaadin-grid.html`
+- **RC**: Also known as "release candidate". Only bug fixes can be expected to happen before the stable version.
 
- To import all Vaadin Core Elements, use the following URL:
+All of the maturity tags can be suffixed with a number, so for example "rc2" is the second release candidate of a certain version.
 
-   `https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-core-elements/vaadin-core-elements.html`
+## Contributing
 
- > You can also use the nightly snapshot versions of any component, e.g. https://cdn.vaadin.com/vaadin-core-elements/master/vaadin-grid/vaadin-grid.html
+We would like nothing more than getting the community involved, and welcome any form of contributions – comments and questions on different communication channels, issues and pull request in the repositories, and anything that you build and share using our elements.
 
+### Get in touch with the team
 
-- ##### Download ZIP
+The chat and the forum are dedicated channels for this project, while the Twitter and Facebook pages are common for all Vaadin related discussion.
 
- 1. Download the latest ZIP archive from [vaadin.com/download](https://vaadin.com/download#elements)
- 2. Extract the archive under your project folder, for example `deps`
+- [Chat](https://gitter.im/vaadin/vaadin-core-elements)
+- [Forum](https://vaadin.com/forum/#!/category/9848927)
+- [Twitter](https://twitter.com/vaadin)
+- [Facebook](https://www.facebook.com/vaadin/)
+- [G+](https://plus.google.com/communities/108116678608923665301)
 
-#### 3. Create a HTML file
+### Some ways to help:
 
- Create a new HTML file inside your project folder and copy the following code into it (choose one of the options how to import Vaadin Core Elements in the `<head>` section):
+- **Test the elements and provide feedback**: We would love to hear your feedback on anything related to the elements, like features, API and design. The best way to start is by [trying them out](https://vaadin.com/docs/-/part/elements/elements-getting-started.html). And to get a quick response, either drop a question/comment on the chat or open an issue in GitHub.
+- **Report bugs**: File issues for the elements in their respective GitHub projects. You can find links to them from https://vaadin.com/elements
+- **Send pull requests**: If you want to contribute code, check out the development instructions below.
 
- > **Serving the files during development**, when using Bower or the ZIP archive:
+We encourage you to read the [contribution instructions by GitHub](https://guides.github.com/activities/contributing-to-open-source/#contributing) also.
 
- > Due to browser security restrictions, serving HTML imports from a `file:///` URL does not work. You need a web server to view pages where you use custom elements. One simple option is to use the [`serve`](https://www.npmjs.com/package/serve) NPM package.
+## Development
 
-  ```html
-<!doctype html>
-<html>
-  <head>
-    <!-- Import Web Component polyfills and all Vaadin Core Elements -->
+Each element has it's own GitHub repository, where development is done. The vaadin-core-element project is just a top-level bundle without actual production code.
 
-    <!-- CDN -->
-    <script src="https://cdn.vaadin.com/vaadin-core-elements/latest/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link href="https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-core-elements/vaadin-core-elements.html" rel="import">
+Familiarize yourself with the code and try to follow the same syntax conventions to make it easier for us to accept your pull requests.
 
-    <!-- Bower -->
-    <!-- <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link href="bower_components/vaadin-core-elements/vaadin-core-elements.html" rel="import"> -->
+The following instructions are common for all Vaadin core elements. You can replace `vaadin-combo-box` with any other element in the following examples. Check the element readmes for any special development notes.
 
-    <!-- ZIP archive -->
-    <!-- <script src="deps/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link href="deps/vaadin-core-elements/vaadin-core-elements.html" rel="import"> -->
-  </head>
-  <body>
+### Getting the code
 
-    <!-- Use the elements, for instance vaadin-grid -->
-    <vaadin-grid selection-mode="multi">
-      <table>
-        <!-- Define the columns -->
-        <col name="index" width="48">
-        <col name="user.picture.thumbnail" width="54">
-        <col name="user.name.first">
-        <col name="user.name.last">
-        <col name="user.email" flex>
-      </table>
+Clone the element project from GitHub:
 
-      <!-- Define custom column headers -->
-      <thead>
-       <tr>
-         <th>#</th>
-         <th></th>
-         <th>First Name</th>
-         <th>Last Name</th>
-         <th>Email</th>
-       </tr>
-      </thead>
-    </vaadin-grid>
+```
+$ git clone https://github.com/vaadin/vaadin-combo-box.git
+```
 
-    <script>
-      // The Web Components polyfill introduces a custom event we can
-      // use to determine when the custom elements are ready to be used
-      document.addEventListener("WebComponentsReady", function () {
+### Running demos
 
-        // Configure vaadin-grid to show data
+Install [polyserve](https://github.com/PolymerLabs/polyserve) using [npm](https://npmjs.org):
+```
+$ npm install -g polyserve
+```
 
-        // Reference to the grid element
-        var grid = document.querySelector("vaadin-grid");
+Start a local server in the project root directory:
 
-        // Fetch some JSON data from a URL
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState == XMLHttpRequest.DONE) {
-            if (xhr.status == 200) {
-              var json = JSON.parse(xhr.responseText);
+```
+$ cd vaadin-combo-box
+$ polyserve
+```
 
-              // Use the returned data array directly as the data source
-              // (keeping all the data source items in the browser's memory)
-              grid.items = json.results;
-            }
-          }
-        }
-        xhr.open("GET", "http://api.randomuser.me/?results=100", true);
-        xhr.send();
+Open the following URLs in your browser:
+- Demo: http://localhost:8080/components/vaadin-combo-box/demo/
+- Generated API documentation:  http://localhost:8080/components/vaadin-combo-box/
 
-        // Add a renderer for the index column
-        grid.columns[0].renderer = function(cell) {
-            cell.element.innerHTML = cell.row.index;
-        }
+### Running tests
 
-        // Add a renderer for the picture column
-        grid.columns[1].renderer = function(cell) {
-            cell.element.innerHTML = '<img src="' + cell.data + '" style="width: 24px;">';
-        }
-      });
-    </script>
+Install [Web Component Tester](https://github.com/Polymer/web-component-tester) using [npm](https://npmjs.org):
+```
+$ npm install -g web-component-tester
+```
 
-  </body>
-</html>
-  ```
+Tests for each individual element can be run with the  task from the element directory:
+
+```
+$ cd vaadin-combo-box
+$ wct
+```
+
+You should include new tests in your pull requests if you add features to the elements or if you are fixing a bug.
+
+### Documentation
+
+We follow the same [style guide](http://polymerelements.github.io/style-guide/) as Polymer.
+
+### Contributor License Agreement
+
+Before we can accept any of your code contributions, you need to sign the CLA. More details to come regarding this, *but you can already open pull requests if you want to*. We will work out the CLA case-by-case until we get an automated solution in place.
+
+## License
+
+Apache License 2.0
