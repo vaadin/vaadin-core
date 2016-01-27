@@ -65,7 +65,7 @@ The current set of supported browsers for Vaadin Core Elements is listed on the 
 
 | IE / Edge | Firefox | Chrome | Safari | iOS Safari | Chrome Android |
 | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
-| IE11, Edge| Latest | Latest | Latest | iOS 8 | Latest
+| IE11, Edge| Latest | Latest | Latest | iOS 9 | Latest
 
 See also
 
