@@ -58,7 +58,7 @@ We would like nothing more than getting the community involved, and welcome any 
 
 ### Get in touch with the team
 
-The chat and the forum are dedicated channels for this project, while the Twitter and Facebook pages are common for all Vaadin related discussion.
+The chat and the forum category are dedicated channels for this project, while the Twitter, Facebook and G+ pages are common for all Vaadin related discussion (including the Java framework).
 
 - [Chat](https://gitter.im/vaadin/vaadin-core-elements)
 - [Forum](https://vaadin.com/forum/#!/category/9848927)
