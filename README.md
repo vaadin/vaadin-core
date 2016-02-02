@@ -84,29 +84,47 @@ The following instructions are common for all Vaadin core elements. **Replace `v
 
 ### Getting the code
 
-Clone the element project from GitHub:
+1. Clone the element project from GitHub:
+  
+  ```shell
+  $ git clone https://github.com/vaadin/vaadin-combo-box.git
+  ```
 
-```shell
-$ git clone https://github.com/vaadin/vaadin-combo-box.git
-```
+2. Install [Node](https://nodejs.org). It comes bundled with [npm](https://npmjs.org), which is needed to install other tooling.
+
+3. Install [Bower](http://bower.io) using [npm](https://npmjs.org): 
+  
+  ```shell
+  $ npm install -g bower
+  ```
+  
+  > If you encounter permission issues when running `npm` see this [thread in Stack Overflow](http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo)
+
+4. Use Bower to install the dependencies of the element:
+  
+  ```shell
+  $ cd vaadin-combo-box
+  $ bower install
+  ```
 
 ### Running demos
 
-Install [polyserve](https://github.com/PolymerLabs/polyserve) using [npm](https://npmjs.org):
-```shell
-$ npm install -g polyserve
-```
+1. Install [polyserve](https://github.com/PolymerLabs/polyserve) using [npm](https://npmjs.org):
+  
+  ```shell
+  $ npm install -g polyserve
+  ```
 
-Start a local server in the project root directory:
+2. Start a local server in the project root directory:
+  
+  ```shell
+  $ cd vaadin-combo-box
+  $ polyserve
+  ```
 
-```shell
-$ cd vaadin-combo-box
-$ polyserve
-```
-
-Open the following URLs in your browser:
-- Demo: http://localhost:8080/components/vaadin-combo-box/demo/
-- Generated API documentation:  http://localhost:8080/components/vaadin-combo-box/
+3. Open the following URLs in your browser:
+  - Demo: http://localhost:8080/components/vaadin-combo-box/demo/
+  - Generated API documentation:  http://localhost:8080/components/vaadin-combo-box/
 
 ### Running tests
 
@@ -115,15 +133,16 @@ Install [Web Component Tester](https://github.com/Polymer/web-component-tester) 
 $ npm install -g web-component-tester
 ```
 
-Tests for each individual element can be run with the  task from the element directory:
+Tests can be run with the `wct` task from the element directory:
 
 ```shell
 $ cd vaadin-combo-box
 $ wct
 ```
 
-You can also run and debug tests manually:
+You can also run and debug the tests manually:
 ```shell
+$ cd vaadin-combo-box
 $ polyserve
 ```
 - Open http://localhost:8080/components/vaadin-combo-box/test/ in your browser.
