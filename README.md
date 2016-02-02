@@ -80,7 +80,7 @@ Each element has it's own GitHub repository, where development is done. The vaad
 
 Familiarize yourself with the code and try to follow the same syntax conventions to make it easier for us to accept your pull requests.
 
-The following instructions are common for all Vaadin core elements. You can replace `vaadin-combo-box` with any other element in the following examples. Check the element readmes for any special development notes.
+The following instructions are common for all Vaadin core elements. **Replace `vaadin-combo-box` with any other element in the following examples**. Check the element readmes for any special development notes.
 
 ### Getting the code
 
