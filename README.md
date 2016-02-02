@@ -23,20 +23,20 @@ Individual elements of the Core Elements bundle are released separately, and you
 You can see more detailed roadmaps of each element from their respective GitHub repositories.
 
 #### Version 0.4
-- `<vaadin-combo-box>` 1.0
-- `<vaadin-icons>` 1.0
+- [`<vaadin-combo-box>`](https://github.com/vaadin/vaadin-combo-box) 1.0
+- [`<vaadin-icons>`](https://github.com/vaadin/vaadin-icons) 1.0
 
 #### Version 0.5
-- `<vaadin-date-picker>` 1.0
-- `<vaadin-grid>` 1.1
+- [`<vaadin-date-picker>`](https://github.com/vaadin/vaadin-date-picker) 1.0
+- [`<vaadin-grid>`](https://github.com/vaadin/vaadin-grid) 1.1
 
 #### Version 1.0
-  - `<vaadin-upload>` 1.0
+  - [`<vaadin-upload>`](https://github.com/vaadin/vaadin-upload) 1.0
 
 #### Version 1.1
-- `<vaadin-grid>` 1.2
-- `<vaadin-combo-box>` 1.1
-- `<vaadin-date-picker>` 1.1
+- [`<vaadin-grid>`](https://github.com/vaadin/vaadin-grid) 1.2
+- [`<vaadin-combo-box>`](https://github.com/vaadin/vaadin-combo-box) 1.1
+- [`<vaadin-date-picker>`](https://github.com/vaadin/vaadin-date-picker) 1.1
 
 ##### Version labels
 
@@ -86,20 +86,20 @@ The following instructions are common for all Vaadin core elements. **Replace `v
 
 Clone the element project from GitHub:
 
-```
+```shell
 $ git clone https://github.com/vaadin/vaadin-combo-box.git
 ```
 
 ### Running demos
 
 Install [polyserve](https://github.com/PolymerLabs/polyserve) using [npm](https://npmjs.org):
-```
+```shell
 $ npm install -g polyserve
 ```
 
 Start a local server in the project root directory:
 
-```
+```shell
 $ cd vaadin-combo-box
 $ polyserve
 ```
@@ -111,16 +111,22 @@ Open the following URLs in your browser:
 ### Running tests
 
 Install [Web Component Tester](https://github.com/Polymer/web-component-tester) using [npm](https://npmjs.org):
-```
+```shell
 $ npm install -g web-component-tester
 ```
 
 Tests for each individual element can be run with the  task from the element directory:
 
-```
+```shell
 $ cd vaadin-combo-box
 $ wct
 ```
+
+You can also run and debug tests manually:
+```shell
+$ polyserve
+```
+- Open http://localhost:8080/components/vaadin-combo-box/test/ in your browser.
 
 You should include new tests in your pull requests if you add features to the elements or if you are fixing a bug.
 
