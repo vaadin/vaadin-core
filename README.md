@@ -90,15 +90,15 @@ The following instructions are common for all Vaadin core elements. **Replace `v
   $ git clone https://github.com/vaadin/vaadin-combo-box.git
   ```
 
-2. Install [Node](https://nodejs.org). It comes bundled with [npm](https://npmjs.org), which is needed to install other tooling.
+2. Install [Node](https://nodejs.org/en/download/). It comes bundled with [npm](https://npmjs.com), which is needed to install other tooling.
 
-3. Install [Bower](http://bower.io) using [npm](https://npmjs.org): 
+3. Install [Bower](http://bower.io) using [npm](https://npmjs.com): 
   
   ```shell
   $ npm install -g bower
   ```
   
-  > If you encounter permission issues when running `npm` see this [thread in Stack Overflow](http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo)
+  > If you encounter permission issues when running `npm` see the article about [fixing npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions) on npmjs.com
 
 4. Use Bower to install the dependencies of the element:
   
@@ -109,7 +109,7 @@ The following instructions are common for all Vaadin core elements. **Replace `v
 
 ### Running demos
 
-1. Install [polyserve](https://github.com/PolymerLabs/polyserve) using [npm](https://npmjs.org):
+1. Install [polyserve](https://github.com/PolymerLabs/polyserve) using [npm](https://npmjs.com):
   
   ```shell
   $ npm install -g polyserve
@@ -128,7 +128,7 @@ The following instructions are common for all Vaadin core elements. **Replace `v
 
 ### Running tests
 
-Install [Web Component Tester](https://github.com/Polymer/web-component-tester) using [npm](https://npmjs.org):
+Install [Web Component Tester](https://github.com/Polymer/web-component-tester) using [npm](https://npmjs.com):
 ```shell
 $ npm install -g web-component-tester
 ```
