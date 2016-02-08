@@ -30,7 +30,8 @@
   },
   "devDependencies": {
     "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
-    "elements-demo-resources": "vaadin/elements-demo-resources#master"
+    "elements-demo-resources": "vaadin/elements-demo-resources#master",
+    "components-demo-resources": "vaadin/components-demo-resources#master"
   },
   "resolutions": {
     "polymer": "v1.1.1"
