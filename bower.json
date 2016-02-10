@@ -26,7 +26,8 @@
   "dependencies": {
     "vaadin-grid": "vaadin/vaadin-grid#~1.0.0",
     "vaadin-combo-box": "vaadin/vaadin-combo-box#1.0.0-alpha5",
-    "vaadin-icons": "vaadin/vaadin-icons#1.0.0-alpha2"
+    "vaadin-icons": "vaadin/vaadin-icons#1.0.0-alpha2",
+    "vaadin-date-picker": "vaadin/vaadin-date-picker#1.0.0-alpha1"
   },
   "devDependencies": {
     "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
