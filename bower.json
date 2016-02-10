@@ -27,12 +27,14 @@
     "vaadin-grid": "vaadin/vaadin-grid#~1.0.0",
     "vaadin-combo-box": "vaadin/vaadin-combo-box#1.0.0-alpha5",
     "vaadin-icons": "vaadin/vaadin-icons#1.0.0-alpha2",
-    "vaadin-date-picker": "vaadin/vaadin-date-picker#1.0.0-alpha1"
+    "vaadin-date-picker": "vaadin/vaadin-date-picker#1.0.0-alpha1",
+    "vaadin-upload": "vaadin/vaadin-upload#1.0.0-alpha1"
   },
   "devDependencies": {
     "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
     "elements-demo-resources": "vaadin/elements-demo-resources#master",
-    "components-demo-resources": "vaadin/components-demo-resources#master"
+    "components-demo-resources": "vaadin/components-demo-resources#master",
+    "mock-http-request": "philikon/MockHttpRequest#master"
   },
   "resolutions": {
     "polymer": "v1.1.1"
