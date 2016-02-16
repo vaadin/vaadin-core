@@ -154,7 +154,7 @@ We follow the same [style guide](http://polymerelements.github.io/style-guide/) 
 
 ### Contributor License Agreement
 
-Before we can accept any of your code contributions, you need to sign the CLA. More details to come regarding this, *but you can already open pull requests if you want to*. We will work out the CLA case-by-case until we get an automated solution in place.
+When you send a pull request to any of our repositories, you get an automated comment response about the CLA. It will notify you if you haven’t signed the CLA yet, and in that case instructions how to do it. You need to do this once per earch repository. Before we can accept any of your code contributions, you need to sign the CLA.
 
 ## License
 
