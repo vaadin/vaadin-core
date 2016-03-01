@@ -8,14 +8,14 @@ layout: page
 
 ## Vaadin Core Elements
 
-Vaadin Core Elements is a free and open source set of high quality Web Components for building mobile and desktop web applications in modern browsers. It builds on top of Google’s Polymer library, and augments the Iron, Paper and other element sets of Polymer with elements that are needed in building business applications.
+Vaadin Core Elements is a free and open source set of high quality [Web Components](http://webcomponents.org) for building mobile and desktop web applications in modern browsers. It builds on top of Google’s [Polymer](http://www.polymer-project.org) library, and augments the [Iron, Paper and other element sets of Polymer](https://elements.polymer-project.org) with elements that are needed in building business applications.
 
-Although based on Polymer, Vaadin elements can be used together with any other web framework which has support for Web Components, including Angular 2, React, Ember, Meteor and GWT.
+Although based on Polymer, Vaadin elements can be used together with any other web framework which has support for Web Components. If you wish to use Vaadin elements with [GWT](http://gwtproject.org), you can use [GWT Polymer Elements](https://vaadin.com/gwt)
 
 Current set of Vaadin Core Elements include:
 
- - [vaadin-grid](https://github.com/vaadin/vaadin-grid)
- - [vaadin-combo-box](https://github.com/vaadin/vaadin-combo-box)
+ - [vaadin-grid](https://vaadin.com/docs/-/part/elements/vaadin-grid/overview.html)
+ - [vaadin-combo-box](https://vaadin.com/docs/-/part/elements/vaadin-combo-box/vaadin-combo-box-overview.html)
 
 Learn more about the benefits of using Vaadin elements from the [Vaadin elements page »](https://vaadin.com/elements)
 
