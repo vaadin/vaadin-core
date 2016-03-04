@@ -10,7 +10,9 @@ layout: page
 
 Vaadin Core Elements is a free and open source set of high quality [Web Components](http://webcomponents.org) for building mobile and desktop web applications in modern browsers. It builds on top of Google’s [Polymer](http://www.polymer-project.org) library, and augments the [Iron, Paper and other element sets of Polymer](https://elements.polymer-project.org) with elements that are needed in building business applications.
 
-Although based on Polymer, Vaadin elements can be used together with any other web framework which has support for Web Components. If you wish to use Vaadin elements with [GWT](http://gwtproject.org), you can use [GWT Polymer Elements](https://vaadin.com/gwt)
+Although based on Polymer, Vaadin elements can be used together with any other web framework which has support for Web Components. See the "Integrations" section for examples how to use the elements together with different JavaScript frameworks and libraries.
+
+If you wish to use Vaadin elements with [GWT](http://gwtproject.org), you can use [GWT Polymer Elements](https://vaadin.com/gwt)
 
 Current set of Vaadin Core Elements include:
 
@@ -72,6 +74,16 @@ See also
  - [Native Web Components support](http://webcomponents.org/)
  - [Browser support of webcomponents.js polyfill](https://github.com/WebComponents/webcomponentsjs#browser-support)
  - [Browser support of Polymer](https://www.polymer-project.org/1.0/resources/compatibility.html)
+ 
+## Framework support
+
+You can use Vaadin elements together with any JavaScript framework or library which has support for Web Components.
+
+Example integrations for some popular frameworks and libraries:
+
+- [Polymer](/docs/-/part/elements/integrations/polymer.html)
+- [Angular 2](/docs/-/part/elements/integrations/angular2.html)
+- [Angular 2](/docs/-/part/elements/integrations/react.html)
 
 
 <!-- Assumes .w-arrow-button and .blue class names from vaadin.com theme. Will fallback to a plain link. -->
