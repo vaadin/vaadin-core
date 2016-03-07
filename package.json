@@ -8,15 +8,15 @@
     "bower": "latest",
     "fs-extra": "latest",
     "gulp": "latest",
+    "gulp-add-src": "latest",
     "gulp-git": "latest",
     "gulp-json-editor": "latest",
     "gulp-markdown": "^1.0.0",
-    "gulp-rename": "latest",
+    "gulp-modify": "^0.1.1",
+    "gulp-rename": "^1.2.2",
     "gulp-replace": "latest",
     "gulp-util": "latest",
-    "yargs": "latest",
-    "gulp-modify": "^0.1.1",
-    "gulp-add-src": "latest"
+    "yargs": "latest"
   },
   "devDependencies": {
     "chalk": "latest",

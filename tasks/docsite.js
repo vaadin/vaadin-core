@@ -8,6 +8,7 @@ var gutil = require('gulp-util');
 var zip = require('gulp-zip');
 var args = require('yargs').argv;
 var addsrc = require('gulp-add-src');
+var rename = require('gulp-rename');
 
 var stagingBasePath = config.paths.staging.cdn;
 var docPath = config.paths.staging.doc;
@@ -49,17 +50,23 @@ gulp.task('cdn:docsite:core-elements-integrations', function() {
   return getDocModifyTask('demo/**', docPath + '/integrations');
 });
 
-var doctasks = ['cdn:docsite:core-elements', 'cdn:docsite:core-elements-integrations'];
+gulp.task('cdn:docsite:core-elements-elements', ['cdn:docsite:bower_components'], function() {
+  var docsPaths = config.coreElements.map(function(c) {
+      return stagingPath + '/' + c + '/docs/**';
+    });
 
-config.coreElements.forEach(function (n) {
-  var task = 'cdn:docsite:' + n;
-  doctasks.push(task);
-  gulp.task(task, ['cdn:docsite:bower_components'], function(done) {
-    var elementDocsite = docPath + '/' + n;
-    var elementDemo = stagingPath + '/' + n + '/demo/**';
+  return gulp.src(docsPaths, {base: stagingPath})
+      .pipe(rename(function (path) {
+        path.dirname = path.dirname.replace('/docs', '/'); //leaves docs folders empty.
+      }))
+      .pipe(gulp.dest(docPath + '/'));
+});
 
-    return getDocModifyTask(elementDemo, elementDocsite, n);
-  });
+gulp.task('cdn:docsite:vaadin-grid', ['cdn:docsite:bower_components'], function(done) {
+  var elementDocsite = docPath + '/vaadin-grid';
+  var elementDemo = stagingPath + '/vaadin-grid/demo/**';
+
+  return getDocModifyTask(elementDemo, elementDocsite, 'vaadin-grid');
 });
 
 function getDocModifyTask(sourceFiles, targetFolder, n) {
@@ -104,7 +111,13 @@ function getDocModifyTask(sourceFiles, targetFolder, n) {
     .pipe(gulp.dest(targetFolder));
 }
 
-gulp.task('cdn:docsite:zip', doctasks, function() {
+gulp.task('cdn:docsite:stage', ['cdn:docsite:core-elements',
+                                'cdn:docsite:core-elements-elements',
+                                 //separate task for vaadin-grid until it uses asciidocs
+                                'cdn:docsite:vaadin-grid',
+                                'cdn:docsite:core-elements-integrations']);
+
+gulp.task('cdn:docsite:zip', ['cdn:docsite:stage'], function() {
   var src = docPath + '/**/*';
   gutil.log("Creating docsite zip " + docPath + " -> " + rootZip +  fileZip);
   return gulp.src(src)
