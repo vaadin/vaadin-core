@@ -45,7 +45,7 @@ On top of the common version numbering (major.minor.patch) Vaadin uses labels to
 
 - **Alpha**: A snapshot mainly to gather feedback from users. All features and implementation details are still subject to change.
 
-- **Beta**: Feature-complete release of the upcoming version. The API may change a bit here and there, but no changes in functionality are to be expected.
+- **Beta**: Feature-complete release of the upcoming version. The API should no longer change, but small improvements can be made. No changes in functionality are to be expected.
 
 - **RC**: Also known as "release candidate". Only bug fixes can be expected to happen before the stable version.
 
