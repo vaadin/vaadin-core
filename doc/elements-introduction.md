@@ -85,7 +85,7 @@ Example integrations for some popular frameworks and libraries:
 
 - [Polymer](/docs/-/part/elements/integrations/polymer.html)
 - [Angular 2](/docs/-/part/elements/integrations/angular2.html)
-- [Angular 2](/docs/-/part/elements/integrations/react.html)
+- [React](/docs/-/part/elements/integrations/react.html)
 
 
 <!-- Assumes .w-arrow-button and .blue class names from vaadin.com theme. Will fallback to a plain link. -->
