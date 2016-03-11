@@ -14,10 +14,12 @@ Although based on Polymer, Vaadin elements can be used together with any other w
 
 If you wish to use Vaadin elements with [GWT](http://gwtproject.org), you can use [GWT Polymer Elements](https://vaadin.com/gwt)
 
-Current set of Vaadin Core Elements include:
+Vaadin Core Elements includes the following elements:
 
- - [vaadin-grid](https://vaadin.com/docs/-/part/elements/vaadin-grid/overview.html)
- - [vaadin-combo-box](https://vaadin.com/docs/-/part/elements/vaadin-combo-box/vaadin-combo-box-overview.html)
+ - [Combo Box](https://vaadin.com/docs/-/part/elements/vaadin-combo-box/vaadin-combo-box-overview.html)
+ - [Date Picker](https://vaadin.com/docs/-/part/elements/vaadin-date-picker/vaadin-date-picker-overview.html)
+ - [Grid](https://vaadin.com/docs/-/part/elements/vaadin-grid/overview.html)
+ - [Upload](https://vaadin.com/docs/-/part/elements/vaadin-upload/vaadin-upload-overview.html)
 
 Learn more about the benefits of using Vaadin elements from the [Vaadin elements page »](https://vaadin.com/elements)
 
