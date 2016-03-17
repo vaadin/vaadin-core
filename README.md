@@ -1,4 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/vaadin/vaadin-core-elements.png?label=ready&title=Ready)](https://waffle.io/vaadin/vaadin-core-elements)
+[![Stories in Ready](https://badge.waffle.io/vaadin/vaadin-core-elements.png?label=ready&title=Ready)](https://waffle.io/vaadin/vaadin-core-elements)
 ![Bower version](https://img.shields.io/bower/v/vaadin-core-elements.svg) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-core-elements?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # Vaadin Core Elements
