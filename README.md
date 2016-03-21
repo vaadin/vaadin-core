@@ -30,10 +30,6 @@ You can see more detailed roadmaps of each element from their respective GitHub 
 - [`<vaadin-date-picker>`](https://github.com/vaadin/vaadin-date-picker) 1.0
 - [`<vaadin-upload>`](https://github.com/vaadin/vaadin-upload) 1.0
 
-#### Version 1.1
-- [`<vaadin-grid>`](https://github.com/vaadin/vaadin-grid) 1.1
-- [`<vaadin-combo-box>`](https://github.com/vaadin/vaadin-combo-box) 1.1
-- [`<vaadin-date-picker>`](https://github.com/vaadin/vaadin-date-picker) 1.1
 
 ##### Version labels
 
