@@ -27,7 +27,7 @@ You can see more detailed roadmaps of each element from their respective GitHub 
 - [`<vaadin-combo-box>`](https://github.com/vaadin/vaadin-combo-box) 1.0
 - [`<vaadin-date-picker>`](https://github.com/vaadin/vaadin-date-picker) 1.0
 - [`<vaadin-upload>`](https://github.com/vaadin/vaadin-upload) 1.0
-- - [`<vaadin-icons>`](https://github.com/vaadin/vaadin-icons) 1.0
+- [`<vaadin-icons>`](https://github.com/vaadin/vaadin-icons) 1.0
 
 
 ##### Version labels
