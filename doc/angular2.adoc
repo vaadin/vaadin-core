@@ -1,0 +1,163 @@
+---
+title: Angular 2
+order: 2
+layout: page
+---
+
+[[vaadin-core-elements.angular2]]
+== Angular 2 Integration
+
+While Vaadin Elements are built using Polymer, they also contain directives to enable seamless usage within Angular 2 applications.
+This page assumes that you already have an Angular 2 application setup ready.
+If you need help with the project setup, you should follow the https://angular.io/docs/ts/latest/quickstart.html[Angular 2 Quickstart] guide.
+
+== Installation
+
+Although Angular 2 dependecies are typically installed via https://www.npmjs.com/[npm], Vaadin Elements require installation with http://bower.io[Bower].
+To install a Vaadin Core Element, you should run the following command in your project directory (replace the `[element-name]` part with the actual name of the element).
+
+[source,bash]
+----
+bower install --save vaadin-[element-name]
+----
+
+After the Bower installation is completed, you need to add the Web Components polyfill to the `<head>` section of your `index.html` file.
+[source,html]
+----
+<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+----
+
+The Web Components polyfill will enable usage of HTML imports in your application.
+In order to have the newly installed Vaadin element available in your templates, you need to add an import for it.
+
+[source,html]
+----
+<link rel="import" href="bower_components/vaadin-[element-name]/vaadin-[element-name].html">
+----
+
+Also the SystemJS configuration needs some modifications in order to load the modules correctly.
+Add the following `map` and `packages` entries to your configuration (once again replacing the `[element-name]` with the actual name of the element).
+
+[source,javascript]
+----
+System.config({
+  map: {
+    'vaadin-[element-name]': 'bower_components/vaadin-[element-name]/directives'
+  },
+  packages: {
+    'vaadin-[element-name]': {
+      defaultExtension: 'js',
+      main: 'vaadin-[element-name].js'
+    }
+  }
+});
+----
+
+Before bootstrapping your application, you need to wait for the `WebComponentsReady` event.
+This event is fired after the HTML imports are done and the custom elements are upgraded and ready to be used.
+The following example demonstrates how to wrap your bootstrap code inside the event listener.
+
+[source,javascript]
+----
+window.addEventListener('WebComponentsReady', function() {
+  System.import('app/main').then(null, console.error.bind(console));
+});
+----
+
+If you followed the Angular 2 Quickstart guide or you are otherwise using `lite-server` or `browser-sync`, create a file called `bs-config.json` in the root of your project folder with the following contents.
+
+[source,javascript]
+----
+{
+  "snippetOptions": {
+    "ignorePaths": "bower_components/**/*.html"
+  }
+}
+----
+
+Now you're all set to use the element inside your Angular 2 application.
+
+== Importing
+
+Import the directive as follows. This example imports the [vaadinelement]#vaadin-date-picker# element, but you should replace the path with the element you're importing.
+Also the directive name should be replaced with a camel case representation of the element name.
+
+[source,javascript]
+----
+import { VaadinDatePicker } from '../bower_components/vaadin-date-picker/directives/vaadin-date-picker';
+----
+
+Your Angular 2 component also needs to declare the usage of the directive.
+This can be done with the `directives` array of the `@Component` decorator.
+After the directive is declared, the element is available to be used in the `template` of your component.
+
+[source]
+----
+@Component({
+  selector: 'my-component',
+  template: '<vaadin-date-picker [(value)]="birthDay"></vaadin-date-picker>',
+  directives: [VaadinDatePicker]
+})
+----
+
+Notice that for Vaadin Charts, you also need to import and declare the `DataSeries` directive as follows.
+
+[source]
+----
+import { VaadinCharts, DataSeries } from '../bower_components/vaadin-charts/directives/vaadin-charts';
+
+@Component({
+  selector: 'my-component',
+  template: `
+    <vaadin-area-chart>
+      <title>Fibonacci</title>
+      <x-axis><title>Index</title></x-axis>
+      <y-axis><title>Value</title></y-axis>
+      <data-series>
+        <data>1, 1, 2, 3, 5, 8, 13, 21, 34</data>
+      </data-series>
+    </vaadin-area-chart>`,
+  directives: [VaadinCharts, DataSeries]
+})
+----
+
+== Usage
+
+For the most part you can use the API provided by the element.
+This API is described in the documentation of each individual element.
+Most notable changes introduced by the directives are the support for data-binding using the Angular 2 syntax and integration with the https://angular.io/docs/ts/latest/guide/forms.html[Angular forms].
+
+=== Form Controls
+When using input-like elements (e.g. [elementname]#vaadin-combo-box# or [elementname]#vaadin-date-picker#) inside an Angular form, you should normally use the [propertyname]#ngControl# attribute to track the state and validity.
+The only difference to normal input elements is the usage of `[(value)]` binding (and `[(files)]` for [elementname]#vaadin-upload#) instead of using the [propertyname]#ngModel#.
+Simple validation like the [propertyname]#required# validator is supported as well as defining custom validators.
+
+See the example below on how to use [elementname]#vaadin-combo-box# as a form control with data-bound [propertyname]#items# property.
+[source]
+----
+<vaadin-combo-box
+  label="My ComboBox"
+  [(value)]="myValue"
+  [items]="myItems"
+  ngControl="myCombo"
+  required>
+</vaadin-combo-box>
+----
+
+=== Styling
+In order to style the appearance of Vaadin Elements, you need to use https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details[CSS properties] and https://www.polymer-project.org/1.0/docs/devguide/styling.html#custom-css-mixins[CSS mixins].
+Unfortunately these styles cannot be applied on a component level, but instead you need to provide styles in application level and also use the `is="custom-style"` attribute.
+
+Changing the icon color of [vaadinelement]#vaadin-date-picker# to `red` could be done with the following example.
+[source]
+----
+<style is="custom-style">
+  vaadin-date-picker {
+    --vaadin-date-picker-calendar-icon: {
+      fill: red;
+    }
+  }
+</style>
+----
+
+See the documentation of each element for a list of available properties and mixins.

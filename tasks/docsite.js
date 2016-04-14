@@ -41,15 +41,24 @@ gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], functi
 });
 
 gulp.task('cdn:docsite:core-elements', function() {
-  return gulp.src('doc/*')
+  return gulp.src(['doc/*', '!doc/angular2.adoc'])
     .pipe(gulp.dest(docPath));
+});
+
+gulp.task('cdn:docsite:core-elements-ng2-integration', function() {
+  return gulp.src('doc/angular2.adoc')
+    .pipe(gulp.dest(docPath + '/integrations'));
 });
 
 gulp.task('cdn:docsite:core-elements-integrations', function() {
   return getDocModifyTask('demo/**', docPath + '/integrations');
 });
 
-var doctasks = ['cdn:docsite:core-elements', 'cdn:docsite:core-elements-integrations'];
+var doctasks = [
+  'cdn:docsite:core-elements',
+  'cdn:docsite:core-elements-integrations',
+  'cdn:docsite:core-elements-ng2-integration'
+];
 
 config.coreElements.forEach(function (n) {
   var task = 'cdn:docsite:' + n;
