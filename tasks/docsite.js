@@ -42,8 +42,13 @@ gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], functi
 });
 
 gulp.task('cdn:docsite:core-elements', function() {
-  return gulp.src('docs/*')
+  return gulp.src(['docs/*', '!docs/angular2.adoc'])
     .pipe(gulp.dest(docPath));
+});
+
+gulp.task('cdn:docsite:core-elements-ng2-integration', function() {
+  return gulp.src('docs/angular2.adoc')
+    .pipe(gulp.dest(docPath + '/integrations'));
 });
 
 gulp.task('cdn:docsite:core-elements-integrations', function() {
@@ -115,7 +120,8 @@ gulp.task('cdn:docsite:stage', ['cdn:docsite:core-elements',
                                 'cdn:docsite:core-elements-elements',
                                  //separate task for vaadin-grid until it uses asciidocs
                                 'cdn:docsite:vaadin-grid',
-                                'cdn:docsite:core-elements-integrations']);
+                                'cdn:docsite:core-elements-integrations',
+                                'cdn:docsite:core-elements-ng2-integration']);
 
 gulp.task('cdn:docsite:zip', ['cdn:docsite:stage'], function() {
   var src = docPath + '/**/*';
