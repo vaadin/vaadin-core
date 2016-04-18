@@ -46,7 +46,7 @@ All of the maturity tags can be suffixed with a number, so for example "rc2" is 
 
 ## Contributing
 
-We would like nothing more than getting the community involved, and welcome any form of contributions – comments and questions on different communication channels, issues and pull request in the repositories, and anything that you build and share using our elements.
+We would absolutely love to get the community involved, and we welcome any form of contributions – comments and questions on different communication channels, issues and pull request in the repositories, and anything that you build and share using our elements.
 
 ### Get in touch with the team
 
