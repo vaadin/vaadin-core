@@ -8,11 +8,11 @@ layout: page
 
 ## Introduction
 
-Vaadin Core Elements is a free and open source set of high quality link:http://webcomponents.org[Web Components] for building mobile and desktop web applications in modern browsers. It builds on top of Google’s link:http://www.polymer-project.org[Polymer] library, and augments the link:https://elements.polymer-project.org[Iron, Paper and other element sets of Polymer] with elements that are needed in building business applications.
+Vaadin Core Elements is a free and open source set of high quality link:http://webcomponents.org[Web Components] for building mobile and desktop web applications in modern browsers. It builds on top of Google’s link:http://www.polymer-project.org[Polymer] library, and augments the link:https://elements.polymer-project.org[Iron, Paper, and other element sets of Polymer] with elements that are needed in building business applications.
 
-Although based on Polymer, Vaadin Elements can be used together with any other web framework which has support for Web Components. See the "Integrations" section for examples how to use the elements together with different JavaScript frameworks and libraries, such as Angular 2 and React.
+Although based on Polymer, Vaadin Elements can be used together with any other web framework that has support for Web Components. See the "Integrations" section for examples how to use the elements together with different JavaScript frameworks and libraries, such as Angular 2 and React.
 
-If you wish to use Vaadin elements with link:http://gwtproject.org[GWT], you can use link:https://vaadin.com/gwt[GWT Polymer Elements]
+If you wish to use Vaadin elements with link:http://gwtproject.org[GWT], you can use link:https://vaadin.com/gwt[GWT Polymer Elements].
 
 Vaadin Core Elements includes the following elements:
 
@@ -21,44 +21,44 @@ Vaadin Core Elements includes the following elements:
  - link:/docs/-/part/elements/vaadin-grid/overview.html[Grid]
  - link:/docs/-/part/elements/vaadin-upload/vaadin-upload-overview.html[Upload]
 
-Learn more about the benefits of using Vaadin elements from the link:https://vaadin.com/elements[Vaadin Elements page »]
+Learn more about the benefits of using Vaadin elements from the link:https://vaadin.com/elements[Vaadin Elements page].
 
 ## Background
 
 ### Web Components
 
-Web Components is a collection of HTML standards (under development, April 2016), which together provide web developers the tools to extend the native web platform with similar tools as the browser vendors have been using for creating the built-in standard elements, such as `<video>`, `<input type="date">` and so on.
+Web Components is a collection of HTML standards (under development, April 2016), which together provide web developers the tools to extend the native web platform with similar tools as the browser vendors have been using for creating the built-in standard elements, such as [elementname]#video#, [elementname]#input type="date"#, and so on.
 
 The four specifications that together form Web Components are:
 
-- **Template element** +
-  “The HTML template element `<template>` is a mechanism for holding client-side content that is not to be rendered when a page is loaded but may subsequently be instantiated during runtime using JavaScript.”
+*Template element*::
+  "The HTML template element [elementname]#template# is a mechanism for holding client-side content that is not rendered when a page is loaded. But it may be instantiated in runtime"
 
-- **Shadow DOM** +
-  “Shadow DOM provides encapsulation for the JavaScript, CSS, and templating in a Web Component. Shadow DOM makes it so these things remain separate from the DOM of the main document.” +
-  “Why would you want to keep some code separate from the rest of the page? One reason is that on a large site, for example, if the CSS is not carefully organized, the styling for the navigation can "leak" into the main content area where it was not intended to go, or vice-versa. As a site or an app scales, this kind of thing becomes difficult to avoid.”
+*Shadow DOM*::
+  "Shadow DOM provides encapsulation for the JavaScript, CSS, and templating in a Web Component. Shadow DOM allows keeping them separate from the DOM of the main document."
+  "Why would you want to keep some code separate from the rest of the page? One reason is that on a large site, for example, if the CSS is not carefully organized, the styling for the navigation can "leak" into the main content area where it was not intended to go, or vice-versa. As a site or an app scales, this kind of thing becomes difficult to avoid."
 
-- **HTML Imports** +
-  “HTML Imports is a way to include HTML documents in other HTML documents. You're not limited to markup either. An import can also include CSS, JavaScript, or anything else an .html file can contain. In other words, this makes imports a fantastic tool for loading related HTML/CSS/JS.”
+*HTML Imports*::
+  "HTML Imports is a way to include HTML documents in other HTML documents. You're not limited to markup either. An import can also include CSS, JavaScript, or anything else an .html file can contain. In other words, this makes imports a fantastic tool for loading related HTML/CSS/JS."
 
-- **Custom Elements** +
-  “Custom Elements allow web developers to define new types of HTML elements. It's quite possibly the most important as Web Components don't exist without the features unlocked by custom elements.”
+*Custom Elements*::
+  "Custom Elements allow web developers to define new types of HTML elements. It's quite possibly the most important as Web Components don't exist without the features unlocked by custom elements."
 
 Descriptions provided by link:https://developer.mozilla.org/en-US/[MDN] and link:http://www.html5rocks.com/en/[HTML5 Rocks].
 
-link:http://webcomponents.org[Learn more about Web Components »]
+link:http://webcomponents.org[Learn more about Web Components]
 
 ### Polymer
 
 The Polymer library is designed to make it easier and faster for developers to create great, reusable components for the modern web.
 
-It provides a declarative syntax that makes it simpler to define custom elements, and it adds features like templating, two-way data binding and property observation to help you build powerful, reusable elements with less code.
+It provides a declarative syntax that makes it simpler to define custom elements, and adds features like templating, two-way data binding, and property observation to help you build powerful, reusable elements with less code.
 
 The Polymer team also builds and maintains a large collection of custom elements, and the most prominent one is the Paper collection. The Paper elements are Google’s reference implementation of Material Design for the web.
 
-link:https://www.polymer-project.org[Learn more about Polymer »]
+link:https://www.polymer-project.org[Learn more about Polymer]
 
-link:https://elements.polymer-project.org[Browse Polymer Element Catalog »]
+link:https://elements.polymer-project.org[Browse Polymer Element Catalog]
 
 ## Browser compatibility
 
