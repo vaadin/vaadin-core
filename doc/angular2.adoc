@@ -78,11 +78,11 @@ If you followed the Angular 2 Quickstart guide or you are otherwise using `lite-
 }
 ----
 
-Now you're all set to use the element inside your Angular 2 application.
+Now you’re all set to use the element inside your Angular 2 application.
 
 == Importing
 
-Import the directive as follows. This example imports the [vaadinelement]#vaadin-date-picker# element, but you should replace the path with the element you're importing.
+Import the directive as follows. This example imports the [vaadinelement]#vaadin-date-picker# element, but you should replace the path with the element you’re importing.
 Also the directive name should be replaced with a camel case representation of the element name.
 
 [source,javascript]
@@ -129,6 +129,32 @@ import { VaadinCharts, DataSeries } from '../bower_components/vaadin-charts/dire
 For the most part you can use the API provided by the element.
 This API is described in the documentation of each individual element.
 Most notable changes introduced by the directives are the support for data-binding using the Angular 2 syntax and integration with the https://angular.io/docs/ts/latest/guide/forms.html[Angular forms].
+
+=== Grid
+The [elementname]#vaadin-grid# element uses a `table` child element to declaratively configure columns, headers and footers.
+In case you’ll need to apply modifications to the declaratively configured [elementname]#vaadin-grid# columns, you must wait for the component to be fully initialized first.
+To do this, you should use the `grid-ready` event as follows.
+
+[source]
+----
+<vaadin-grid (grid-ready)="gridReady($event)" [items]="dataItems">
+  <table>
+    <colgroup>
+      <col>
+    </colgroup>
+  </table>
+</vaadin-grid>
+----
+[source, javascript]
+----
+gridReady(grid) {
+  // You can now configure the columns by adding a renderer function for example.
+  grid.columns[0].renderer = (cell) => {
+    cell.element.innerHTML = 'row-' + cell.row.index;
+  }
+}
+----
+
 
 === Form Controls
 When using input-like elements (e.g. [elementname]#vaadin-combo-box# or [elementname]#vaadin-date-picker#) inside an Angular form, you should normally use the [propertyname]#ngControl# attribute to track the state and validity.
