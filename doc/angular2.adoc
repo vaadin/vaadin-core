@@ -39,18 +39,14 @@ In order to have the newly installed Vaadin element available in your templates,
 ----
 
 Also the SystemJS configuration needs some modifications in order to load the modules correctly.
-Add the following `map` and `packages` entries to your configuration (once again replacing the `[element-name]` with the actual name of the element).
+Add the following `packages` entry for `bower_components` to your configuration unless it’s already present.
 
 [source,javascript]
 ----
 System.config({
-  map: {
-    'vaadin-[element-name]': 'bower_components/vaadin-[element-name]/directives'
-  },
   packages: {
-    'vaadin-[element-name]': {
-      defaultExtension: 'js',
-      main: 'vaadin-[element-name].js'
+    'bower_components': {
+      defaultExtension: 'js'
     }
   }
 });
