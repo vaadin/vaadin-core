@@ -5,7 +5,7 @@ layout: page
 ---
 
 [[vaadin-core-elements.angular2]]
-== Angular 2 Integration
+= Angular 2 Integration
 
 While Vaadin Elements are built using Polymer, they also contain directives to enable seamless usage within Angular 2 applications.
 This page assumes that you already have an Angular 2 application setup ready.
@@ -16,9 +16,12 @@ If you need help with the project setup, you should follow the https://angular.i
 Although Angular 2 dependecies are typically installed via https://www.npmjs.com/[npm], Vaadin Elements require installation with http://bower.io[Bower].
 To install a Vaadin Core Element, you should run the following command in your project directory (replace the `[element-name]` part with the actual name of the element).
 
+[NOTE]
+Angular 2 support was introduced in `1.1.0-alpha1` versions of each element.
+
 [source,bash]
 ----
-bower install --save vaadin-[element-name]
+bower install --save vaadin-[element-name]#1.1.0-alpha1
 ----
 
 After the Bower installation is completed, you need to add the Web Components polyfill to the `<head>` section of your `index.html` file.
