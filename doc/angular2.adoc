@@ -158,7 +158,7 @@ gridReady(grid) {
 
 === Form Controls
 When using input-like elements (e.g. [elementname]#vaadin-combo-box# or [elementname]#vaadin-date-picker#) inside an Angular form, you should normally use the [propertyname]#ngControl# attribute to track the state and validity.
-The only difference to normal input elements is the usage of `[(value)]` binding (and `[(files)]` for [elementname]#vaadin-upload#) instead of using the [propertyname]#ngModel#.
+You can use two-way data-binding of `[(value)]` (and `[(files)]` for [elementname]#vaadin-upload#) or use [propertyname]#ngModel# as you would with other form fields.
 Simple validation like the [propertyname]#required# validator is supported as well as defining custom validators.
 
 See the example below on how to use [elementname]#vaadin-combo-box# as a form control with data-bound [propertyname]#items# property.
@@ -166,7 +166,7 @@ See the example below on how to use [elementname]#vaadin-combo-box# as a form co
 ----
 <vaadin-combo-box
   label="My ComboBox"
-  [(value)]="myValue"
+  [(ngModel)]="myValue"
   [items]="myItems"
   ngControl="myCombo"
   required>
