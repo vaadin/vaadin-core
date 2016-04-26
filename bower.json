@@ -31,6 +31,9 @@
     "vaadin-upload": "vaadin/vaadin-upload#1.0.0-beta1"
   },
   "devDependencies": {
+    "web-component-tester": "^4.0.3",
+    "test-fixture": "polymerelements/test-fixture#^1.0.0",
+    "iron-test-helpers": "polymerelements/iron-test-helpers#^1.0.0",
     "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
     "elements-demo-resources": "vaadin/elements-demo-resources#master",
     "components-demo-resources": "vaadin/components-demo-resources#master",
