@@ -122,10 +122,60 @@ import { VaadinCharts, DataSeries } from '../bower_components/vaadin-charts/dire
 ----
 
 == Usage
-
 For the most part you can use the API provided by the element.
 This API is described in the documentation of each individual element.
 Most notable changes introduced by the directives are the support for data-binding using the Angular 2 syntax and integration with the https://angular.io/docs/ts/latest/guide/forms.html[Angular forms].
+
+=== Data-Binding
+You can use Angular 2 data-binding syntax with all the properties declared in the API documentation for each element.
+Some properties also support two-way data-binding. These are marked with [propertyname]#notifies# in the API documentation.
+
+[source]
+----
+<vaadin-combo-box
+  label="My ComboBox"
+  [(value)]="myValue"
+  [items]="myItems">
+</vaadin-combo-box>
+----
+
+
+=== Form Controls
+When using input-like elements ([elementname]#vaadin-combo-box#, [elementname]#vaadin-date-picker# or [elementname]#vaadin-upload#) inside an Angular form, you should normally use the [propertyname]#ngControl# attribute to track the state and validity.
+You can use two-way data-binding with [propertyname]#ngModel# as you would with other form fields.
+Simple validation like the [propertyname]#required# validator is supported as well as defining custom validators.
+
+See the example below on how to use [elementname]#vaadin-combo-box# as a form control with data-bound [propertyname]#items# property.
+[source]
+----
+<vaadin-combo-box
+  label="My ComboBox"
+  [(ngModel)]="myValue"
+  [items]="myItems"
+  ngControl="myCombo"
+  required>
+</vaadin-combo-box>
+----
+
+=== Styling
+Due to the Shadow DOM encapsulation, applying normal CSS rules for a Vaadin Element is limited to the main element only.
+
+Therefore, in order to fully customize the appearance of Vaadin Elements, you need to use https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details[CSS properties] and https://www.polymer-project.org/1.0/docs/devguide/styling.html#custom-css-mixins[CSS mixins].
+Unfortunately these styles cannot be applied on a component level, but instead you need to provide styles in application level and also use the `is="custom-style"` attribute.
+
+Changing the icon color of [vaadinelement]#vaadin-date-picker# to `red` could be done with the following example.
+[source]
+----
+<style is="custom-style">
+  vaadin-date-picker {
+    --vaadin-date-picker-calendar-icon: {
+      fill: red;
+    }
+  }
+</style>
+----
+
+See the documentation of each element for a list of available properties and mixins.
 
 === Grid
 The [elementname]#vaadin-grid# element uses a `table` child element to declaratively configure columns, headers and footers.
@@ -151,39 +201,3 @@ gridReady(grid) {
   }
 }
 ----
-
-
-=== Form Controls
-When using input-like elements (e.g. [elementname]#vaadin-combo-box# or [elementname]#vaadin-date-picker#) inside an Angular form, you should normally use the [propertyname]#ngControl# attribute to track the state and validity.
-You can use two-way data-binding of `[(value)]` (and `[(files)]` for [elementname]#vaadin-upload#) or use [propertyname]#ngModel# as you would with other form fields.
-Simple validation like the [propertyname]#required# validator is supported as well as defining custom validators.
-
-See the example below on how to use [elementname]#vaadin-combo-box# as a form control with data-bound [propertyname]#items# property.
-[source]
-----
-<vaadin-combo-box
-  label="My ComboBox"
-  [(ngModel)]="myValue"
-  [items]="myItems"
-  ngControl="myCombo"
-  required>
-</vaadin-combo-box>
-----
-
-=== Styling
-In order to style the appearance of Vaadin Elements, you need to use https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details[CSS properties] and https://www.polymer-project.org/1.0/docs/devguide/styling.html#custom-css-mixins[CSS mixins].
-Unfortunately these styles cannot be applied on a component level, but instead you need to provide styles in application level and also use the `is="custom-style"` attribute.
-
-Changing the icon color of [vaadinelement]#vaadin-date-picker# to `red` could be done with the following example.
-[source]
-----
-<style is="custom-style">
-  vaadin-date-picker {
-    --vaadin-date-picker-calendar-icon: {
-      fill: red;
-    }
-  }
-</style>
-----
-
-See the documentation of each element for a list of available properties and mixins.
