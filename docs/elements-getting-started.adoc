@@ -1,0 +1,157 @@
+---
+title: Getting Started
+order: 2
+layout: page
+---
+
+# Getting Started with Vaadin Core Elements
+
+This page will guide you through the installation of the Vaadin Core Elements bundle and help you get started with your first project using these elements.
+
+## Installation
+
+There are three ways to use Vaadin Core Elements in your project: Bower, CDN, and a ZIP archive. The only difference between these options is the URL that you use to import the necessary files into your HTML page.
+
+### Create a New Folder
+
+Start by creating a new folder for your project and change to the folder.
+
+[subs="normal"]
+----
+[prompt]#$# [command]#mkdir# [replaceable]#my-project#
+[prompt]#$# [command]#cd# [replaceable]#my-project#
+----
+
+### Install Vaadin Core Elements
+
+#### Bower
+
+The recommended way to manage your front-end dependencies is to use link:http://bower.io[Bower]. Follow the link:http://bower.io/#install-bower[Bower installation instructions], then run the following command inside your project folder to install the most recent stable release.
+
+[subs="normal"]
+----
+[prompt]#$# [command]#bower# install --save [replaceable]#vaadin-core-elements#
+----
+
+This will download the Vaadin Core Elements bundle and its dependencies into the [filename]#bower_components# folder under your project's folder.
+
+If you wish to use a development snapshot version of some element, you can install and update that separately. For example:
+
+[subs="normal"]
+----
+[prompt]#$# [command]#bower# install --save [replaceable]#vaadin-grid##master
+----
+
+#### CDN
+
+You can use Vaadin Core Elements from our link:https://en.wikipedia.org/wiki/Content_delivery_network[CDN] server. This is especially convenient for services like JSFiddle, Codepen.io, etc.
+
+For example, to import [vaadinelement]#vaadin-grid#, use the following URL:
+
+----
+<link href="https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-grid/vaadin-grid.html" rel="import">
+----
+
+To import all Vaadin Core Elements, use the following URL:
+
+----
+<link href="https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-core-elements/vaadin-core-elements.html" rel="import">
+----
+
+You can also use the nightly snapshot versions of any component, e.g.
+
+----
+<link href="https://cdn.vaadin.com/vaadin-core-elements/master/vaadin-grid/vaadin-grid.html" rel="import">
+----
+
+#### Download as a ZIP
+
+1. Download the latest release ZIP archive from the link:https://github.com/vaadin/vaadin-core-elements/releases[GitHub releases page]
+2. Extract the archive under your project folder, for example in a [filename]#deps# folder.
+
+### Create a HTML file
+
+Create a new HTML file (for example [filename]#index.html#) inside your project folder and copy the code below into it.
+
+Pay attention to the following details:
+
+ - HTML5 doctype [elementname]#!doctype html# is required for everything to work smoothly.
+ - You need to adjust how the [filename]#webcomponents-lite.min.js# polyfill and [filename]#vaadin-core-elements.html# are imported according to the installation option you selected.
+ - Notice how the JavaScript logic waits for [classname]#WebComponentsReady# event before accessing the elements.
+
+
+**Serving the files during development**, when using Bower or the ZIP archive:
+
+Due to browser security restrictions, serving HTML imports from a `file:///` URL does not work. You need a web server to view pages where you use custom elements. One simple option is to use the link:https://www.npmjs.com/package/serve["serve" npm package].
+
+[source,html]
+----
+
+<!doctype html>
+<html>
+ <head>
+   <!-- Import Web Component polyfills and all Vaadin Core Elements. -->
+
+   <!-- CDN -->
+   <script src="https://cdn.vaadin.com/vaadin-core-elements/latest/webcomponentsjs/webcomponents-lite.min.js"></script>
+   <link href="https://cdn.vaadin.com/vaadin-core-elements/latest/vaadin-core-elements/vaadin-core-elements.html" rel="import">
+
+   <!-- Bower -->
+   <!-- <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+   <link href="bower_components/vaadin-core-elements/vaadin-core-elements.html" rel="import"> -->
+
+   <!-- ZIP archive -->
+   <!-- <script src="deps/webcomponentsjs/webcomponents-lite.min.js"></script>
+   <link href="deps/vaadin-core-elements/vaadin-core-elements.html" rel="import"> -->
+ </head>
+ <body>
+
+   <vaadin-grid selection-mode="multi">
+     <table>
+       <!-- Define the columns and their mapping to data properties. -->
+       <col name="firstName">
+       <col name="lastName">
+       <col name="email">
+
+       <!-- Define the column headings. -->
+       <thead>
+         <tr>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Email</th>
+         </tr>
+       </thead>
+     </table>
+   </vaadin-grid>
+
+   <script>
+     // The Web Components polyfill introduces a custom event we can
+     // use to determine when the custom elements are ready to be used.
+     document.addEventListener("WebComponentsReady", function () {
+
+       // Reference to the grid element.
+       var grid = document.querySelector("vaadin-grid");
+
+       // Add some example data as an array.
+       grid.items = [
+         { "firstName": "Hugo", "lastName": "Romero", "email": "hugo.romero@example.com" },
+         { "firstName": "Nieves", "lastName": "Diez", "email": "nieves.diez@example.com" },
+         { "firstName": "Esteban", "lastName": "Vega", "email": "esteban.vega@example.com" },
+         { "firstName": "Roxane", "lastName": "Diez", "email": "roxane.diez@example.com" }
+       ];
+     });
+   </script>
+
+ </body>
+</html>
+----
+
+After you have created the file and you have a local server serving the files, you should be able to open up the application in your browser at http://localhost:3000/index.html (notice that the port number may vary depending on the server you use).
+
++++
+<!-- Assumes .w-arrow-button and .blue class names from vaadin.com theme. Will fallback to a plain link. -->
+<a href="vaadin-grid/overview.html" class="w-arrow-button blue" style="display: inline-block">
+  Vaadin Grid<br />
+  <small>Continue to Vaadin Grid documentation</small>
+</a>
++++

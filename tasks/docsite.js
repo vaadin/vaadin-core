@@ -42,7 +42,7 @@ gulp.task('cdn:docsite:bower_components', ['cdn:stage-bower_components'], functi
 });
 
 gulp.task('cdn:docsite:core-elements', function() {
-  return gulp.src('doc/*')
+  return gulp.src('docs/*')
     .pipe(gulp.dest(docPath));
 });
 
