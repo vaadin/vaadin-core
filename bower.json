@@ -24,7 +24,7 @@
     "**/tests"
   ],
   "dependencies": {
-    "vaadin-grid": "vaadin/vaadin-grid#1.1.0-beta1",
+    "vaadin-grid": "vaadin/vaadin-grid#docsite-version",
     "vaadin-combo-box": "vaadin/vaadin-combo-box#1.1.0-beta1",
     "vaadin-icons": "vaadin/vaadin-icons#1.0.0-rc1",
     "vaadin-date-picker": "vaadin/vaadin-date-picker#1.1.0-beta1",
