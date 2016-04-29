@@ -64,16 +64,7 @@ window.addEventListener('WebComponentsReady', function() {
 });
 ----
 
-If you followed the Angular 2 Quickstart guide or you are otherwise using `lite-server` or `browser-sync`, create a file called `bs-config.json` in the root of your project folder with the following contents.
-
-[source,javascript]
-----
-{
-  "snippetOptions": {
-    "ignorePaths": "bower_components/**/*.html"
-  }
-}
-----
+*Note*: if you experiment some problems when running your app in devmode, please visit this [known issue](https://github.com/vaadin/vaadin-core-elements/issues/46)
 
 Now you’re all set to use the element inside your Angular 2 application.
 
