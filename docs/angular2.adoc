@@ -65,7 +65,7 @@ window.addEventListener('WebComponentsReady', function() {
 ----
 
 [NOTE]
-If you see errors about missing behaviors in the console, please visit this [known issue](https://github.com/vaadin/vaadin-core-elements/issues/46)
+If you see errors about missing behaviors in the console, please visit this https://github.com/vaadin/vaadin-core-elements/issues/46[known issue].
 
 Now you’re all set to use the element inside your Angular 2 application.
 
