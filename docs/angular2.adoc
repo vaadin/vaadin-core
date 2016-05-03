@@ -17,12 +17,13 @@ Although Angular 2 dependecies are typically installed via https://www.npmjs.com
 To install a Vaadin Core Element, you should run the following command in your project directory (replace the `[element-name]` part with the actual name of the element).
 
 [NOTE]
-Angular 2 support was introduced in `1.1.0-alpha1` versions of each element.
-Minimum requirement for the Angular version is `2.0.0-beta.16` or newer.
+Angular 2 support was introduced in `1.1.0-alpha1` versions of each element. +
+For element versions `1.1.0-beta2` or newer, use Angular version `2.0.0-rc.0`. +
+For element versions `1.1.0-alpha1 to 1.1.0-beta1`, use Angular version `2.0.0-beta.16/17`.
 
 [source,bash]
 ----
-bower install --save vaadin-[element-name]#1.1.0-alpha1
+bower install --save vaadin-[element-name]#1.1.0-beta2
 ----
 
 After the Bower installation is completed, you need to add the Web Components polyfill to the `<head>` section of your `index.html` file.
@@ -45,6 +46,7 @@ Add the following `packages` entry for `bower_components` to your configuration 
 [source,javascript]
 ----
 System.config({
+  map: 'bower_components': 'bower_components',
   packages: {
     'bower_components': {
       defaultExtension: 'js'
