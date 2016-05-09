@@ -9,20 +9,33 @@ layout: page
 
 While Vaadin Elements are built using Polymer, they also contain directives to enable seamless usage within Angular 2 applications.
 This page assumes that you already have an Angular 2 application setup ready.
+
+If you don't have set up your project, you could clone the Angular 2 Quick Start application and run it typing the following commands:
+
+[source,bash]
+----
+git clone  https://github.com/angular/quickstart  my-proj
+cd my-proj
+rm -rf .git
+npm install
+npm start
+----
 If you need help with the project setup, you should follow the https://angular.io/docs/ts/latest/quickstart.html[Angular 2 Quickstart] guide.
 
 == Installation
-
-Although Angular 2 dependecies are typically installed via https://www.npmjs.com/[npm], Vaadin Elements require installation with http://bower.io[Bower].
-To install a Vaadin Core Element, you should run the following command in your project directory (replace the `[element-name]` part with the actual name of the element).
 
 [NOTE]
 Angular 2 support was introduced in `1.1.0-alpha1` versions of each element. +
 For element versions `1.1.0-beta2` or newer, use Angular version `2.0.0-rc.0`. +
 For element versions `1.1.0-alpha1 to 1.1.0-beta1`, use Angular version `2.0.0-beta.16/17`.
 
+
+Although Angular 2 dependecies are typically installed via https://www.npmjs.com/[npm], Vaadin Elements require installation with http://bower.io[Bower].
+To install a Vaadin Core Element, first you should setup bower in your project, and then you need to run the following command in your project directory (replace the `[element-name]` part with the actual name of the element).
+
 [source,bash]
 ----
+bower init
 bower install --save vaadin-[element-name]#1.1.0-beta2
 ----
 
@@ -46,7 +59,9 @@ Add the following `packages` entry for `bower_components` to your configuration 
 [source,javascript]
 ----
 System.config({
-  map: 'bower_components': 'bower_components',
+  map: {
+    'bower_components': 'bower_components'
+  },
   packages: {
     'bower_components': {
       defaultExtension: 'js'
@@ -68,6 +83,9 @@ window.addEventListener('WebComponentsReady', function() {
 
 [NOTE]
 If you see errors about missing behaviors in the console, please visit this https://github.com/vaadin/vaadin-core-elements/issues/46[known issue].
+
+[NOTE]
+If compilation fails due to `implicitly` declared vars in any dependency, set the property [propertyname]#noImplicitAny# to true in your [filename]#tsconfig.json# file:
 
 Now you’re all set to use the element inside your Angular 2 application.
 
