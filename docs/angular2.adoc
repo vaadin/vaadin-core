@@ -7,7 +7,8 @@ layout: page
 [[vaadin-core-elements.angular2]]
 = Angular 2 Integration
 
-While Vaadin Elements are built using Polymer, they also contain directives to enable seamless usage within Angular 2 applications.
+While Vaadin Elements are built using Polymer, you need [vaadin-ng2-polymer] directive to enable seamless usage within Angular 2 applications.
+
 This page assumes that you already have an Angular 2 application setup ready.
 
 If you need help with the project setup, you should follow the https://angular.io/docs/ts/latest/quickstart.html[Angular 2 Quickstart] guide.
@@ -15,12 +16,20 @@ If you need help with the project setup, you should follow the https://angular.i
 == Installation
 
 [NOTE]
+
 Angular 2 support was introduced in `1.1.0-alpha1` versions of each element. +
 For element versions `1.1.0-beta2` or newer, use Angular version `2.0.0-rc.0`. +
 For element versions `1.1.0-alpha1 to 1.1.0-beta1`, use Angular version `2.0.0-beta.16/17`.
 
 
-Although Angular 2 dependecies are typically installed via https://www.npmjs.com/[npm], Vaadin Elements require installation with http://bower.io[Bower].
+Use https://www.npmjs.com/[npm] to install the generic polymer directive which allows the usage of any Polymer element in Angular 2.
+
+[source,bash]
+----
+npm install vaadin/vaadin-ng2-polymer
+----
+
+Although Angular 2 dependecies are typically installed via npm, Vaadin Elements require installation with http://bower.io[Bower].
 To install a Vaadin Core Element, first you should setup bower in your project, and then you need to run the following command in your project directory (replace the `[element-name]` part with the actual name of the element).
 
 [source,bash]
@@ -81,32 +90,37 @@ Now you’re all set to use the element inside your Angular 2 application.
 
 == Importing
 
-Import the directive as follows. This example imports the [vaadinelement]#vaadin-date-picker# element, but you should replace the path with the element you’re importing.
-Also the directive name should be replaced with a camel case representation of the element name.
+
+
+Import the polymer directive as follows.
 
 [source,javascript]
 ----
-import { VaadinDatePicker } from '../bower_components/vaadin-date-picker/directives/vaadin-date-picker';
+import { PolymerElement } from '../node_modules/vaadin-ng2-polymer/polymer-element';
 ----
 
 Your Angular 2 component also needs to declare the usage of the directive.
 This can be done with the `directives` array of the `@Component` decorator.
+
 After the directive is declared, the element is available to be used in the `template` of your component.
+
+This example uses the directive with the [vaadinelement]#vaadin-date-picker# element, but you should replace the path with the element you’re importing.
+
 
 [source]
 ----
 @Component({
   selector: 'my-component',
   template: '<vaadin-date-picker [(value)]="birthDay"></vaadin-date-picker>',
-  directives: [VaadinDatePicker]
+  directives: [PolymerElement('vaadin-date-picker')]
 })
 ----
 
-Notice that for Vaadin Charts, you also need to import and declare the `DataSeries` directive as follows.
+Notice that for Vaadin Charts, you also need to add the directive for the [vaadinelement]#data-series# element as follows.
 
 [source]
 ----
-import { VaadinCharts, DataSeries } from '../bower_components/vaadin-charts/directives/vaadin-charts';
+import { PolymerElement } from '../node_modules/vaadin-ng2-polymer/polymer-element';
 
 @Component({
   selector: 'my-component',
@@ -119,7 +133,7 @@ import { VaadinCharts, DataSeries } from '../bower_components/vaadin-charts/dire
         <data>1, 1, 2, 3, 5, 8, 13, 21, 34</data>
       </data-series>
     </vaadin-area-chart>`,
-  directives: [VaadinCharts, DataSeries]
+  directives: [PolymerElement('vaadin-charts'), PolymerElement('data-series')]
 })
 ----
 
@@ -182,11 +196,11 @@ See the documentation of each element for a list of available properties and mix
 === Grid
 The [elementname]#vaadin-grid# element uses a `table` child element to declaratively configure columns, headers and footers.
 In case you’ll need to apply modifications to the declaratively configured [elementname]#vaadin-grid# columns, you must wait for the component to be fully initialized first.
-To do this, you should use the `grid-ready` event as follows.
+To do this, you can use the native element as a Promise.
 
 [source]
 ----
-<vaadin-grid (grid-ready)="gridReady($event)" [items]="dataItems">
+<vaadin-grid #grid [items]="dataItems">
   <table>
     <colgroup>
       <col>
@@ -194,12 +208,14 @@ To do this, you should use the `grid-ready` event as follows.
   </table>
 </vaadin-grid>
 ----
+
 [source, javascript]
 ----
-gridReady(grid) {
-  // You can now configure the columns by adding a renderer function for example.
-  grid.columns[0].renderer = (cell) => {
-    cell.element.innerHTML = 'row-' + cell.row.index;
-  }
+@ViewChild('grid') grid: any;
+
+ngAfterViewInit() {
+  this.grid.nativeElement.then(() => {
+      ...
+  });
 }
 ----
