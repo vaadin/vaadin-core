@@ -7,7 +7,7 @@ layout: page
 [[vaadin-core-elements.angular2]]
 = Angular 2 Integration
 
-While Vaadin Elements are built using Polymer, you need [vaadin-ng2-polymer] directive to enable seamless usage within Angular 2 applications.
+While Vaadin Elements are built using Polymer, you need https://github.com/vaadin/angular2-polymer[@vaadin/angular2-polymer] directive to enable seamless usage within Angular 2 applications.
 
 This page assumes that you already have an Angular 2 application setup ready.
 
@@ -26,7 +26,7 @@ Use https://www.npmjs.com/[npm] to install the generic polymer directive which a
 
 [source,bash]
 ----
-npm install vaadin/vaadin-ng2-polymer
+npm install @vaadin/angular2-polymer
 ----
 
 Although Angular 2 dependecies are typically installed via npm, Vaadin Elements require installation with http://bower.io[Bower].
@@ -90,13 +90,11 @@ Now you’re all set to use the element inside your Angular 2 application.
 
 == Importing
 
-
-
-Import the polymer directive as follows.
+Import the Polymer directive as follows.
 
 [source,javascript]
 ----
-import { PolymerElement } from '../node_modules/vaadin-ng2-polymer/polymer-element';
+import { PolymerElement } from '../node_modules/@vaadin/angular2-polymer/polymer-element';
 ----
 
 Your Angular 2 component also needs to declare the usage of the directive.
@@ -200,7 +198,7 @@ To do this, you can use the native element as a Promise.
 
 [source]
 ----
-<vaadin-grid #grid [items]="dataItems">
+<vaadin-grid #grid>
   <table>
     <colgroup>
       <col>
@@ -215,7 +213,7 @@ To do this, you can use the native element as a Promise.
 
 ngAfterViewInit() {
   this.grid.nativeElement.then(() => {
-      ...
+     // Some code to configure the grid.
   });
 }
 ----
