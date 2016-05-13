@@ -7,7 +7,7 @@ layout: page
 [[vaadin-core-elements.angular2]]
 = Angular 2 Integration
 
-While Vaadin Elements are built using Polymer, you need https://github.com/vaadin/angular2-polymer[@vaadin/angular2-polymer] directive to enable seamless usage within Angular 2 applications.
+While Vaadin Elements are built using Polymer, you need the [literal]#https://github.com/vaadin/angular2-polymer[@vaadin/angular2-polymer]# directive to enable seamless usage within Angular 2 applications.
 
 This page assumes that you already have an Angular 2 application setup ready.
 
@@ -22,23 +22,24 @@ For element versions `1.1.0-beta2` or newer, use Angular version `2.0.0-rc.0`. +
 For element versions `1.1.0-alpha1 to 1.1.0-beta1`, use Angular version `2.0.0-beta.16/17`.
 
 
-Use https://www.npmjs.com/[npm] to install the generic polymer directive which allows the usage of any Polymer element in Angular 2.
+Use https://www.npmjs.com/[npm] to install the generic polymer directive that allows the usage of any Polymer element in Angular 2.
 
-[source,bash]
+[subs="normal"]
 ----
-npm install @vaadin/angular2-polymer
+[prompt]#$# command]#npm# install @vaadin/angular2-polymer
 ----
 
 Although Angular 2 dependecies are typically installed via npm, Vaadin Elements require installation with http://bower.io[Bower].
-To install a Vaadin Core Element, first you should setup bower in your project, and then you need to run the following command in your project directory (replace the `[element-name]` part with the actual name of the element).
+To install a Vaadin Core Element, first you should set up bower in your project, and then you need to run the following command in your project directory (replace the `[element-name]` part with the actual name of the element).
 
-[source,bash]
+[subs="normal"]
 ----
-bower init
-bower install --save vaadin-[element-name]#1.1.0-beta2
+[prompt]#$# command]#bower# init
+[prompt]#$# command]#bower# install --save vaadin-[replaceable]##element-name###1.1.0-beta3
 ----
 
-After the Bower installation is completed, you need to add the Web Components polyfill to the `<head>` section of your `index.html` file.
+After the Bower installation is completed, you need to add the Web Components polyfill to the [elementname]#head# section of your [filename]#index.html# file.
+
 [source,html]
 ----
 <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
@@ -53,7 +54,7 @@ In order to have the newly installed Vaadin element available in your templates,
 ----
 
 Also the SystemJS configuration needs some modifications in order to load the modules correctly.
-Add the following `packages` entry for `bower_components` to your configuration unless it’s already present.
+Add the following `packages` entry for `bower_components` to your configuration unless it is already present.
 
 [source,javascript]
 ----
@@ -70,7 +71,7 @@ System.config({
 ----
 
 Before bootstrapping your application, you need to wait for the `WebComponentsReady` event.
-This event is fired after the HTML imports are done and the custom elements are upgraded and ready to be used.
+The event is fired after the HTML imports are done and the custom elements are upgraded and ready to be used.
 The following example demonstrates how to wrap your bootstrap code inside the event listener.
 
 [source,javascript]
@@ -81,12 +82,12 @@ window.addEventListener('WebComponentsReady', function() {
 ----
 
 [NOTE]
-If you see errors about missing behaviors in the console, please visit this https://github.com/vaadin/vaadin-core-elements/issues/46[known issue].
+If you see errors about missing behaviors in the console, please visit the  https://github.com/vaadin/vaadin-core-elements/issues/46[Vaadin Core Elements issue #46].
 
 [NOTE]
 If compilation fails due to implicitly declared vars in any dependency, set the property [propertyname]#noImplicitAny# to `false` in your [filename]#tsconfig.json# file.
 
-Now you’re all set to use the element inside your Angular 2 application.
+Now you are all set to use the element inside your Angular 2 application.
 
 == Importing
 
@@ -102,10 +103,9 @@ This can be done with the `directives` array of the `@Component` decorator.
 
 After the directive is declared, the element is available to be used in the `template` of your component.
 
-This example uses the directive with the [vaadinelement]#vaadin-date-picker# element, but you should replace the path with the element you’re importing.
+Te following example uses the directive with the [elementname]#vaadin-date-picker# element. Replace the path with the element you are importing.
 
-
-[source]
+[source, javascript]
 ----
 @Component({
   selector: 'my-component',
@@ -116,7 +116,7 @@ This example uses the directive with the [vaadinelement]#vaadin-date-picker# ele
 
 Notice that for Vaadin Charts, you also need to add the directive for the [vaadinelement]#data-series# element as follows.
 
-[source]
+[source, javascript]
 ----
 import { PolymerElement } from '../node_modules/vaadin-ng2-polymer/polymer-element';
 
@@ -136,11 +136,11 @@ import { PolymerElement } from '../node_modules/vaadin-ng2-polymer/polymer-eleme
 ----
 
 == Usage
-For the most part you can use the API provided by the element.
-This API is described in the documentation of each individual element.
-Most notable changes introduced by the directives are the support for data-binding using the Angular 2 syntax and integration with the https://angular.io/docs/ts/latest/guide/forms.html[Angular forms].
+For the most part, you can use the API provided by the element.
+The API is described in the documentation of each individual element.
+Most notable changes introduced by the directives are the support for data binding using the Angular 2 syntax and integration with the https://angular.io/docs/ts/latest/guide/forms.html[Angular forms].
 
-=== Data-Binding
+=== Data Binding
 You can use Angular 2 data-binding syntax with all the properties declared in the API documentation for each element.
 Some properties also support two-way data-binding. These are marked with [propertyname]#notifies# in the API documentation.
 
@@ -155,11 +155,11 @@ Some properties also support two-way data-binding. These are marked with [proper
 
 
 === Form Controls
-When using input-like elements ([elementname]#vaadin-combo-box#, [elementname]#vaadin-date-picker# or [elementname]#vaadin-upload#) inside an Angular form, you should normally use the [propertyname]#ngControl# attribute to track the state and validity.
+When using input-like elements ([elementname]#vaadin-combo-box#, [elementname]#vaadin-date-picker#, or [elementname]#vaadin-upload#) inside an Angular form, you should normally use the [propertyname]#ngControl# attribute to track the state and validity.
 You can use two-way data-binding with [propertyname]#ngModel# as you would with other form fields.
-Simple validation like the [propertyname]#required# validator is supported as well as defining custom validators.
+Validation is supported with the simple [propertyname]#required# validator as well as with custom validators that you can define.
 
-See the example below on how to use [elementname]#vaadin-combo-box# as a form control with data-bound [propertyname]#items# property.
+See the following example on how to use [elementname]#vaadin-combo-box# as a form control with data-bound [propertyname]#items# pro perty.
 [source]
 ----
 <vaadin-combo-box
@@ -175,9 +175,9 @@ See the example below on how to use [elementname]#vaadin-combo-box# as a form co
 Due to the Shadow DOM encapsulation, applying normal CSS rules for a Vaadin Element is limited to the main element only.
 
 Therefore, in order to fully customize the appearance of Vaadin Elements, you need to use https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details[CSS properties] and https://www.polymer-project.org/1.0/docs/devguide/styling.html#custom-css-mixins[CSS mixins].
-Unfortunately these styles cannot be applied on a component level, but instead you need to provide styles in application level and also use the `is="custom-style"` attribute.
+Unfortunately, these styles cannot be applied on the component level. Instead you need to provide styles on application level and also use the `is="custom-style"` attribute.
 
-Changing the icon color of [vaadinelement]#vaadin-date-picker# to `red` could be done with the following example.
+Changing the icon color of [vaadinelement]#vaadin-date-picker# to `red` can be done as in the following example:
 [source]
 ----
 <style is="custom-style">
@@ -192,9 +192,10 @@ Changing the icon color of [vaadinelement]#vaadin-date-picker# to `red` could be
 See the documentation of each element for a list of available properties and mixins.
 
 === Grid
-The [elementname]#vaadin-grid# element uses a `table` child element to declaratively configure columns, headers and footers.
-In case you’ll need to apply modifications to the declaratively configured [elementname]#vaadin-grid# columns, you must wait for the component to be fully initialized first.
-To do this, you can use the native element as a Promise.
+The [elementname]#vaadin-grid# element uses a `table` child element to declaratively configure columns, headers, and footers.
+In case you need to apply modifications to the declaratively configured [vaadinelement]#vaadin-grid# columns, you must wait for the component to be fully initialized first.
+You can wait for it by using the native element as a Promise.
+For example, let us assume that you have the following element defined:
 
 [source]
 ----
@@ -206,6 +207,8 @@ To do this, you can use the native element as a Promise.
   </table>
 </vaadin-grid>
 ----
+
+Now, you can wait for the initialization to complete with a promise as is done in the following:
 
 [source, javascript]
 ----
