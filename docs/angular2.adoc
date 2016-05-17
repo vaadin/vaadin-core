@@ -54,17 +54,17 @@ In order to have the newly installed Vaadin element available in your templates,
 ----
 
 Also the SystemJS configuration needs some modifications in order to load the modules correctly.
-Add the following `packages` entry for `bower_components` to your configuration unless it is already present.
+Add the following `map`and `packages` entries for `@vaadin/angular2-polymer` to your configuration.
 
 [source,javascript]
 ----
 System.config({
   map: {
-    'bower_components': 'bower_components'
+    '@vaadin': 'node_modules/@vaadin'
   },
   packages: {
-    'bower_components': {
-      defaultExtension: 'js'
+    '@vaadin/angular2-polymer': {
+      main: 'index.js'
     }
   }
 });
@@ -95,7 +95,7 @@ Import the Polymer directive as follows.
 
 [source,javascript]
 ----
-import { PolymerElement } from '../node_modules/@vaadin/angular2-polymer/polymer-element';
+import { PolymerElement } from '@vaadin/angular2-polymer';
 ----
 
 Your Angular 2 component also needs to declare the usage of the directive.
@@ -118,7 +118,7 @@ Notice that for Vaadin Charts, you also need to add the directive for the [vaadi
 
 [source, javascript]
 ----
-import { PolymerElement } from '../node_modules/vaadin-ng2-polymer/polymer-element';
+import { PolymerElement } from '@vaadin/angular2-polymer';
 
 @Component({
   selector: 'my-component',
