@@ -8,12 +8,10 @@ module.exports = {
   version: args.version || 'master',
   permalink: args.version ? 'latest' : '',
   toolsHost: args.toolsHostname || 'tools.vaadin.com',
-  zipHost: args.zipHostname || 'vaadin.com',
   paths: {
     staging: {
       bower: 'target/bower',
       cdn: 'target/cdn',
-      zip: 'target/zip',
       doc: 'target/docsite'
     },
     userhome: userhome,
