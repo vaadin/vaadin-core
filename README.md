@@ -29,6 +29,14 @@ You can see more detailed roadmaps of each element from their respective GitHub 
 - [`<vaadin-upload>`](https://github.com/vaadin/vaadin-upload) 1.0
 - [`<vaadin-icons>`](https://github.com/vaadin/vaadin-icons) 1.0
 
+#### Next up
+- [`<vaadin-combo-box>`](https://github.com/vaadin/vaadin-combo-box) 1.x
+ - More customization options for the input element
+ - Dropdown item templates
+- [`<vaadin-date-picker>`](https://github.com/vaadin/vaadin-date-picker) 1.x
+ - More customization options for the input element
+ - Keyboard input
+- New elements in planning: `<vaadin-context-menu>`, `<vaadin-form-layout>`, `<vaadin-details>`
 
 ##### Version labels
 
