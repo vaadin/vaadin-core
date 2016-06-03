@@ -28,7 +28,7 @@ gulp.task('cdn:stage-bower_components', function() {
 });
 
 gulp.task('cdn:stage-vaadin-core-elements', function() {
-  return gulp.src(['LICENSE.html', 'README.md', 'vaadin-core-elements.html', 'demo/*', 'apidoc/*'], {
+  return gulp.src(['LICENSE.html', 'README.md', 'index.html', 'vaadin-core-elements.html', 'demo/*', 'apidoc/*'], {
       base: "."
     })
     .pipe(modify({
