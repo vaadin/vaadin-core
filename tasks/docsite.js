@@ -67,13 +67,6 @@ gulp.task('cdn:docsite:core-elements-elements', ['cdn:docsite:bower_components']
       .pipe(gulp.dest(docPath + '/'));
 });
 
-gulp.task('cdn:docsite:vaadin-grid', ['cdn:docsite:bower_components'], function(done) {
-  var elementDocsite = docPath + '/vaadin-grid';
-  var elementDemo = stagingPath + '/vaadin-grid/demo/**';
-
-  return getDocModifyTask(elementDemo, elementDocsite, 'vaadin-grid');
-});
-
 function getDocModifyTask(sourceFiles, targetFolder, n) {
   fs.mkdirsSync(targetFolder);
   gutil.log('Generating site documentation from '  + sourceFiles + ' into ' + targetFolder);
@@ -118,8 +111,6 @@ function getDocModifyTask(sourceFiles, targetFolder, n) {
 
 gulp.task('cdn:docsite:stage', ['cdn:docsite:core-elements',
                                 'cdn:docsite:core-elements-elements',
-                                 //separate task for vaadin-grid until it uses asciidocs
-                                'cdn:docsite:vaadin-grid',
                                 'cdn:docsite:core-elements-integrations',
                                 'cdn:docsite:core-elements-ng2-integration']);
 
