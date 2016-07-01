@@ -24,11 +24,11 @@
     "**/tests"
   ],
   "dependencies": {
-    "vaadin-grid": "vaadin/vaadin-grid#1.1.0-beta4",
-    "vaadin-combo-box": "vaadin/vaadin-combo-box#1.1.0-beta3",
+    "vaadin-grid": "vaadin/vaadin-grid#1.1.0",
+    "vaadin-combo-box": "vaadin/vaadin-combo-box#1.1.0",
     "vaadin-icons": "vaadin/vaadin-icons#1.0.0",
-    "vaadin-date-picker": "vaadin/vaadin-date-picker#1.1.0-beta3",
-    "vaadin-upload": "vaadin/vaadin-upload#1.1.0-beta3"
+    "vaadin-date-picker": "vaadin/vaadin-date-picker#1.1.0",
+    "vaadin-upload": "vaadin/vaadin-upload#1.0.1"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.3",
