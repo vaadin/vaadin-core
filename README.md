@@ -4,7 +4,7 @@
 
 [Vaadin elements](https://vaadin.com/elements) are an evolving set of open sourced custom HTML elements, which seamlessly extend the [Polymer Element Catalog](https://elements.polymer-project.org) with high-quality user interface components commonly needed in modern mobile and desktop business web applications.
 
-Vaadin Core Elements is a bundle that contains all the free elements, licensed under the Apache License 2.0.
+Vaadin Core Elements is a bundle that contains all the free elements, licensed under the Apache License 2.0. In addition, we have commercially licensed elements, such as [Vaadin Charts](https://github.com/vaadin/vaadin-charts).
 
 ## Learn more
 
@@ -18,25 +18,26 @@ See the list of elements, demos and documentation, instructions how to get start
 
 This is a high level view of the upcoming releases for Vaadin Core Elements. The nearest releases are more likely to include what is stated here, but further plans have a higher risk of changing.
 
-Individual elements of the Core Elements bundle are released separately, and you can track their progress from their relevant milestones (TBA). The bundle version is released once all individual element milestones for it are finished.
+Individual elements of the Core Elements bundle are released separately, and you can track their progress from their repositories.
 
-You can see more detailed roadmaps of each element from their respective GitHub repositories.
+#### Nearly there
+- [`<vaadin-grid>`](https://github.com/vaadin/vaadin-grid) 1.2
+- [`<vaadin-split-layout>`](https://github.com/vaadin/vaadin-split-panel) 0.1
 
-#### Version 1.0
-- [`<vaadin-grid>`](https://github.com/vaadin/vaadin-grid) 1.0
-- [`<vaadin-combo-box>`](https://github.com/vaadin/vaadin-combo-box) 1.0
-- [`<vaadin-date-picker>`](https://github.com/vaadin/vaadin-date-picker) 1.0
-- [`<vaadin-upload>`](https://github.com/vaadin/vaadin-upload) 1.0
-- [`<vaadin-icons>`](https://github.com/vaadin/vaadin-icons) 1.0
-
-#### Next up
+#### Next up 
 - [`<vaadin-combo-box>`](https://github.com/vaadin/vaadin-combo-box) 1.x
- - More customization options for the input element
+ - Custom filtering
+ - Lazy loading
  - Dropdown item templates
 - [`<vaadin-date-picker>`](https://github.com/vaadin/vaadin-date-picker) 1.x
- - More customization options for the input element
+ - Min and max date limits
  - Keyboard input
-- New elements in planning: `<vaadin-context-menu>`, `<vaadin-form-layout>`, `<vaadin-details>`
+ - Screenreader support
+ - Week numbers
+
+#### In planning
+- New elements: `<vaadin-context-menu>`, `<vaadin-form-layout>`, `<vaadin-details>`
+- Bootstrap CSS integration
 
 ##### Version labels
 
