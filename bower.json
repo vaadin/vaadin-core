@@ -38,7 +38,9 @@
     "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
     "elements-demo-resources": "vaadin/elements-demo-resources#master",
     "components-demo-resources": "vaadin/components-demo-resources#master",
-    "mock-http-request": "philikon/MockHttpRequest#master"
+    "mock-http-request": "philikon/MockHttpRequest#master",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "paper-toast": "polymerelements/paper-toast#^1.0.0"
   },
   "resolutions": {
     "polymer": "v1.1.1"
