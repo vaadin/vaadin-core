@@ -20,6 +20,7 @@ Vaadin Core Elements includes the following elements:
  - link:/docs/-/part/elements/vaadin-date-picker/vaadin-date-picker-overview.html[Date Picker]
  - link:/docs/-/part/elements/vaadin-grid/overview.html[Grid]
  - link:/docs/-/part/elements/vaadin-upload/vaadin-upload-overview.html[Upload]
+ - link:/docs/-/part/elements/vaadin-split-layout/vaadin-split-layout-overview.html[Split Layout]
  - link:/docs/-/part/elements/vaadin-icons/vaadin-icons-overview.html[Icons]
 
 Learn more about the benefits of using Vaadin elements from the link:https://vaadin.com/elements[Vaadin Elements page].
