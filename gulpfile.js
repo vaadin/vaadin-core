@@ -8,6 +8,6 @@ gulp.task('default', function() {
   console.log('\n  Use:\n gulp <stage|deploy[:cdn]>|<zip>\n');
 });
 
-gulp.task('clean', ['clean:cdn', 'clean:zip']);
+gulp.task('clean', ['clean:cdn', 'clean:bower', 'clean:zip']);
 
 gulp.task('deploy', ['deploy:cdn']);
