@@ -4,7 +4,10 @@ var fs = require('fs');
 var userhome = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 
 module.exports = {
-  coreElements: ['vaadin-grid', 'vaadin-combo-box', 'vaadin-date-picker', 'vaadin-upload', 'vaadin-icons'],
+  // List of elements to be deployed from the master.
+  // The bower.json file is used for deploying latest release of the bundle.
+  masterElements: ['vaadin-grid', 'vaadin-combo-box', 'vaadin-date-picker', 'vaadin-upload', 'vaadin-icons', 'vaadin-split-layout'],
+
   version: args.version || 'master',
   permalink: args.version ? 'latest' : '',
   toolsHost: args.toolsHostname || 'tools.vaadin.com',
