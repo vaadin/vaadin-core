@@ -41,5 +41,16 @@
   },
   "resolutions": {
     "polymer": "v1.1.1"
+  },
+  "masterOverrides": {
+    "version": "master",
+    "dependencies": {
+      "vaadin-grid": "vaadin/vaadin-grid#master",
+      "vaadin-combo-box": "vaadin/vaadin-combo-box#master",
+      "vaadin-icons": "vaadin/vaadin-icons#master",
+      "vaadin-date-picker": "vaadin/vaadin-date-picker#master",
+      "vaadin-upload": "vaadin/vaadin-upload#master",
+      "vaadin-split-layout": "vaadin/vaadin-split-layout#master"
+    }
   }
 }

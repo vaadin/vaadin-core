@@ -3,6 +3,7 @@ var config = require('./config');
 var common = require('./common');
 var gulp = require('gulp');
 var fs = require('fs-extra');
+var path = require('path');
 var modify = require('gulp-modify');
 var rsync = require('gulp-rsync');
 var gutil = require('gulp-util');
@@ -12,16 +13,33 @@ var stagingBasePath = config.paths.staging.cdn;
 var version = config.version;
 var host = config.toolsHost;
 var permalink = config.permalink;
-var stagingPath = stagingBasePath + '/' + version;
-var testPath = process.cwd() + '/' + stagingPath + '/test';
+var stagingPath = path.join(process.cwd(), stagingBasePath, version);
+var masterBowerPath = config.paths.staging.bower;
 
 gulp.task('clean:cdn', function() {
   fs.removeSync(stagingBasePath);
 });
 
-gulp.task('cdn:stage-bower_components', function() {
+gulp.task('clean:bower', function() {
+  fs.removeSync(masterBowerPath);
+});
+
+gulp.task('cdn:stage-bower.json', function() {
+  // Load the bower.json, assign overrides and write back to disk.
+  let bowerJson = JSON.parse(fs.readFileSync('./bower.json', 'utf-8'));
+  bowerJson = Object.assign(bowerJson, bowerJson.masterOverrides);
+  delete bowerJson.masterOverrides;
+
+  fs.mkdirSync(masterBowerPath);
+  fs.writeFileSync(masterBowerPath + '/bower.json', JSON.stringify(bowerJson, null, '  '));
+  gutil.log('Created ' + masterBowerPath + '/bower.json with overrides applied.');
+});
+
+gulp.task('cdn:stage-bower_components', ['cdn:stage-bower.json'], function() {
+  const bowerJsonPath = path.join(process.cwd(), (version === 'master' ? masterBowerPath : ''));
   return bower({
     directory: stagingPath,
+    cwd: bowerJsonPath,
     forceLatest: true,
     cmd: 'install'
   });
@@ -41,10 +59,10 @@ gulp.task('cdn:stage-vaadin-core-elements', function() {
         return contents;
       }
     }))
-    .pipe(gulp.dest(stagingPath + "/vaadin-core-elements"));
+    .pipe(gulp.dest(stagingPath + '/vaadin-core-elements'));
 });
 
-gulp.task('stage:cdn', ['clean:cdn', 'cdn:stage-bower_components', 'cdn:stage-vaadin-core-elements']);
+gulp.task('stage:cdn', ['clean:cdn', 'clean:bower', 'cdn:stage-bower_components', 'cdn:stage-vaadin-core-elements']);
 
 gulp.task('upload:cdn', ['stage:cdn'], function() {
   common.checkArguments(['cdnUsername', 'cdnDestination']);
