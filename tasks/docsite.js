@@ -19,7 +19,6 @@ var stagingPath = stagingBasePath + '/' + version;
 var modify = require('gulp-modify');
 var rootZip = 'target/';
 var fileZip = 'docsite.zip';
-var bowerJson = require('../bower.json');
 
 gulp.task('cdn:docsite:clean', function() {
   fs.removeSync(docPath);
@@ -57,6 +56,7 @@ gulp.task('cdn:docsite:core-elements-integrations', function() {
 });
 
 gulp.task('cdn:docsite:core-elements-elements', ['cdn:docsite:bower_components'], function() {
+  const bowerJson = require('../' + stagingPath + '/bower.json');
   var docsPaths = Object.keys(bowerJson.dependencies).map(function(c) {
     return stagingPath + '/' + c + '/docs/**';
   });
