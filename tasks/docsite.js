@@ -56,9 +56,10 @@ gulp.task('cdn:docsite:core-elements-integrations', function() {
 });
 
 gulp.task('cdn:docsite:core-elements-elements', ['cdn:docsite:bower_components'], function() {
-  var docsPaths = config.coreElements.map(function(c) {
-      return stagingPath + '/' + c + '/docs/**';
-    });
+  const bowerJson = require('../' + stagingPath + '/bower.json');
+  var docsPaths = Object.keys(bowerJson.dependencies).map(function(c) {
+    return stagingPath + '/' + c + '/docs/**';
+  });
 
   return gulp.src(docsPaths, {base: stagingPath})
       .pipe(rename(function (path) {

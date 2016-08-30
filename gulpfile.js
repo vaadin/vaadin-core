@@ -4,8 +4,6 @@ require('require-dir')('./tasks');
 var args = require('yargs').argv;
 var git = require('gulp-git');
 
-var version = '0.3.0';
-
 gulp.task('default', function() {
   console.log('\n  Use:\n gulp <stage|deploy[:cdn]>|<zip>\n');
 });

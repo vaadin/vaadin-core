@@ -3,6 +3,7 @@ var config = require('./config');
 var common = require('./common');
 var gulp = require('gulp');
 var fs = require('fs-extra');
+var path = require('path');
 var modify = require('gulp-modify');
 var rsync = require('gulp-rsync');
 var gutil = require('gulp-util');
@@ -12,16 +13,31 @@ var stagingBasePath = config.paths.staging.cdn;
 var version = config.version;
 var host = config.toolsHost;
 var permalink = config.permalink;
-var stagingPath = stagingBasePath + '/' + version;
-var testPath = process.cwd() + '/' + stagingPath + '/test';
+var stagingPath = path.join(process.cwd(), stagingBasePath, version);
 
 gulp.task('clean:cdn', function() {
   fs.removeSync(stagingBasePath);
 });
 
-gulp.task('cdn:stage-bower_components', function() {
+gulp.task('cdn:stage-bower.json', ['clean:cdn'], function() {
+  // Load the bower.json, assign overrides and write back to disk.
+  let bowerJson = JSON.parse(fs.readFileSync('./bower.json', 'utf-8'));
+
+  if (version === 'master') {
+    gutil.log('Applying overrides to ' + stagingPath + '/bower.json');
+    bowerJson = Object.assign(bowerJson, bowerJson.masterOverrides);
+    delete bowerJson.masterOverrides;
+  }
+
+  fs.mkdirSync(stagingBasePath);
+  fs.mkdirSync(stagingPath);
+  fs.writeFileSync(stagingPath + '/bower.json', JSON.stringify(bowerJson, null, '  '));
+});
+
+gulp.task('cdn:stage-bower_components', ['cdn:stage-bower.json'], function() {
   return bower({
-    directory: stagingPath,
+    directory: '.',
+    cwd: stagingPath,
     forceLatest: true,
     cmd: 'install'
   });
@@ -41,7 +57,7 @@ gulp.task('cdn:stage-vaadin-core-elements', function() {
         return contents;
       }
     }))
-    .pipe(gulp.dest(stagingPath + "/vaadin-core-elements"));
+    .pipe(gulp.dest(stagingPath + '/vaadin-core-elements'));
 });
 
 gulp.task('stage:cdn', ['clean:cdn', 'cdn:stage-bower_components', 'cdn:stage-vaadin-core-elements']);
