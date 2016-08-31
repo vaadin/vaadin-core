@@ -25,7 +25,11 @@ gulp.task('cdn:stage-bower.json', ['clean:cdn'], function() {
 
   if (version === 'master') {
     gutil.log('Applying overrides to ' + stagingPath + '/bower.json');
-    bowerJson = Object.assign(bowerJson, bowerJson.masterOverrides);
+
+    // Assign the override properties.
+    Object.keys(bowerJson.masterOverrides).forEach(override => {
+      bowerJson[override] = bowerJson.masterOverrides[override];
+    });
     delete bowerJson.masterOverrides;
   }
 
