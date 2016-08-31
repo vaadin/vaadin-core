@@ -21,7 +21,7 @@ gulp.task('clean:cdn', function() {
 
 gulp.task('cdn:stage-bower.json', ['clean:cdn'], function() {
   // Load the bower.json, assign overrides and write back to disk.
-  let bowerJson = JSON.parse(fs.readFileSync('./bower.json', 'utf-8'));
+  var bowerJson = JSON.parse(fs.readFileSync('./bower.json', 'utf-8'));
 
   if (version === 'master') {
     gutil.log('Applying overrides to ' + stagingPath + '/bower.json');
