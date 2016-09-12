@@ -39,7 +39,9 @@
     "components-demo-resources": "vaadin/components-demo-resources#master",
     "mock-http-request": "philikon/MockHttpRequest#master",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-    "paper-toast": "polymerelements/paper-toast#^1.0.0"
+    "paper-toast": "polymerelements/paper-toast#^1.0.0",
+    "paper-menu": "^1.2.2",
+    "paper-item": "^1.2.1"
   },
   "resolutions": {
     "polymer": "v1.1.1"
@@ -52,7 +54,8 @@
       "vaadin-icons": "vaadin/vaadin-icons#master",
       "vaadin-date-picker": "vaadin/vaadin-date-picker#master",
       "vaadin-upload": "vaadin/vaadin-upload#master",
-      "vaadin-split-layout": "vaadin/vaadin-split-layout#master"
+      "vaadin-split-layout": "vaadin/vaadin-split-layout#master",
+      "vaadin-context-menu": "vaadin/vaadin-context-menu#master"
     }
   }
 }
