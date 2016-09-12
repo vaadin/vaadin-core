@@ -33,8 +33,8 @@ gulp.task('cdn:stage-bower.json', ['clean:cdn'], function() {
     delete bowerJson.masterOverrides;
   }
 
-  fs.mkdirSync(stagingBasePath);
-  fs.mkdirSync(stagingPath);
+  fs.mkdirsSync(stagingBasePath);
+  fs.mkdirsSync(stagingPath);
   fs.writeFileSync(stagingPath + '/bower.json', JSON.stringify(bowerJson, null, '  '));
 });
 
