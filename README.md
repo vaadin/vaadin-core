@@ -23,8 +23,9 @@ Individual elements of the Core Elements bundle are released separately, and you
 #### Nearly there
 - [`<vaadin-grid>`](https://github.com/vaadin/vaadin-grid) 1.2
 - [`<vaadin-split-layout>`](https://github.com/vaadin/vaadin-split-panel) 0.1
+- [`<vaadin-context-menu>`](https://github.com/vaadin/vaadin-context-menu) 0.1
 
-#### Next up 
+#### Next up
 - [`<vaadin-combo-box>`](https://github.com/vaadin/vaadin-combo-box) 1.x
  - Custom filtering
  - Lazy loading
@@ -86,23 +87,23 @@ The following instructions are common for all Vaadin core elements. **Replace `v
 ### Getting the code
 
 1. Clone the element project from GitHub:
-  
+
   ```shell
   $ git clone https://github.com/vaadin/vaadin-combo-box.git
   ```
 
 2. Install [Node](https://nodejs.org/en/download/). It comes bundled with [npm](https://npmjs.com), which is needed to install other tooling.
 
-3. Install [Bower](http://bower.io) using [npm](https://npmjs.com): 
-  
+3. Install [Bower](http://bower.io) using [npm](https://npmjs.com):
+
   ```shell
   $ npm install -g bower
   ```
-  
+
   > If you encounter permission issues when running `npm` see the article about [fixing npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions) on npmjs.com
 
 4. Use Bower to install the dependencies of the element:
-  
+
   ```shell
   $ cd vaadin-combo-box
   $ bower install
@@ -111,13 +112,13 @@ The following instructions are common for all Vaadin core elements. **Replace `v
 ### Running demos
 
 1. Install [polyserve](https://github.com/PolymerLabs/polyserve) using [npm](https://npmjs.com):
-  
+
   ```shell
   $ npm install -g polyserve
   ```
 
 2. Start a local server in the project root directory:
-  
+
   ```shell
   $ cd vaadin-combo-box
   $ polyserve

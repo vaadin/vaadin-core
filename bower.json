@@ -52,7 +52,8 @@
       "vaadin-icons": "vaadin/vaadin-icons#master",
       "vaadin-date-picker": "vaadin/vaadin-date-picker#master",
       "vaadin-upload": "vaadin/vaadin-upload#master",
-      "vaadin-split-layout": "vaadin/vaadin-split-layout#master"
+      "vaadin-split-layout": "vaadin/vaadin-split-layout#master",
+      "vaadin-context-menu": "vaadin/vaadin-context-menu#master"
     }
   }
 }
