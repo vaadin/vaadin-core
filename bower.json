@@ -13,7 +13,8 @@
     "web",
     "components",
     "webcomponents",
-    "web-components"
+    "web-components",
+    "element-collection"
   ],
   "main": "vaadin-core-elements.html",
   "ignore": [
