@@ -16,43 +16,7 @@ See the list of elements, demos and documentation, instructions how to get start
 
 ## Roadmap
 
-This is a high level view of the upcoming releases for Vaadin Core Elements. The nearest releases are more likely to include what is stated here, but further plans have a higher risk of changing.
-
-Individual elements of the Core Elements bundle are released separately, and you can track their progress from their repositories.
-
-#### Nearly there
-- [`<vaadin-grid>`](https://github.com/vaadin/vaadin-grid) 1.2
-- [`<vaadin-split-layout>`](https://github.com/vaadin/vaadin-split-panel) 0.1
-- [`<vaadin-context-menu>`](https://github.com/vaadin/vaadin-context-menu) 0.1
-
-#### Next up
-- [`<vaadin-combo-box>`](https://github.com/vaadin/vaadin-combo-box) 1.x
- - Custom filtering
- - Lazy loading
- - Dropdown item templates
-- [`<vaadin-date-picker>`](https://github.com/vaadin/vaadin-date-picker) 1.x
- - Min and max date limits
- - Keyboard input
- - Screenreader support
- - Week numbers
-
-#### In planning
-- New elements: `<vaadin-context-menu>`, `<vaadin-form-layout>`, `<vaadin-details>`
-- Bootstrap CSS integration
-
-##### Version labels
-
-On top of the common version numbering (major.minor.patch) Vaadin uses labels to indicate the maturity of a version.
-
-*Examples: `1.0.0-alpha2`, `1.0.0-beta4`, `1.0.0-rc1`*
-
-- **Alpha**: A snapshot mainly to gather feedback from users. All features and implementation details are still subject to change.
-
-- **Beta**: Feature-complete release of the upcoming version. The API should no longer change, but small improvements can be made. No changes in functionality are to be expected.
-
-- **RC**: Also known as "release candidate". Only bug fixes can be expected to happen before the stable version.
-
-All of the maturity tags can be suffixed with a number, so for example "rc2" is the second release candidate of a certain version.
+See https://vaadin.com/roadmap for a high level roadmap that is updated once a week.
 
 ## Contributing
 
