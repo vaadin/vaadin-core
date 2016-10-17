@@ -29,7 +29,7 @@
     "vaadin-combo-box": "vaadin/vaadin-combo-box#1.1.x",
     "vaadin-icons": "vaadin/vaadin-icons#1.0.x",
     "vaadin-date-picker": "vaadin/vaadin-date-picker#1.1.x",
-    "vaadin-upload": "vaadin/vaadin-upload#1.0.x"
+    "vaadin-upload": "vaadin/vaadin-upload#1.1.x"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.3",
