@@ -18,7 +18,7 @@ Vaadin Core Elements includes the following elements:
 
  - link:/docs/-/part/elements/vaadin-combo-box/vaadin-combo-box-overview.html[Combo Box]
  - link:/docs/-/part/elements/vaadin-date-picker/vaadin-date-picker-overview.html[Date Picker]
- - link:/docs/-/part/elements/vaadin-grid/overview.html[Grid]
+ - link:/docs/-/part/elements/vaadin-grid/vaadin-grid-overview.html[Grid]
  - link:/docs/-/part/elements/vaadin-upload/vaadin-upload-overview.html[Upload]
  - link:/docs/-/part/elements/vaadin-icons/vaadin-icons-overview.html[Icons]
 
