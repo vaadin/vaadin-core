@@ -42,7 +42,8 @@
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
     "paper-toast": "polymerelements/paper-toast#^1.0.0",
     "paper-menu": "^1.2.2",
-    "paper-item": "^1.2.1"
+    "paper-item": "^1.2.1",
+    "sugar": "^2.0.0"
   },
   "resolutions": {
     "polymer": "v1.1.1"
