@@ -51,7 +51,7 @@
   "masterOverrides": {
     "version": "master",
     "dependencies": {
-      "vaadin-grid": "vaadin/vaadin-grid#master",
+      "vaadin-grid": "vaadin/vaadin-grid#2.0.0-pre.2",
       "vaadin-combo-box": "vaadin/vaadin-combo-box#master",
       "vaadin-icons": "vaadin/vaadin-icons#master",
       "vaadin-date-picker": "vaadin/vaadin-date-picker#master",
