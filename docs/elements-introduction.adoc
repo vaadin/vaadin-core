@@ -10,7 +10,7 @@ layout: page
 
 Vaadin Core Elements is a free and open source set of high quality link:http://webcomponents.org[Web Components] for building mobile and desktop web applications in modern browsers. It builds on top of Google’s link:http://www.polymer-project.org[Polymer] library, and augments the link:https://elements.polymer-project.org[Iron, Paper, and other element sets of Polymer] with elements that are needed in building business applications.
 
-Although based on Polymer, Vaadin Elements can be used together with any other web framework that has support for Web Components. See the  link:integrations/polymer.html[Integrations] section for examples how to use the elements together with different JavaScript frameworks and libraries, such as Angular 2 and React.
+Although based on Polymer, Vaadin Elements can be used together with any other web framework that has support for Web Components. See the  link:integrations/polymer.html[Integrations] section for examples how to use the elements together with different JavaScript frameworks and libraries, such as Angular 2, React and Vue.js.
 
 If you wish to use Vaadin elements with link:http://gwtproject.org[GWT], you can use link:https://vaadin.com/gwt[GWT Polymer Elements].
 
@@ -87,6 +87,7 @@ Example integrations for some popular frameworks and libraries:
 - link:/docs/-/part/elements/integrations/polymer.html[Polymer]
 - link:/docs/-/part/elements/integrations/angular2.html[Angular 2]
 - link:/docs/-/part/elements/integrations/react.html[React]
+- link:/docs/-/part/elements/integrations/vuejs.html[Vue.js]
 
 
 +++
