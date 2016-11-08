@@ -22,7 +22,7 @@ Vaadin Elements uses link:http://bower.io/[Bower] for package management.
 ----
 
 .  By default, Bower installs dependencies to the [filename]#bower_components# directory.
-But if you are using Webpack or Vue CLI, it expects static stuff to be in the [filename]#static# directory.
+But if you are using Webpack or Vue CLI, it expects static files to be in the [filename]#static# directory.
 Thus, create the [filename]#.bowerrc# file in the root directory, with the following content:
 +
 [source,json]
