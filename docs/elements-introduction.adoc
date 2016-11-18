@@ -84,10 +84,10 @@ You can use Vaadin elements together with any JavaScript framework or library wh
 
 Example integrations for some popular frameworks and libraries:
 
-- link:/docs/-/part/elements/integrations/polymer.html[Polymer]
-- link:/docs/-/part/elements/integrations/angular2.html[Angular 2]
-- link:/docs/-/part/elements/integrations/react.html[React]
-- link:/docs/-/part/elements/integrations/vuejs.html[Vue.js]
+- link:/docs/-/part/elements/elements-getting-started.html[Polymer]
+- link:/docs/-/part/elements/angular2-polymer/overview.html[Angular 2]
+- link:/docs/-/part/elements/integrations/integrations-react.html[React]
+- link:/docs/-/part/elements/integrations/integrations-vuejs.html[Vue.js]
 
 
 +++
