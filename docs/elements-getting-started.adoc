@@ -150,7 +150,7 @@ After you have created the file and you have a local server serving the files, y
 
 +++
 <!-- Assumes .w-arrow-button and .blue class names from vaadin.com theme. Will fallback to a plain link. -->
-<a href="vaadin-grid/overview.html" class="w-arrow-button blue" style="display: inline-block">
+<a href="vaadin-grid/vaadin-grid-overview.html" class="w-arrow-button blue" style="display: inline-block">
   Vaadin Grid<br />
   <small>Continue to Vaadin Grid documentation</small>
 </a>
