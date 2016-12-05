@@ -28,7 +28,7 @@
     "vaadin-grid": "vaadin/vaadin-grid#1.2.x",
     "vaadin-combo-box": "vaadin/vaadin-combo-box#1.1.x",
     "vaadin-icons": "vaadin/vaadin-icons#1.0.x",
-    "vaadin-date-picker": "vaadin/vaadin-date-picker#1.1.x",
+    "vaadin-date-picker": "vaadin/vaadin-date-picker#1.2.x",
     "vaadin-upload": "vaadin/vaadin-upload#1.1.x"
   },
   "devDependencies": {
