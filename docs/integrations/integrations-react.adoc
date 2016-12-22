@@ -38,7 +38,7 @@ The code below can be run and forked as a JSFiddle at https://jsfiddle.net/pw1nL
 var UserGrid = React.createClass({
   render: function(){
     return (
-      <vaadin-grid></vaadin-grid>
+      '<vaadin-grid></vaadin-grid>';
     )
   },
 
@@ -116,6 +116,6 @@ var UserApp = React.createClass({
 });
 
 HTMLImports.whenReady(function(){
-  ReactDOM.render(<UserApp></UserApp>, document.getElementById('container'));
+  ReactDOM.render('<UserApp></UserApp>', document.getElementById('container'));
 });
 ----
