@@ -17,8 +17,10 @@ If you wish to use Vaadin elements with link:http://gwtproject.org[GWT], you can
 Vaadin Core Elements includes the following elements:
 
  - link:/docs/-/part/elements/vaadin-combo-box/vaadin-combo-box-overview.html[Combo Box]
+ - link:/docs/-/part/elements/vaadin-context-menu/vaadin-context-menu-overview.html[Context Menu]
  - link:/docs/-/part/elements/vaadin-date-picker/vaadin-date-picker-overview.html[Date Picker]
- - link:/docs/-/part/elements/vaadin-grid/vaadin-grid-overview.html[Grid]
+ - link:/docs/-/part/elements/vaadin-grid/vaadin-grid-overview.html[(Data) Grid]
+ - link:/docs/-/part/elements/vaadin-split-layout/vaadin-split-layout-overview.html[Split Layout]
  - link:/docs/-/part/elements/vaadin-upload/vaadin-upload-overview.html[Upload]
  - link:/docs/-/part/elements/vaadin-icons/vaadin-icons-overview.html[Icons]
 
@@ -55,7 +57,7 @@ The Polymer library is designed to make it easier and faster for developers to c
 
 It provides a declarative syntax that makes it simpler to define custom elements, and adds features like templating, two-way data binding, and property observation to help you build powerful, reusable elements with less code.
 
-The Polymer team also builds and maintains a large collection of custom elements, and the most prominent one is the Paper collection. The Paper elements are Google’s reference implementation of Material Design for the web.
+The Polymer team also builds and maintains a large collection of custom elements, and the most prominent one is the Paper collection. The Paper elements are Google’s reference implementation of Material design for the web.
 
 link:https://www.polymer-project.org[Learn more about Polymer]
 
