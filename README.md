@@ -8,8 +8,9 @@
 - [vaadin-context-menu](https://github.com/vaadin/vaadin-context-menu)
 - [vaadin-date-picker](https://github.com/vaadin/vaadin-date-picker)
 - [vaadin-grid](https://github.com/vaadin/vaadin-grid)
-- [vaadin-split-layout](https://github.com/vaadin/vaadin-split-layout)
 - [vaadin-icons](https://github.com/vaadin/vaadin-icons)
+- [vaadin-split-layout](https://github.com/vaadin/vaadin-split-layout)
+- [vaadin-upload](https://github.com/vaadin/vaadin-upload)
 
 Vaadin Core Elements is a bundle that contains all the free elements, licensed under the Apache License 2.0. In addition, we have commercially licensed elements, such as [Vaadin Charts](https://github.com/vaadin/vaadin-charts).
 
