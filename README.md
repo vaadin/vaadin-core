@@ -1,4 +1,6 @@
-![Bower version](https://img.shields.io/bower/v/vaadin-core-elements.svg) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-core-elements?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+![Bower version](https://img.shields.io/bower/v/vaadin-core-elements.svg) 
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/collection/vaadin/vaadin-core-elements)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin/vaadin-core-elements?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # Vaadin Core Elements
 
