@@ -6,13 +6,15 @@
 
 [Vaadin elements](https://vaadin.com/elements) are an evolving set of open sourced custom HTML elements, which seamlessly extend the [Polymer Element Catalog](https://elements.polymer-project.org) with high-quality user interface components commonly needed in modern mobile and desktop business web applications. The following elements are included:
 
-- [vaadin-combo-box](https://github.com/vaadin/vaadin-combo-box)
-- [vaadin-context-menu](https://github.com/vaadin/vaadin-context-menu)
-- [vaadin-date-picker](https://github.com/vaadin/vaadin-date-picker)
-- [vaadin-grid](https://github.com/vaadin/vaadin-grid)
-- [vaadin-icons](https://github.com/vaadin/vaadin-icons)
-- [vaadin-split-layout](https://github.com/vaadin/vaadin-split-layout)
-- [vaadin-upload](https://github.com/vaadin/vaadin-upload)
+| Element | Stable Version | Build Status |
+|---------|----------------|--------------|
+| [vaadin-combo-box](https://github.com/vaadin/vaadin-combo-box) | ![Bower version](https://img.shields.io/bower/v/vaadin-combo-box.svg) | [![Build Status](https://travis-ci.org/vaadin/vaadin-combo-box.svg?branch=master)](https://travis-ci.org/vaadin/vaadin-combo-box) |
+| [vaadin-context-menu](https://github.com/vaadin/vaadin-context-menu) | ![Bower version](https://img.shields.io/bower/v/vaadin-context-menu.svg) | [![Build Status](https://travis-ci.org/vaadin/vaadin-context-menu.svg?branch=master)](https://travis-ci.org/vaadin/vaadin-context-menu) |
+| [vaadin-date-picker](https://github.com/vaadin/vaadin-date-picker) | ![Bower version](https://img.shields.io/bower/v/vaadin-date-picker.svg) | [![Build Status](https://travis-ci.org/vaadin/vaadin-date-picker.svg?branch=master)](https://travis-ci.org/vaadin/vaadin-date-picker) |
+| [vaadin-grid](https://github.com/vaadin/vaadin-grid) | ![Bower version](https://img.shields.io/bower/v/vaadin-grid.svg) | [![Build Status](https://travis-ci.org/vaadin/vaadin-grid.svg?branch=2.0-dev)](https://travis-ci.org/vaadin/vaadin-grid) |
+| [vaadin-icons](https://github.com/vaadin/vaadin-icons) | ![Bower version](https://img.shields.io/bower/v/vaadin-icons.svg) | |
+| [vaadin-split-layout](https://github.com/vaadin/vaadin-split-layout) | ![Bower version](https://img.shields.io/bower/v/vaadin-split-layout.svg) | [![Build status](https://travis-ci.org/vaadin/vaadin-split-layout.svg?branch=master)](https://travis-ci.org/vaadin/vaadin-split-layout) |
+| [vaadin-upload](https://github.com/vaadin/vaadin-upload) | ![Bower version](https://img.shields.io/bower/v/vaadin-upload.svg) | [![Build Status](https://travis-ci.org/vaadin/vaadin-upload.svg?branch=master)](https://travis-ci.org/vaadin/vaadin-upload) |
 
 Vaadin Core Elements is a bundle that contains all the free elements, licensed under the Apache License 2.0. In addition, we have commercially licensed elements, such as [Vaadin Charts](https://github.com/vaadin/vaadin-charts).
 
