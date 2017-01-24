@@ -1,6 +1,5 @@
 {
   "name": "vaadin-core-elements",
-  "version": "1.3.0",
   "authors": [
     "Vaadin Ltd"
   ],
@@ -26,10 +25,12 @@
   ],
   "dependencies": {
     "vaadin-grid": "vaadin/vaadin-grid#1.2.x",
-    "vaadin-combo-box": "vaadin/vaadin-combo-box#1.1.x",
+    "vaadin-combo-box": "vaadin/vaadin-combo-box#1.2.x",
     "vaadin-icons": "vaadin/vaadin-icons#1.0.x",
     "vaadin-date-picker": "vaadin/vaadin-date-picker#1.2.x",
-    "vaadin-upload": "vaadin/vaadin-upload#1.1.x"
+    "vaadin-upload": "vaadin/vaadin-upload#1.1.x",
+    "vaadin-split-layout": "vaadin/vaadin-split-layout#1.0.x",
+    "vaadin-context-menu": "vaadin/vaadin-context-menu#1.0.x"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.3",
