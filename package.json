@@ -1,6 +1,6 @@
 {
   "name": "vaadin-core-elements",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Vaadin Core Elements is an evolving set of free, open sourced custom HTML elements, built using Polymer, for building mobile and desktop web applications in modern browsers.",
   "author": "Vaadin Ltd",
   "license": "Apache-2.0",
