@@ -6,10 +6,10 @@
   "license": "Apache-2.0",
   "dependencies": {
     "bower": "latest",
-    "fs-extra": "latest",
+    "fs-extra": "2.0.x",
     "gulp": "^3.9.1",
     "gulp-add-src": "latest",
-    "gulp-git": "latest",
+    "gulp-git": "1.14.x",
     "gulp-json-editor": "latest",
     "gulp-markdown": "^1.0.0",
     "gulp-modify": "^0.1.1",
