@@ -8,6 +8,7 @@ var modify = require('gulp-modify');
 var rsync = require('gulp-rsync');
 var gutil = require('gulp-util');
 var args = require('yargs').argv;
+var git = require('gulp-git');
 
 var stagingBasePath = config.paths.staging.cdn;
 var version = config.version;
@@ -90,4 +91,58 @@ gulp.task('deploy:cdn', ['upload:cdn'], function(done) {
   } else {
     done();
   }
+});
+
+gulp.task('cdn:arguments', function(done) {
+  common.checkArguments(['element', 'tag']);
+  args.folder = args.tag.replace(/^v/g, '');
+  stagingPath = path.join(process.cwd(), stagingBasePath, args.element, args.folder);
+  done();
+});
+
+gulp.task('cdn:clone', ['clean:cdn', 'cdn:arguments'], function(done) {
+  git.clone('https://github.com/vaadin/' + args.element, {args: '-b ' + args.tag + ' ./target/cdn/' + args.element + '/' + args.folder }, function (err) {
+    if (err) throw err;
+    done();
+  });
+});
+
+gulp.task('cdn:install', ['cdn:arguments', 'cdn:clone'], function() {
+  return bower({
+    cwd: stagingPath,
+    forceLatest: true,
+    cmd: 'install'
+  });
+});
+
+gulp.task('cdn:stage', ['cdn:arguments', 'cdn:install'], function() {
+  return gulp.src([stagingPath + '/**/*.html',  '!**/bower_components/**'])
+    .pipe(modify({
+      fileModifier: function(file, contents) {
+        // magic regex trying to change import paths from:
+        // ../foo/foo.html to bower_components/foo/foo.html
+        // ../../foo/foo.html to ../bower_components/foo/foo.html
+        // ../my-element.html stays as it is.
+        contents = contents.replace(new RegExp(/([href|src].+)((\.\.\/)((?!bower_components|\.\.).+\/.+))/g), '$1bower_components/$4');
+        return contents;
+      }
+    }))
+    .pipe(gulp.dest(stagingPath));
+});
+
+gulp.task('cdn:upload', ['cdn:stage'], function() {
+  common.checkArguments(['cdnUsername', 'cdnDestination']);
+  var destination = path.join(args.cdnDestination, args.element, args.folder);
+  gutil.log('Uploading to cdn (rsync): ' + stagingPath + ' -> ' + args.cdnUsername + '@' + host + ':' + destination);
+  return gulp.src(stagingPath)
+    .pipe(rsync({
+      username: args.cdnUsername,
+      hostname: host,
+      root: stagingPath,
+      emptyDirectories: false,
+      recursive: true,
+      clean: true,
+      silent: true,
+      destination: destination
+    }));
 });

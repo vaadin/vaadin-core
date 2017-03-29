@@ -2,7 +2,6 @@
 var gulp = require('gulp');
 require('require-dir')('./tasks');
 var args = require('yargs').argv;
-var git = require('gulp-git');
 
 gulp.task('default', function() {
   console.log('\n  Use:\n gulp <stage|deploy[:cdn]>|<zip>\n');

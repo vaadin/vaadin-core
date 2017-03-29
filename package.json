@@ -7,7 +7,7 @@
   "dependencies": {
     "bower": "latest",
     "fs-extra": "latest",
-    "gulp": "latest",
+    "gulp": "^3.9.1",
     "gulp-add-src": "latest",
     "gulp-git": "latest",
     "gulp-json-editor": "latest",
