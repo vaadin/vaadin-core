@@ -93,6 +93,8 @@ gulp.task('deploy:cdn', ['upload:cdn'], function(done) {
   }
 });
 
+/* Above are the old tasks to publish the vaadin-core-elements package, below the tasks to publish a single element from a specific tag/branch. Sorry about the poor naming :-) */
+
 gulp.task('cdn:arguments', function(done) {
   common.checkArguments(['element', 'tag']);
   args.folder = args.tag.replace(/^v/g, '');
