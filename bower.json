@@ -47,7 +47,8 @@
     "sugar": "^2.0.0"
   },
   "resolutions": {
-    "polymer": "v1.1.1"
+    "polymer": "v1.1.1",
+    "iron-iconset-svg": "^1.1.0"
   },
   "masterOverrides": {
     "version": "master",
