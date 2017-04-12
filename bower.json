@@ -24,13 +24,13 @@
     "**/tests"
   ],
   "dependencies": {
-    "vaadin-grid": "vaadin/vaadin-grid#1.2.x",
     "vaadin-combo-box": "vaadin/vaadin-combo-box#1.3.x",
-    "vaadin-icons": "vaadin/vaadin-icons#1.0.x",
+    "vaadin-context-menu": "vaadin/vaadin-context-menu#1.0.x",
     "vaadin-date-picker": "vaadin/vaadin-date-picker#1.2.x",
-    "vaadin-upload": "vaadin/vaadin-upload#1.1.x",
-    "vaadin-split-layout": "vaadin/vaadin-split-layout#1.0.x",
-    "vaadin-context-menu": "vaadin/vaadin-context-menu#1.0.x"
+    "vaadin-grid": "vaadin/vaadin-grid#2.0.x",
+    "vaadin-icons": "vaadin/vaadin-icons#3.0.x",
+    "vaadin-split-layout": "vaadin/vaadin-split-layout#1.1.x",
+    "vaadin-upload": "vaadin/vaadin-upload#1.1.x"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.3",
@@ -38,7 +38,6 @@
     "iron-test-helpers": "polymerelements/iron-test-helpers#^1.0.0",
     "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
     "elements-demo-resources": "vaadin/elements-demo-resources#master",
-    "components-demo-resources": "vaadin/components-demo-resources#master",
     "mock-http-request": "philikon/MockHttpRequest#master",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
     "paper-toast": "polymerelements/paper-toast#^1.0.0",
