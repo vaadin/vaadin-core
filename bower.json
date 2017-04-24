@@ -34,20 +34,21 @@
   },
   "devDependencies": {
     "web-component-tester": "^4.0.3",
-    "test-fixture": "polymerelements/test-fixture#^1.0.0",
-    "iron-test-helpers": "polymerelements/iron-test-helpers#^1.0.0",
-    "iron-component-page": "polymerelements/iron-component-page#~1.1.0",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#^1.0.0",
+    "iron-component-page": "PolymerElements/iron-component-page#~1.1.0",
     "elements-demo-resources": "vaadin/elements-demo-resources#master",
     "mock-http-request": "philikon/MockHttpRequest#master",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-    "paper-toast": "polymerelements/paper-toast#^1.0.0",
-    "paper-menu": "^1.2.2",
-    "paper-item": "^1.2.1",
-    "sugar": "^2.0.0"
+    "paper-toast": "PolymerElements/paper-toast#^1.0.0",
+    "paper-menu": "PolymerElements/paper-menu#^1.2.2",
+    "paper-item": "PolymerElements/paper-item#^1.2.1",
+    "sugar": "^2.0.0",
+    "paper-checkbox": "PolymerElements/paper-checkbox#^1.4.2"
   },
   "resolutions": {
     "polymer": "v1.1.1",
-    "iron-iconset-svg": "^1.1.0"
+    "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.1.0"
   },
   "masterOverrides": {
     "version": "master",
