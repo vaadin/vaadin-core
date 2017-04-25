@@ -106,22 +106,23 @@ Due to browser security restrictions, serving HTML imports from a `file:///` URL
  </head>
  <body>
 
-   <vaadin-grid selection-mode="multi">
-     <table>
-       <!-- Define the columns and their mapping to data properties. -->
-       <col name="firstName">
-       <col name="lastName">
-       <col name="email">
+   <vaadin-grid>
 
-       <!-- Define the column headings. -->
-       <thead>
-         <tr>
-           <th>First Name</th>
-           <th>Last Name</th>
-           <th>Email</th>
-         </tr>
-       </thead>
-     </table>
+    <vaadin-grid-column>
+      <template class="header">First Name</template>
+      <template>[[item.firstName]]</template>
+    </vaadin-grid-column>
+
+    <vaadin-grid-column>
+      <template class="header">Last Name</template>
+      <template>[[item.lastName]]</template>
+    </vaadin-grid-column>
+
+    <vaadin-grid-column>
+      <template class="header">Email</template>
+      <template>[[item.email]]</template>
+    </vaadin-grid-column>
+
    </vaadin-grid>
 
    <script>
