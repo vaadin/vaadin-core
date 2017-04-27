@@ -10,19 +10,19 @@ layout: page
 
 Vaadin Core Elements is a free and open source set of high quality link:http://webcomponents.org[Web Components] for building mobile and desktop web applications in modern browsers. It builds on top of Google’s link:http://www.polymer-project.org[Polymer] library, and augments the link:https://elements.polymer-project.org[Iron, Paper, and other element sets of Polymer] with elements that are needed in building business applications.
 
-Although based on Polymer, Vaadin Elements can be used together with any other web framework that has support for Web Components. See the  link:integrations/polymer.html[Integrations] section for examples how to use the elements together with different JavaScript frameworks and libraries, such as Angular 2, React and Vue.js.
+Although based on Polymer, Vaadin Elements can be used together with any other web framework that has support for Web Components. See the  link:integrations/polymer.html[Integrations] section for examples how to use the elements together with different JavaScript frameworks and libraries, such as React and Vue.js.
 
-If you wish to use Vaadin elements with link:http://gwtproject.org[GWT], you can use link:https://vaadin.com/gwt[GWT Polymer Elements].
+There's also 3rd party utilities available for integrating Vaadin Core Elements (and Polymer elements in general) with link:https://github.com/platosha/angular-polymer[Angular] and link:https://github.com/manolo/gwt-polymer-elements[GWT]
 
 Vaadin Core Elements includes the following elements:
 
- - link:/docs/-/part/elements/vaadin-combo-box/vaadin-combo-box-overview.html[Combo Box]
- - link:/docs/-/part/elements/vaadin-context-menu/vaadin-context-menu-overview.html[Context Menu]
- - link:/docs/-/part/elements/vaadin-date-picker/vaadin-date-picker-overview.html[Date Picker]
- - link:/docs/-/part/elements/vaadin-grid/vaadin-grid-overview.html[(Data) Grid]
- - link:/docs/-/part/elements/vaadin-split-layout/vaadin-split-layout-overview.html[Split Layout]
- - link:/docs/-/part/elements/vaadin-upload/vaadin-upload-overview.html[Upload]
- - link:/docs/-/part/elements/vaadin-icons/vaadin-icons-overview.html[Icons]
+ - link:https://vaadin.com/elements/-/element/vaadin-combo-box[Combo Box]
+ - link:https://vaadin.com/elements/-/element/vaadin-context-menu[Context Menu]
+ - link:https://vaadin.com/elements/-/element/vaadin-date-picker[Date Picker]
+ - link:https://vaadin.com/elements/-/element/vaadin-grid[(Data) Grid]
+ - link:https://vaadin.com/elements/-/element/vaadin-split-layout[Split Layout]
+ - link:https://vaadin.com/elements/-/element/vaadin-upload[Upload]
+ - link:https://vaadin.com/elements/-/element/vaadin-icons[Icons]
 
 Learn more about the benefits of using Vaadin elements from the link:https://vaadin.com/elements[Vaadin Elements page].
 
@@ -87,7 +87,6 @@ You can use Vaadin elements together with any JavaScript framework or library wh
 Example integrations for some popular frameworks and libraries:
 
 - link:/docs/-/part/elements/elements-getting-started.html[Polymer]
-- link:/docs/-/part/elements/angular2-polymer/overview.html[Angular 2]
 - link:/docs/-/part/elements/integrations/integrations-react.html[React]
 - link:/docs/-/part/elements/integrations/integrations-vuejs.html[Vue.js]
 

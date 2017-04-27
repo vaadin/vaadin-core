@@ -106,22 +106,23 @@ Due to browser security restrictions, serving HTML imports from a `file:///` URL
  </head>
  <body>
 
-   <vaadin-grid selection-mode="multi">
-     <table>
-       <!-- Define the columns and their mapping to data properties. -->
-       <col name="firstName">
-       <col name="lastName">
-       <col name="email">
+   <vaadin-grid>
 
-       <!-- Define the column headings. -->
-       <thead>
-         <tr>
-           <th>First Name</th>
-           <th>Last Name</th>
-           <th>Email</th>
-         </tr>
-       </thead>
-     </table>
+    <vaadin-grid-column>
+      <template class="header">First Name</template>
+      <template>[[item.firstName]]</template>
+    </vaadin-grid-column>
+
+    <vaadin-grid-column>
+      <template class="header">Last Name</template>
+      <template>[[item.lastName]]</template>
+    </vaadin-grid-column>
+
+    <vaadin-grid-column>
+      <template class="header">Email</template>
+      <template>[[item.email]]</template>
+    </vaadin-grid-column>
+
    </vaadin-grid>
 
    <script>
@@ -147,11 +148,3 @@ Due to browser security restrictions, serving HTML imports from a `file:///` URL
 ----
 
 After you have created the file and you have a local server serving the files, you should be able to open up the application in your browser at http://localhost:3000/index.html (notice that the port number may vary depending on the server you use).
-
-+++
-<!-- Assumes .w-arrow-button and .blue class names from vaadin.com theme. Will fallback to a plain link. -->
-<a href="vaadin-grid/vaadin-grid-overview.html" class="w-arrow-button blue" style="display: inline-block">
-  Vaadin Grid<br />
-  <small>Continue to Vaadin Grid documentation</small>
-</a>
-+++
