@@ -14,21 +14,11 @@ The following instructions are common for all Vaadin core elements. **Replace `v
   $ git clone https://github.com/vaadin/vaadin-combo-box.git
   ```
 
-2. Install [Node](https://nodejs.org/en/download/). It comes bundled with [npm](https://npmjs.com), which is needed to install other tooling.
-
-3. Install [Bower](http://bower.io) using [npm](https://npmjs.com):
-
-  ```shell
-  $ npm install -g bower
-  ```
-
-  > If you encounter permission issues when running `npm` see the article about [fixing npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions) on npmjs.com
-
-4. Use Bower to install the dependencies of the element:
+2. Use [npm](https://npmjs.com) to install the dependencies of the element:
 
   ```shell
   $ cd vaadin-combo-box
-  $ bower install
+  $ npm install
   ```
 
 ### Running demos
