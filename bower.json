@@ -62,7 +62,8 @@
       "vaadin-icons": "vaadin/vaadin-icons#master",
       "vaadin-split-layout": "vaadin/vaadin-split-layout#master",
       "vaadin-text-field": "vaadin/vaadin-text-field#master",
-      "vaadin-upload": "vaadin/vaadin-upload#master"
+      "vaadin-upload": "vaadin/vaadin-upload#master",
+      "vaadin-themes": "vaadin/vaadin-themes#master"
     }
   },
   "resolutions": {
