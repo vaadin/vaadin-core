@@ -4,7 +4,7 @@
 
 # Vaadin Core Elements
 
-[Vaadin elements](https://vaadin.com/elements) are an evolving set of open sourced custom HTML elements, which seamlessly extend the [Polymer Element Catalog](https://elements.polymer-project.org) with high-quality user interface components commonly needed in modern mobile and desktop business web applications. The following elements are included:
+[Vaadin elements](https://vaadin.com/elements) are an evolving set of open sourced [Polymer](https://www.polymer-project.org/) web components, which seamlessly extend the [Polymer Element Catalog](https://www.webcomponents.org/collection/Polymer/elements) with high-quality user interface components commonly needed in modern mobile and desktop business web applications. The following elements are included:
 
 | Element | Bower Version | Npm version | Build Status | Polymer 2 support |
 |---------|---------------|-------------|--------------|-------------------|
