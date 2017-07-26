@@ -70,6 +70,7 @@
     "iron-flex-layout": "^2.0.0",
     "iron-icon": "2.0.0",
     "iron-iconset-svg": "^2.0.0",
-    "iron-meta": "1 - 2"
+    "iron-meta": "1 - 2",
+    "iron-form": "^2.0.0"
   }
 }
