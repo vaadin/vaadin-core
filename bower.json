@@ -64,6 +64,15 @@
       "vaadin-text-field": "vaadin/vaadin-text-field#master",
       "vaadin-themes": "vaadin/vaadin-themes#master",
       "vaadin-upload": "vaadin/vaadin-upload#master"
+    },
+    "resolutions": {
+      "iron-flex-layout": "^2.0.0",
+      "iron-icon": "2.0.0",
+      "iron-iconset-svg": "^2.0.0",
+      "iron-meta": "1 - 2",
+      "iron-form": "^2.0.0",
+      "vaadin-button": "master",
+      "vaadin-text-field": "master"
     }
   },
   "resolutions": {
