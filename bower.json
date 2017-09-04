@@ -15,7 +15,7 @@
     "web-components",
     "element-collection"
   ],
-  "main": "vaadin-core-elements.html",
+  "main": "vaadin-core.html",
   "ignore": [
     "**/.*",
     "**/node_modules",
