@@ -14,16 +14,6 @@ Although based on Polymer, Vaadin Elements can be used together with any other w
 
 There's also 3rd party utilities available for integrating Vaadin Core Elements (and Polymer elements in general) with link:https://github.com/platosha/angular-polymer[Angular] and link:https://github.com/manolo/gwt-polymer-elements[GWT]
 
-Vaadin Core Elements includes the following elements:
-
- - link:https://vaadin.com/elements/-/element/vaadin-combo-box[Combo Box]
- - link:https://vaadin.com/elements/-/element/vaadin-context-menu[Context Menu]
- - link:https://vaadin.com/elements/-/element/vaadin-date-picker[Date Picker]
- - link:https://vaadin.com/elements/-/element/vaadin-grid[(Data) Grid]
- - link:https://vaadin.com/elements/-/element/vaadin-split-layout[Split Layout]
- - link:https://vaadin.com/elements/-/element/vaadin-upload[Upload]
- - link:https://vaadin.com/elements/-/element/vaadin-icons[Icons]
-
 Learn more about the benefits of using Vaadin elements from the link:https://vaadin.com/elements[Vaadin Elements page].
 
 ## Background
@@ -78,7 +68,7 @@ See also
 
  - link:http://webcomponents.org/[Native Web Components support]
  - link:https://github.com/WebComponents/webcomponentsjs#browser-support[Browser support of webcomponents.js polyfill]
- - link:https://www.polymer-project.org/1.0/resources/compatibility.html[Browser support of Polymer]
+ - link:https://www.polymer-project.org/2.0/docs/browsers[Browser support of Polymer]
 
 ## Framework support
 
@@ -89,6 +79,8 @@ Example integrations for some popular frameworks and libraries:
 - link:/docs/-/part/elements/elements-getting-started.html[Polymer]
 - link:/docs/-/part/elements/integrations/integrations-react.html[React]
 - link:/docs/-/part/elements/integrations/integrations-vuejs.html[Vue.js]
+
+For more information, check link:https://custom-elements-everywhere.com[custom-elements-everywhere.com], which tracks the support status of various frameworks.
 
 
 +++
