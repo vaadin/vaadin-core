@@ -31,7 +31,7 @@
     "vaadin-date-picker": "vaadin/vaadin-date-picker#2.0.5",
     "vaadin-dialog": "vaadin/vaadin-dialog#1.0.0-beta1",
     "vaadin-form-layout": "vaadin/vaadin-form-layout#1.0.3",
-    "vaadin-grid": "vaadin/vaadin-grid#4.0.0-alpha2",
+    "vaadin-grid": "vaadin/vaadin-grid#4.0.0-alpha3",
     "vaadin-icons": "vaadin/vaadin-icons#4.1.2",
     "vaadin-ordered-layout": "vaadin/vaadin-ordered-layout#1.0.0-alpha1",
     "vaadin-progress-bar": "vaadin/vaadin-progress-bar#1.0.0-alpha3",
@@ -40,7 +40,7 @@
     "vaadin-text-field": "vaadin/vaadin-text-field#1.1.0-beta1",
     "vaadin-upload": "vaadin/vaadin-upload#2.1.2",
 
-    "vaadin-valo-theme": "vaadin/vaadin-valo-theme#2.0.0-alpha1"
+    "vaadin-valo-theme": "vaadin/vaadin-valo-theme#2.0.0-alpha2"
   },
   "devDependencies": {
     "mock-http-request": "philikon/MockHttpRequest#master",
