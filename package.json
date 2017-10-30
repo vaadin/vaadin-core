@@ -5,31 +5,9 @@
   "author": "Vaadin Ltd",
   "license": "Apache-2.0",
   "dependencies": {
-    "bower": "latest",
-    "fs-extra": "2.0.x",
-    "gulp": "^3.9.1",
-    "gulp-add-src": "latest",
-    "gulp-git": "1.14.x",
-    "gulp-json-editor": "latest",
-    "gulp-markdown": "^1.0.0",
-    "gulp-modify": "^0.1.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "latest",
-    "gulp-util": "latest",
-    "yargs": "latest"
+    "bower": "latest"
   },
-  "devDependencies": {
-    "chalk": "latest",
-    "gulp-bower": "0.0.10",
-    "gulp-insert": "latest",
-    "gulp-rsync": "0.0.5",
-    "gulp-unzip": "^0.1.3",
-    "gulp-zip": "^2.0.3",
-    "lodash": "^3.5.0",
-    "node-ssh-exec": "^0.1.1",
-    "require-dir": "^0.1.0",
-    "scp2": "^0.2.1"
-  },
+  "devDependencies": {},
   "keywords": [
     "vaadin",
     "core",
