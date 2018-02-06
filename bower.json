@@ -44,6 +44,6 @@
     "vaadin-split-layout": "vaadin/vaadin-split-layout#4.0.0-alpha5",
     "vaadin-tabs": "vaadin/vaadin-tabs#2.0.0-alpha7",
     "vaadin-text-field": "vaadin/vaadin-text-field#2.0.0-alpha10",
-    "vaadin-upload": "vaadin/vaadin-upload#4.0.0-alpha5"
+    "vaadin-upload": "vaadin/vaadin-upload#4.0.0-alpha4"
   }
 }
