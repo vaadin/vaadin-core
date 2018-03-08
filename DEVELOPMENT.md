@@ -1,10 +1,10 @@
-## Developing Vaadin Core Elements
+## Developing Vaadin components
 
-Each Vaadin element has it's own GitHub repository, where development is done. The vaadin-core-element project is just a top-level bundle without actual production code.
+Each Vaadin component has it's own GitHub repository, where development is done. The vaadin-core project is just a top-level bundle without actual production code.
 
 Familiarize yourself with the code and try to follow the same syntax conventions to make it easier for us to accept your pull requests.
 
-The following instructions are common for all Vaadin core elements. **Replace `vaadin-combo-box` with any other element in the following examples**. Check the element readmes for any special development notes.
+The following instructions are common for all Vaadin components. **Replace `vaadin-combo-box` with any other element in the following examples**. Check the element readmes for any special development notes.
 
 ### Getting the code
 
@@ -71,7 +71,7 @@ $ polyserve
 ```
 - Open http://localhost:8080/components/vaadin-combo-box/test/ in your browser.
 
-You should include new tests in your pull requests if you add features to the elements or if you are fixing a bug.
+You should include new tests in your pull requests if you add features to the components or if you are fixing a bug.
 
 ### Documentation
 
