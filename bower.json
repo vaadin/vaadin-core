@@ -29,7 +29,7 @@
     "vaadin-combo-box": "vaadin/vaadin-combo-box#4.0.0-beta5",
     "vaadin-context-menu": "vaadin/vaadin-context-menu#4.0.0-beta2",
     "vaadin-date-picker": "vaadin/vaadin-date-picker#3.0.0-beta5",
-    "vaadin-dialog": "vaadin/vaadin-dialog#2.0.0-beta3",
+    "vaadin-dialog": "vaadin/vaadin-dialog#2.0.0-beta2",
     "vaadin-dropdown-menu": "vaadin/vaadin-dropdown-menu#1.0.0-beta3",
     "vaadin-form-layout": "vaadin/vaadin-form-layout#2.0.0-beta1",
     "vaadin-grid": "vaadin/vaadin-grid#5.0.0-beta7",
