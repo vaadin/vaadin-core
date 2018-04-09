@@ -4,7 +4,7 @@
 
 # Vaadin core components
 
-[Vaadin core components](https://vaadin.com/components) are an evolving set of open sourced [Polymer](https://www.polymer-project.org/) web components, which seamlessly extend the [Polymer Element Catalog](https://www.webcomponents.org/collection/Polymer/elements) with high-quality user interface components commonly needed in modern mobile and desktop business web applications.
+[Vaadin core components](https://vaadin.com/components) is the open source part of the Vaadin standards-based Web Components set, which contains high-quality user interface components commonly needed in modern mobile and desktop business web applications.
 
 For more information, see the [Vaadin components README](https://github.com/vaadin/vaadin).
 
