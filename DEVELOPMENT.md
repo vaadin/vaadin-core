@@ -77,6 +77,56 @@ You should include new tests in your pull requests if you add features to the co
 
 We follow the same [style guide](https://www.polymer-project.org/2.0/docs/tools/documentation) as Polymer.
 
+### Polymer 3: converting from HTML imports to ES modules
+
+Vaadin components use HTML imports and Polymer 2 in the mainline codebase.
+In order to use a Vaadin component in Polymer 3, the codebase has to
+be converted first.
+
+Follow these steps to convert a Vaadin component:
+
+```shell
+# Clone polymer-modulizer master, npm link the modulizer repository
+$ (
+    cd .. &&
+    git clone --depth 1 -b master https://github.com/Polymer/polymer-modulizer &&
+    cd polymer-modulizer
+    npm link
+  )
+
+# Install global dependencies
+$ npm install -g magi-cli yarn polymer-cli@next
+
+# Commit any changes, make sure your local repository is clean
+$ git status
+
+$ magi p3-convert --out .
+
+# Install component dependencies from npm using yarn
+$ yarn install --flat
+
+# Run development server
+$ polymer serve --npm --module-resolution node --open
+```
+
+- Open http://localhost:8081/components/@vaadin/vaadin-combo-box/demo/ for the demos
+- Open http://localhost:8081/components/@vaadin/vaadin-combo-box/test/ for the tests
+
+When done, return back to the Polymer 2 (HTML imports) codebase using git:
+
+```shell
+$ git reset --hard HEAD^ && git clean -df
+```
+
+### Polymer 3: contributing
+
+To contribute into Polymer 3 Vaadin components, make your changes
+on the mainline Polymer 2 codebase, then open a pull request targeting
+the master branch.
+
+Note: unlike the official Polymer Elements, the converted Polymer 3 compatible
+Vaadin components are only published on npm, not pushed to GitHub repositories.
+
 ### Contributor License Agreement
 
 When you send a pull request to any of our repositories, you get an automated comment response about the CLA. It will notify you if you haven’t signed the CLA yet, and in that case instructions how to do it. You need to do this once per each repository. Before we can accept any of your code contributions, you need to sign the CLA.
