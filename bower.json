@@ -32,7 +32,7 @@
     "vaadin-dialog": "vaadin/vaadin-dialog#2.0.0",
     "vaadin-dropdown-menu": "vaadin/vaadin-dropdown-menu#1.0.0",
     "vaadin-form-layout": "vaadin/vaadin-form-layout#2.0.0",
-    "vaadin-grid": "vaadin/vaadin-grid#5.0.0",
+    "vaadin-grid": "vaadin/vaadin-grid#5.0.3",
     "vaadin-icons": "vaadin/vaadin-icons#4.1.4",
     "vaadin-item": "vaadin/vaadin-item#2.0.0",
     "vaadin-list-box": "vaadin/vaadin-list-box#1.0.1",
