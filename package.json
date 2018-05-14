@@ -1,6 +1,6 @@
 {
   "name": "vaadin-core",
-  "version": "10.0.0-beta1",
+  "version": "10.0.0-beta10",
   "description": "Vaadin components is an evolving set of free, open sourced custom HTML elements, built using Polymer, for building mobile and desktop web applications in modern browsers.",
   "author": "Vaadin Ltd",
   "license": "Apache-2.0",
