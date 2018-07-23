@@ -1,16 +1,15 @@
 ## Proccess of contributing and creating a pull request
 
-Dear contributor, we are glad that you would like to improve our product. We are working hard on implementing the fixes/improvements you are providing.  
-Unfortunately we are not able to apply all of the changes right away as all of our products have high quality requirements.  
-We are interested in all ideas that you are providing: either it is a small bug fix or a new feature implementation. You are able to submit a PR following these minimum requirements:
+Dear contributor, we are glad that you want to improve our product. Our products have high quality requirements, changes should satisfy those as well.
+To submit a PR follow these minimum requirements:
 
   - Make sure your code is compliant with our code linters: `gulp lint`
   - Check that tests are passing: `polymer test`
   - [Submit a pull request](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) with detailed title and description
   - Wait for response from one of Vaadin components team members
 
-We will review the PR as soon as possible and make a decision on it.  
-As for the time before merging it, it depends on the number of advanced requirements provided below. The more requirements are met, the bigger are the chances PR will be merged in the nearest future. Otherwise, we will need to take care of those missing parts, schedule those in our roadmap and probably handle DX/UX testing sessions.
+We will review the PR and make a decision on it.
+Time required for handling external PRs depends on the number of advanced requirements provided below. The more requirements are met, the sooner PR will be merged. Otherwise, we will take care of those missing parts in case of PR approvement.
 
 ### Advanced requirements:
 
@@ -26,15 +25,15 @@ As for the time before merging it, it depends on the number of advanced requirem
       - iOS Safari (9, latest, any platform)
       - Chrome on Android (latest, any platform)
 
-  - Live Demo with a code example demonstarting the feature (inc. webcomponents.org element demo)
+  - Live Demo with a code example demonstarting the feature
     - Not required for a bug fix
 
   - Documented
-    - parts
+    - visual parts
     - elements
     - events
     - attributes exposed for styling
-    - new API's
+    - public properties and methods
 
   - Accessible
 
