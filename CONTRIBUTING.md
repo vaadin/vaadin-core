@@ -15,7 +15,7 @@ We will review the PR and make a decision on it.
 
 Advanced requirements affect the PR handling time. The more requirements are met, the sooner PR will be merged. Otherwise, we will take care of those missing parts in case of PR approvement.
 
-  - Minimal API to fulfill the requirements of the idea
+  - Minimal API to fulfill the requirements of the idea (when modifying the API do not forget to to run `polymer analyze` to update analysis file)
 
   - 100% coverage with automated tests
     - Should pass on each supported platform (desktop/mobile):
