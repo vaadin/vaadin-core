@@ -41,7 +41,7 @@
     "vaadin-ordered-layout": "vaadin-ordered-layout#1.0.2",
     "vaadin-progress-bar": "vaadin-progress-bar#1.0.0",
     "vaadin-radio-button": "vaadin-radio-button#1.0.1",
-    "vaadin-split-layout": "vaadin-split-layout#4.0.0",
+    "vaadin-split-layout": "vaadin-split-layout#4.0.1",
     "vaadin-tabs": "vaadin-tabs#2.0.0",
     "vaadin-text-field": "vaadin-text-field#2.0.1",
     "vaadin-upload": "vaadin-upload#4.0.0"
