@@ -28,14 +28,14 @@
     "vaadin-checkbox": "vaadin-checkbox#2.1.1",
     "vaadin-combo-box": "vaadin-combo-box#4.0.1",
     "vaadin-context-menu": "vaadin-context-menu#4.0.1",
-    "vaadin-date-picker": "vaadin-date-picker#3.0.2",
+    "vaadin-date-picker": "vaadin-date-picker#3.0.3",
     "vaadin-dialog": "vaadin-dialog#2.0.2",
-    "vaadin-dropdown-menu": "vaadin-dropdown-menu#1.0.0",
+    "vaadin-dropdown-menu": "vaadin-dropdown-menu#1.0.1",
     "vaadin-form-layout": "vaadin-form-layout#2.0.1",
     "vaadin-grid": "vaadin-grid#5.0.4",
     "vaadin-icons": "vaadin-icons#4.1.4",
     "vaadin-item": "vaadin-item#2.0.0",
-    "vaadin-list-box": "vaadin-list-box#1.0.2",
+    "vaadin-list-box": "vaadin-list-box#1.0.3",
     "vaadin-lumo-styles": "vaadin-lumo-styles#1.0.0",
     "vaadin-notification": "vaadin-notification#1.0.0",
     "vaadin-ordered-layout": "vaadin-ordered-layout#1.0.2",
@@ -43,7 +43,7 @@
     "vaadin-radio-button": "vaadin-radio-button#1.0.1",
     "vaadin-split-layout": "vaadin-split-layout#4.0.1",
     "vaadin-tabs": "vaadin-tabs#2.0.0",
-    "vaadin-text-field": "vaadin-text-field#2.0.1",
+    "vaadin-text-field": "vaadin-text-field#2.0.2",
     "vaadin-upload": "vaadin-upload#4.0.0"
   }
 }
