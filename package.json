@@ -37,7 +37,7 @@
     "@vaadin/vaadin-item": "2.1.0",
     "@vaadin/vaadin-list-box": "1.1.0",
     "@vaadin/vaadin-list-mixin": "2.1.0",
-    "@vaadin/vaadin-lumo-styles": "1.2.0",
+    "@vaadin/vaadin-lumo-styles": "1.3.2",
     "@vaadin/vaadin-material-styles": "1.2.0",
     "@vaadin/vaadin-notification": "1.2.0-beta1",
     "@vaadin/vaadin-ordered-layout": "1.1.0",
