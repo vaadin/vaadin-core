@@ -1,5 +1,6 @@
 import '@vaadin/vaadin-button/vaadin-button.js';
 import '@vaadin/vaadin-checkbox/vaadin-checkbox.js';
+import '@vaadin/vaadin-checkbox/vaadin-checkbox-group.js';
 import '@vaadin/vaadin-combo-box/vaadin-combo-box.js';
 import '@vaadin/vaadin-context-menu/vaadin-context-menu.js';
 import '@vaadin/vaadin-date-picker/vaadin-date-picker.js';
