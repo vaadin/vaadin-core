@@ -71,7 +71,7 @@
     "vaadin-themable-mixin": "vaadin-themable-mixin#1.4.4",
     "vaadin-upload": "vaadin-upload#4.2.1",
     "vaadin-custom-field": "vaadin-custom-field#1.0.1",
-    "vaadin-app-layout": "vaadin-app-layout#2.0.0-alpha2",
+    "vaadin-app-layout": "vaadin-app-layout#2.0.0-beta1",
     "vaadin-login": "vaadin-login#1.0.0",
     "webcomponentsjs": "webcomponentsjs#1.2.6",
     "vaadin-usage-statistics": "vaadin-usage-statistics#2.0.2"
