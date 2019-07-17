@@ -48,7 +48,7 @@
     "@vaadin/vaadin-radio-button": "^1.2.3",
     "@vaadin/vaadin-split-layout": "^4.1.1",
     "@vaadin/vaadin-tabs": "^3.0.4",
-    "@vaadin/vaadin-text-field": "^2.4.7",
+    "@vaadin/vaadin-text-field": "^2.4.8",
     "@vaadin/vaadin-themable-mixin": "^1.4.4",
     "@vaadin/vaadin-upload": "^4.2.2",
     "@vaadin/vaadin-custom-field": "^1.0.6",
