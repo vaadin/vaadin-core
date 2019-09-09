@@ -63,7 +63,7 @@
     "vaadin-menu-bar": "vaadin-menu-bar#1.0.3",
     "vaadin-notification": "vaadin-notification#1.4.0",
     "vaadin-ordered-layout": "vaadin-ordered-layout#1.1.0",
-    "vaadin-overlay": "vaadin-overlay#3.2.13",
+    "vaadin-overlay": "vaadin-overlay#3.2.14",
     "vaadin-progress-bar": "vaadin-progress-bar#1.1.2",
     "vaadin-radio-button": "vaadin-radio-button#1.2.3",
     "vaadin-split-layout": "vaadin-split-layout#4.1.1",
@@ -75,6 +75,6 @@
     "vaadin-app-layout": "vaadin-app-layout#2.0.2",
     "vaadin-login": "vaadin-login#1.0.1",
     "webcomponentsjs": "webcomponentsjs#1.2.6",
-    "vaadin-usage-statistics": "vaadin-usage-statistics#2.0.9"
+    "vaadin-usage-statistics": "vaadin-usage-statistics#2.0.10"
   }
 }
