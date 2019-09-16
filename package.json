@@ -52,7 +52,7 @@
     "@vaadin/vaadin-themable-mixin": "^1.4.4",
     "@vaadin/vaadin-upload": "^4.2.2",
     "@vaadin/vaadin-custom-field": "^1.0.6",
-    "@vaadin/vaadin-app-layout": "^2.0.2",
+    "@vaadin/vaadin-app-layout": "^2.0.3",
     "@vaadin/vaadin-login": "^1.0.1",
     "@vaadin/vaadin-usage-statistics": "^2.0.10"
   },
