@@ -67,5 +67,18 @@
     "components",
     "webcomponents",
     "web-components"
-  ]
+  ],
+  "scripts": {
+    "size:check": "size-limit",
+    "size:why": "size-limit --why"
+  },
+  "size-limit": [
+    {
+      "path": "vaadin-core.js",
+      "limit": "200 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-big-lib": "^2.1.6"
+  }
 }
