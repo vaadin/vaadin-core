@@ -49,7 +49,7 @@
     "@vaadin/vaadin-split-layout": "^4.1.1",
     "@vaadin/vaadin-tabs": "^3.0.5",
     "@vaadin/vaadin-text-field": "^2.5.0",
-    "@vaadin/vaadin-themable-mixin": "^1.5.1",
+    "@vaadin/vaadin-themable-mixin": "^1.5.2",
     "@vaadin/vaadin-upload": "^4.2.2",
     "@vaadin/vaadin-custom-field": "^1.0.6",
     "@vaadin/vaadin-app-layout": "^2.0.3",
