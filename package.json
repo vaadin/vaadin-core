@@ -55,7 +55,7 @@
     "@vaadin/vaadin-app-layout": "^2.0.3",
     "@vaadin/vaadin-login": "^1.0.1",
     "@vaadin/vaadin-usage-statistics": "^2.0.11",
-    "@vaadin/router": "^1.5.0"
+    "@vaadin/router": "^1.5.2"
   },
   "files": [
     "vaadin-core.js"

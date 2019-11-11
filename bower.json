@@ -76,6 +76,6 @@
     "vaadin-login": "vaadin-login#1.0.1",
     "webcomponentsjs": "webcomponentsjs#1.2.6",
     "vaadin-usage-statistics": "vaadin-usage-statistics#2.0.11",
-    "vaadin-router": "vaadin-router#1.5.0"
+    "vaadin-router": "vaadin-router#1.5.2"
   }
 }
