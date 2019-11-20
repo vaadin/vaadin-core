@@ -19,7 +19,7 @@
     "@vaadin/vaadin-details": "^1.0.1",
     "@vaadin/vaadin-dialog": "^2.2.1",
     "@vaadin/vaadin-select": "^2.1.6",
-    "@vaadin/vaadin-element-mixin": "^2.1.4",
+    "@vaadin/vaadin-element-mixin": "^2.2.0",
     "@vaadin/vaadin-form-layout": "^2.1.6",
     "@vaadin/vaadin-grid": "^5.5.0",
     "@vaadin/vaadin-icons": "^4.3.1",
@@ -54,7 +54,7 @@
     "@vaadin/vaadin-custom-field": "^1.0.6",
     "@vaadin/vaadin-app-layout": "^2.0.3",
     "@vaadin/vaadin-login": "^1.0.1",
-    "@vaadin/vaadin-usage-statistics": "^2.0.11"
+    "@vaadin/vaadin-usage-statistics": "^2.1.0"
   },
   "files": [
     "vaadin-core.js"
