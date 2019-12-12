@@ -38,4 +38,5 @@ import '@vaadin/vaadin-text-field/vaadin-password-field.js';
 import '@vaadin/vaadin-text-field/vaadin-text-area.js';
 import '@vaadin/vaadin-text-field/vaadin-email-field.js';
 import '@vaadin/vaadin-text-field/vaadin-number-field.js';
+import '@vaadin/vaadin-text-field/vaadin-integer-field.js';
 import '@vaadin/vaadin-upload/vaadin-upload.js';
