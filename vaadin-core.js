@@ -1,5 +1,6 @@
 import '@vaadin/vaadin-accordion/vaadin-accordion.js';
 import '@vaadin/vaadin-app-layout/vaadin-app-layout.js';
+import '@vaadin/vaadin-app-layout/vaadin-drawer-toggle.js';
 import '@vaadin/vaadin-button/vaadin-button.js';
 import '@vaadin/vaadin-checkbox/vaadin-checkbox.js';
 import '@vaadin/vaadin-checkbox/vaadin-checkbox-group.js';
@@ -38,4 +39,5 @@ import '@vaadin/vaadin-text-field/vaadin-password-field.js';
 import '@vaadin/vaadin-text-field/vaadin-text-area.js';
 import '@vaadin/vaadin-text-field/vaadin-email-field.js';
 import '@vaadin/vaadin-text-field/vaadin-number-field.js';
+import '@vaadin/vaadin-text-field/vaadin-integer-field.js';
 import '@vaadin/vaadin-upload/vaadin-upload.js';
