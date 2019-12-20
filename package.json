@@ -43,7 +43,7 @@
     "@vaadin/vaadin-menu-bar": "^1.0.3",
     "@vaadin/vaadin-notification": "^1.4.0",
     "@vaadin/vaadin-ordered-layout": "^1.1.0",
-    "@vaadin/vaadin-overlay": "^3.2.16",
+    "@vaadin/vaadin-overlay": "^3.2.17",
     "@vaadin/vaadin-progress-bar": "^1.1.2",
     "@vaadin/vaadin-radio-button": "^1.2.3",
     "@vaadin/vaadin-split-layout": "^4.1.1",
@@ -55,7 +55,7 @@
     "@vaadin/vaadin-app-layout": "^2.0.4",
     "@vaadin/vaadin-login": "^1.0.1",
     "@vaadin/vaadin-usage-statistics": "^2.1.0",
-    "@vaadin/router": "^1.5.2"
+    "@vaadin/router": "^1.6.0"
   },
   "files": [
     "vaadin-core.js"
