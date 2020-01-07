@@ -71,7 +71,7 @@
     "vaadin-text-field": "vaadin-text-field#2.5.3",
     "vaadin-themable-mixin": "vaadin-themable-mixin#1.5.2",
     "vaadin-upload": "vaadin-upload#4.2.2",
-    "vaadin-custom-field": "vaadin-custom-field#1.0.9",
+    "vaadin-custom-field": "vaadin-custom-field#1.0.10",
     "vaadin-app-layout": "vaadin-app-layout#2.0.4",
     "vaadin-login": "vaadin-login#1.0.1",
     "webcomponentsjs": "webcomponentsjs#1.2.6",
