@@ -8,7 +8,7 @@
   "dependencies": {
     "@webcomponents/shadycss": "^1.8.0",
     "@vaadin/vaadin-accordion": "^1.0.1",
-    "@vaadin/vaadin-button": "^2.2.1",
+    "@vaadin/vaadin-button": "^2.2.2",
     "@vaadin/vaadin-checkbox": "^2.2.10",
     "@vaadin/vaadin-combo-box": "^5.0.9",
     "@vaadin/vaadin-context-menu": "^4.3.15",
@@ -43,7 +43,7 @@
     "@vaadin/vaadin-menu-bar": "^1.0.3",
     "@vaadin/vaadin-notification": "^1.4.0",
     "@vaadin/vaadin-ordered-layout": "^1.1.0",
-    "@vaadin/vaadin-overlay": "^3.2.17",
+    "@vaadin/vaadin-overlay": "^3.2.18",
     "@vaadin/vaadin-progress-bar": "^1.1.2",
     "@vaadin/vaadin-radio-button": "^1.2.3",
     "@vaadin/vaadin-split-layout": "^4.1.1",
@@ -51,7 +51,7 @@
     "@vaadin/vaadin-text-field": "^2.5.3",
     "@vaadin/vaadin-themable-mixin": "^1.5.2",
     "@vaadin/vaadin-upload": "^4.2.2",
-    "@vaadin/vaadin-custom-field": "^1.0.9",
+    "@vaadin/vaadin-custom-field": "^1.0.10",
     "@vaadin/vaadin-app-layout": "^2.0.4",
     "@vaadin/vaadin-login": "^1.0.1",
     "@vaadin/vaadin-usage-statistics": "^2.1.0"
