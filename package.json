@@ -42,7 +42,7 @@
     "@vaadin/vaadin-login": "^1.0.1",
     "@vaadin/vaadin-lumo-styles": "^1.5.0",
     "@vaadin/vaadin-material-styles": "^1.2.3",
-    "@vaadin/vaadin-menu-bar": "^1.0.3",
+    "@vaadin/vaadin-menu-bar": "^1.0.5",
     "@vaadin/vaadin-notification": "^1.4.0",
     "@vaadin/vaadin-ordered-layout": "^1.2.0",
     "@vaadin/vaadin-overlay": "^3.3.1",
