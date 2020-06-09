@@ -29,6 +29,7 @@ import '@vaadin/vaadin-login/vaadin-login-overlay.js';
 import '@vaadin/vaadin-notification/vaadin-notification.js';
 import '@vaadin/vaadin-ordered-layout/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/vaadin-scroller.js';
 import '@vaadin/vaadin-progress-bar/vaadin-progress-bar.js';
 import '@vaadin/vaadin-radio-button/vaadin-radio-button.js';
 import '@vaadin/vaadin-radio-button/vaadin-radio-group.js';
