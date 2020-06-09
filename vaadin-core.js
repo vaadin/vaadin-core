@@ -8,6 +8,7 @@ import '@vaadin/vaadin-combo-box/vaadin-combo-box.js';
 import '@vaadin/vaadin-context-menu/vaadin-context-menu.js';
 import '@vaadin/vaadin-custom-field/vaadin-custom-field.js';
 import '@vaadin/vaadin-date-picker/vaadin-date-picker.js';
+import '@vaadin/vaadin-date-time-picker/vaadin-date-time-picker.js';
 import '@vaadin/vaadin-details/vaadin-details.js';
 import '@vaadin/vaadin-time-picker/vaadin-time-picker.js';
 import '@vaadin/vaadin-dialog/vaadin-dialog.js';
