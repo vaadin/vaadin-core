@@ -26,6 +26,7 @@ import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@vaadin/vaadin-item/vaadin-item.js';
 import '@vaadin/vaadin-list-box/vaadin-list-box.js';
 import '@vaadin/vaadin-login/vaadin-login-overlay.js';
+import '@vaadin/vaadin-login/vaadin-login-form.js';
 import '@vaadin/vaadin-notification/vaadin-notification.js';
 import '@vaadin/vaadin-ordered-layout/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/vaadin-vertical-layout.js';
