@@ -31,7 +31,7 @@
     "@vaadin/vaadin-date-time-picker": "^1.2.0",
     "@vaadin/vaadin-details": "^1.1.0",
     "@vaadin/vaadin-development-mode-detector": "^2.0.4",
-    "@vaadin/vaadin-dialog": "^2.4.4",
+    "@vaadin/vaadin-dialog": "^2.4.5",
     "@vaadin/vaadin-element-mixin": "^2.3.2",
     "@vaadin/vaadin-form-layout": "^2.2.0",
     "@vaadin/vaadin-grid": "^5.6.7",
