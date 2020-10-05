@@ -53,7 +53,7 @@
     "@vaadin/vaadin-tabs": "^3.1.0",
     "@vaadin/vaadin-text-field": "^2.6.3",
     "@vaadin/vaadin-themable-mixin": "^1.5.2",
-    "@vaadin/vaadin-time-picker": "^2.2.0",
+    "@vaadin/vaadin-time-picker": "^2.2.1",
     "@vaadin/vaadin-upload": "^4.3.0",
     "@vaadin/vaadin-usage-statistics": "^2.1.0"
   },
