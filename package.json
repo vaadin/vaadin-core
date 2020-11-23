@@ -34,7 +34,7 @@
     "@vaadin/vaadin-dialog": "^2.5.2",
     "@vaadin/vaadin-element-mixin": "^2.4.2",
     "@vaadin/vaadin-form-layout": "^2.3.0",
-    "@vaadin/vaadin-grid": "^5.7.5",
+    "@vaadin/vaadin-grid": "^5.7.6",
     "@vaadin/vaadin-icons": "^4.3.1",
     "@vaadin/vaadin-item": "^2.3.0",
     "@vaadin/vaadin-list-box": "^1.4.0",
@@ -55,7 +55,7 @@
     "@vaadin/vaadin-text-field": "^2.7.1",
     "@vaadin/vaadin-themable-mixin": "^1.6.1",
     "@vaadin/vaadin-time-picker": "^2.3.0",
-    "@vaadin/vaadin-upload": "^4.4.0",
+    "@vaadin/vaadin-upload": "^4.4.1",
     "@vaadin/vaadin-usage-statistics": "^2.1.0"
   },
   "files": [
