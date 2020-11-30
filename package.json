@@ -51,8 +51,8 @@
     "@vaadin/vaadin-select": "^2.4.0",
     "@vaadin/vaadin-split-layout": "^4.3.0",
     "@vaadin/vaadin-tabs": "^3.2.0",
-    "@vaadin/vaadin-text-field": "^2.8.1",
-    "@vaadin/vaadin-themable-mixin": "^1.6.1",
+    "@vaadin/vaadin-text-field": "^2.8.2",
+    "@vaadin/vaadin-themable-mixin": "^1.6.2",
     "@vaadin/vaadin-time-picker": "^2.4.0",
     "@vaadin/vaadin-upload": "^4.4.1",
     "@vaadin/vaadin-usage-statistics": "^2.1.0"
