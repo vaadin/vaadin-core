@@ -49,7 +49,7 @@
     "@vaadin/vaadin-overlay": "^3.5.1",
     "@vaadin/vaadin-progress-bar": "^1.3.0",
     "@vaadin/vaadin-radio-button": "^1.5.1",
-    "@vaadin/router": "^1.7.3",
+    "@vaadin/router": "^1.7.4",
     "@vaadin/vaadin-select": "^3.0.0",
     "@vaadin/vaadin-split-layout": "^4.3.0",
     "@vaadin/vaadin-tabs": "^4.0.0",
