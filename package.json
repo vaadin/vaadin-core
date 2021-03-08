@@ -21,7 +21,7 @@
     "@webcomponents/shadycss": "^1.9.6",
     "@vaadin/vaadin-accordion": "^1.2.0",
     "@vaadin/vaadin-app-layout": "^2.2.0",
-    "@vaadin/vaadin-avatar": "^2.0.0",
+    "@vaadin/vaadin-avatar": "^2.0.2",
     "@vaadin/vaadin-button": "^2.4.0",
     "@vaadin/vaadin-checkbox": "^3.0.0",
     "@vaadin/vaadin-combo-box": "^6.0.0",
