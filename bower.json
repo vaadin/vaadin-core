@@ -55,7 +55,7 @@
     "vaadin-dialog": "vaadin-dialog#2.5.2",
     "vaadin-element-mixin": "vaadin-element-mixin#2.4.2",
     "vaadin-form-layout": "vaadin-form-layout#2.3.0",
-    "vaadin-grid": "vaadin-grid#5.7.9",
+    "vaadin-grid": "vaadin-grid#5.7.11",
     "vaadin-icons": "vaadin-icons#4.3.2",
     "vaadin-item": "vaadin-item#2.3.0",
     "vaadin-list-box": "vaadin-list-box#1.4.0",
