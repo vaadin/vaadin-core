@@ -35,7 +35,7 @@
     "@vaadin/vaadin-dialog": "^2.5.2",
     "@vaadin/vaadin-element-mixin": "^2.4.2",
     "@vaadin/vaadin-form-layout": "^2.3.0",
-    "@vaadin/vaadin-grid": "^5.8.3",
+    "@vaadin/vaadin-grid": "^5.8.4",
     "@vaadin/vaadin-icons": "^4.3.2",
     "@vaadin/vaadin-item": "^2.3.0",
     "@vaadin/vaadin-list-box": "^1.4.0",
