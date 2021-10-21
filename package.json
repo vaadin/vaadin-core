@@ -8,8 +8,8 @@
   "dependencies": {
     "@vaadin/accordion": "22.0.0-alpha10",
     "@vaadin/app-layout": "22.0.0-alpha10",
-    "@vaadin/avatar-group": "22.0.0-alpha10",
     "@vaadin/avatar": "22.0.0-alpha10",
+    "@vaadin/avatar-group": "22.0.0-alpha10",
     "@vaadin/button": "22.0.0-alpha10",
     "@vaadin/checkbox": "22.0.0-alpha10",
     "@vaadin/checkbox-group": "22.0.0-alpha10",
