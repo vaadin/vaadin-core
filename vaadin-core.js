@@ -2,6 +2,7 @@ import '@vaadin/accordion';
 import '@vaadin/app-layout';
 import '@vaadin/app-layout/drawer-toggle.js';
 import '@vaadin/avatar';
+import '@vaadin/avatar-group';
 import '@vaadin/button';
 import '@vaadin/checkbox';
 import '@vaadin/checkbox-group';
