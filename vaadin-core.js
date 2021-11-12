@@ -32,6 +32,8 @@ import '@vaadin/list-box';
 import '@vaadin/login/vaadin-login-overlay.js';
 import '@vaadin/login/vaadin-login-form.js';
 import '@vaadin/menu-bar';
+import '@vaadin/message-input';
+import '@vaadin/message-list';
 import '@vaadin/notification';
 import '@vaadin/number-field';
 import '@vaadin/password-field';
