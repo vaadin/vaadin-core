@@ -31,11 +31,11 @@
     "@vaadin/vaadin-date-picker": "^4.4.2",
     "@vaadin/vaadin-date-time-picker": "^1.4.0",
     "@vaadin/vaadin-details": "^1.2.0",
-    "@vaadin/vaadin-development-mode-detector": "^2.0.4",
+    "@vaadin/vaadin-development-mode-detector": "^2.0.5",
     "@vaadin/vaadin-dialog": "^2.6.0",
     "@vaadin/vaadin-element-mixin": "^2.4.2",
     "@vaadin/vaadin-form-layout": "^2.3.0",
-    "@vaadin/vaadin-grid": "^5.9.2",
+    "@vaadin/vaadin-grid": "^5.9.3",
     "@vaadin/vaadin-icons": "^4.3.2",
     "@vaadin/vaadin-item": "^2.3.0",
     "@vaadin/vaadin-list-box": "^1.4.0",
@@ -53,11 +53,11 @@
     "@vaadin/vaadin-select": "^2.4.2",
     "@vaadin/vaadin-split-layout": "^4.3.0",
     "@vaadin/vaadin-tabs": "^3.2.0",
-    "@vaadin/vaadin-text-field": "^2.9.0",
+    "@vaadin/vaadin-text-field": "^2.9.1",
     "@vaadin/vaadin-themable-mixin": "^1.6.2",
     "@vaadin/vaadin-time-picker": "^2.4.0",
     "@vaadin/vaadin-upload": "^4.4.3",
-    "@vaadin/vaadin-usage-statistics": "^2.1.0"
+    "@vaadin/vaadin-usage-statistics": "^2.1.2"
   },
   "files": [
     "vaadin-core.js"
