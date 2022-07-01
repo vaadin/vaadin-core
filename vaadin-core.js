@@ -1,6 +1,6 @@
 import '@vaadin/accordion';
 import '@vaadin/app-layout';
-import '@vaadin/app-layout/drawer-toggle.js';
+import '@vaadin/app-layout/vaadin-drawer-toggle.js';
 import '@vaadin/avatar';
 import '@vaadin/avatar-group';
 import '@vaadin/button';
