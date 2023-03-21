@@ -57,7 +57,7 @@
     "@vaadin/time-picker": "24.0.0",
     "@vaadin/tooltip": "24.0.0",
     "@vaadin/upload": "24.0.0",
-    "@vaadin/vaadin-development-mode-detector": "2.0.5",
+    "@vaadin/vaadin-development-mode-detector": "2.0.6",
     "@vaadin/vaadin-lumo-styles": "24.0.0",
     "@vaadin/vaadin-material-styles": "24.0.0",
     "@vaadin/router": "1.7.4",
