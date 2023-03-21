@@ -73,7 +73,7 @@
     "@vaadin/vaadin-date-picker": "23.3.8",
     "@vaadin/vaadin-date-time-picker": "23.3.8",
     "@vaadin/vaadin-details": "23.3.8",
-    "@vaadin/vaadin-development-mode-detector": "2.0.5",
+    "@vaadin/vaadin-development-mode-detector": "2.0.6",
     "@vaadin/vaadin-dialog": "23.3.8",
     "@vaadin/vaadin-form-layout": "23.3.8",
     "@vaadin/vaadin-grid": "23.3.8",
