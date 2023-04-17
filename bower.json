@@ -51,7 +51,7 @@
     "vaadin-date-picker": "vaadin/vaadin-date-picker#4.5.0",
     "vaadin-date-time-picker": "vaadin/vaadin-date-time-picker#1.4.0",
     "vaadin-details": "vaadin/vaadin-details#1.2.1",
-    "vaadin-development-mode-detector": "vaadin/vaadin-development-mode-detector#2.0.5",
+    "vaadin-development-mode-detector": "vaadin/vaadin-development-mode-detector#2.0.6",
     "vaadin-dialog": "vaadin/vaadin-dialog#2.6.0",
     "vaadin-element-mixin": "vaadin/vaadin-element-mixin#2.4.2",
     "vaadin-form-layout": "vaadin/vaadin-form-layout#2.3.0",
