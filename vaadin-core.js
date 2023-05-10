@@ -43,6 +43,7 @@ import '@vaadin/progress-bar';
 import '@vaadin/radio-group';
 import '@vaadin/scroller';
 import '@vaadin/select';
+import '@vaadin/side-nav';
 import '@vaadin/split-layout';
 import '@vaadin/tabs';
 import '@vaadin/tabsheet';
