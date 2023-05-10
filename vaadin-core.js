@@ -49,6 +49,7 @@ import '@vaadin/tabsheet';
 import '@vaadin/text-area';
 import '@vaadin/text-field';
 import '@vaadin/time-picker';
+import '@vaadin/tooltip';
 import '@vaadin/upload';
 import '@vaadin/vertical-layout';
 import '@vaadin/virtual-list';
