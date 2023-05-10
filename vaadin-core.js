@@ -45,6 +45,7 @@ import '@vaadin/scroller';
 import '@vaadin/select';
 import '@vaadin/split-layout';
 import '@vaadin/tabs';
+import '@vaadin/tabsheet';
 import '@vaadin/text-area';
 import '@vaadin/text-field';
 import '@vaadin/time-picker';
