@@ -43,7 +43,7 @@
     "vaadin-app-layout": "vaadin/vaadin-app-layout#2.2.0",
     "vaadin-avatar": "vaadin/vaadin-avatar#1.0.4",
     "vaadin-button": "vaadin/vaadin-button#2.4.0",
-    "vaadin-checkbox": "vaadin/vaadin-checkbox#2.5.1",
+    "vaadin-checkbox": "vaadin/vaadin-checkbox#2.5.2",
     "vaadin-combo-box": "vaadin/vaadin-combo-box#5.4.13",
     "vaadin-context-menu": "vaadin/vaadin-context-menu#4.6.0",
     "vaadin-control-state-mixin": "vaadin/vaadin-control-state-mixin#2.2.6",

@@ -23,7 +23,7 @@
     "@vaadin/vaadin-app-layout": "^2.2.0",
     "@vaadin/vaadin-avatar": "^1.0.4",
     "@vaadin/vaadin-button": "^2.4.0",
-    "@vaadin/vaadin-checkbox": "^2.5.1",
+    "@vaadin/vaadin-checkbox": "^2.5.2",
     "@vaadin/vaadin-combo-box": "^5.4.13",
     "@vaadin/vaadin-context-menu": "^4.6.0",
     "@vaadin/vaadin-control-state-mixin": "^2.2.6",
