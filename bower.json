@@ -45,7 +45,7 @@
     "vaadin-button": "vaadin/vaadin-button#2.4.0",
     "vaadin-checkbox": "vaadin/vaadin-checkbox#2.6.1",
     "vaadin-combo-box": "vaadin/vaadin-combo-box#5.5.3",
-    "vaadin-context-menu": "vaadin/vaadin-context-menu#4.6.0",
+    "vaadin-context-menu": "vaadin/vaadin-context-menu#4.6.1",
     "vaadin-control-state-mixin": "vaadin/vaadin-control-state-mixin#2.2.6",
     "vaadin-custom-field": "vaadin/vaadin-custom-field#1.4.0",
     "vaadin-date-picker": "vaadin/vaadin-date-picker#4.6.0",

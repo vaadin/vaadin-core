@@ -25,7 +25,7 @@
     "@vaadin/vaadin-button": "^2.4.0",
     "@vaadin/vaadin-checkbox": "^2.6.1",
     "@vaadin/vaadin-combo-box": "^5.5.3",
-    "@vaadin/vaadin-context-menu": "^4.6.0",
+    "@vaadin/vaadin-context-menu": "^4.6.1",
     "@vaadin/vaadin-control-state-mixin": "^2.2.6",
     "@vaadin/vaadin-custom-field": "^1.4.0",
     "@vaadin/vaadin-date-picker": "^4.6.0",
