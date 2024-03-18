@@ -39,7 +39,7 @@
     "@vaadin/vaadin-icons": "^4.3.2",
     "@vaadin/vaadin-item": "^2.3.0",
     "@vaadin/vaadin-list-box": "^1.4.0",
-    "@vaadin/vaadin-list-mixin": "^2.5.2",
+    "@vaadin/vaadin-list-mixin": "^2.5.3",
     "@vaadin/vaadin-login": "^1.3.0",
     "@vaadin/vaadin-lumo-styles": "^1.6.1",
     "@vaadin/vaadin-material-styles": "^1.3.2",
