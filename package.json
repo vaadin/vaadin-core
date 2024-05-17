@@ -74,7 +74,7 @@
     "@vaadin/vaadin-date-picker": "23.3.32",
     "@vaadin/vaadin-date-time-picker": "23.3.32",
     "@vaadin/vaadin-details": "23.3.32",
-    "@vaadin/vaadin-development-mode-detector": "2.0.6",
+    "@vaadin/vaadin-development-mode-detector": "2.0.7",
     "@vaadin/vaadin-dialog": "23.3.32",
     "@vaadin/vaadin-form-layout": "23.3.32",
     "@vaadin/vaadin-grid": "23.3.32",
