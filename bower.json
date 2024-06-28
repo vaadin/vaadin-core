@@ -75,7 +75,7 @@
     "vaadin-text-field": "vaadin/vaadin-text-field#2.10.0",
     "vaadin-themable-mixin": "vaadin/vaadin-themable-mixin#1.6.2",
     "vaadin-time-picker": "vaadin/vaadin-time-picker#3.1.0",
-    "vaadin-upload": "vaadin/vaadin-upload#4.4.3",
+    "vaadin-upload": "vaadin/vaadin-upload#4.4.4",
     "vaadin-usage-statistics": "vaadin/vaadin-usage-statistics#2.1.2",
     "webcomponentsjs": "webcomponentsjs#1.2.6"
   }

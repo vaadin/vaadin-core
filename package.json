@@ -56,7 +56,7 @@
     "@vaadin/vaadin-text-field": "^2.10.0",
     "@vaadin/vaadin-themable-mixin": "^1.6.2",
     "@vaadin/vaadin-time-picker": "^3.1.0",
-    "@vaadin/vaadin-upload": "^4.4.3",
+    "@vaadin/vaadin-upload": "^4.4.4",
     "@vaadin/vaadin-usage-statistics": "^2.1.2"
   },
   "files": [
